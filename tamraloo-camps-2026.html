@@ -323,6 +323,10 @@ body {
   display: grid; grid-template-columns: 1fr 1fr;
   gap: 16px;
 }
+/* 3-col for weeks with All Day + AM + PM */
+.week-sessions-3col {
+  grid-template-columns: 1fr 1fr 1fr;
+}
 
 /* session label */
 .session-label {
@@ -331,14 +335,16 @@ body {
   margin-bottom: 10px;
   display: flex; align-items: center; gap: 8px;
 }
-.session-label.am { color: var(--orange); }
-.session-label.pm { color: var(--blue); }
+.session-label.am     { color: var(--orange); }
+.session-label.pm     { color: var(--blue); }
+.session-label.allday { color: var(--magenta); }
 .session-label::before {
   content: ''; display: block;
   width: 24px; height: 4px; border-radius: 2px;
 }
-.session-label.am::before { background: linear-gradient(to right, #f8c050, #e07828); }
-.session-label.pm::before { background: linear-gradient(to right, #78c8ea, #4a96c8); }
+.session-label.am::before     { background: linear-gradient(to right, #f8c050, #e07828); }
+.session-label.pm::before     { background: linear-gradient(to right, #78c8ea, #4a96c8); }
+.session-label.allday::before { background: linear-gradient(to right, #c8007d, #8c1865); }
 
 /* CAMP CARD — tile format: full flyer on top, details below */
 .camp-card {
@@ -850,7 +856,8 @@ body {
   .hiw-inner { grid-template-columns: 1fr; gap: 24px; }
   .hiw-step { border-right: none; padding: 0; border-bottom: 1px solid var(--border); padding-bottom: 20px; }
   .hiw-step:last-child { border-bottom: none; }
-  .week-sessions { grid-template-columns: 1fr; }
+  .week-sessions,
+  .week-sessions-3col { grid-template-columns: 1fr; }
   /* camp-card is vertical by default — no override needed on mobile */
   .ccc-banner { grid-template-columns: 1fr; }
   .ccc-photo { min-height: 200px; }
@@ -1083,7 +1090,32 @@ body {
         <div class="week-dates">June 16 – 19<span>Week Two</span></div>
       </div>
     </div>
-    <div class="week-sessions">
+    <div class="week-sessions week-sessions-3col">
+      <!-- ALL DAY -->
+      <div>
+        <p class="session-label allday">All Day &nbsp;&middot;&nbsp; Full Day</p>
+        <div class="camp-card allday">
+          <div class="camp-card-img">
+            <img src="https://static.wixstatic.com/media/2d2ffb_e35820aa152e4906b44b2d2098297fc6~mv2.png" alt="Creative Conservatory Camp" loading="lazy">
+          </div>
+          <div class="camp-card-body">
+            <span class="camp-type allday">All-Day Camp</span>
+            <h3>Creative Conservatory Camp</h3>
+            <div class="camp-meta">
+              <div class="camp-meta-item">
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 1a6 6 0 110 12A6 6 0 018 2zm-.5 3v3.25l2.5 1.5.5-.87-2-.1.18V5H7.5z"/></svg>
+                Full Day (AM + PM)
+              </div>
+              <div class="camp-meta-item">
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a5 5 0 100 10A5 5 0 008 1zm0 1a4 4 0 110 8A4 4 0 018 2z"/></svg>
+                Ages 5–12
+              </div>
+            </div>
+            <p class="camp-desc">Structured performing arts every morning and Creative STEM labs every afternoon. Runs all 8 weeks — enroll for one week or the whole summer.</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRDfxUhRaN23nOmlGlBHHd6e56utrNVCAD8MOslb0FRAedMg/viewform" class="camp-register">Register for All-Day Camp</a>
+          </div>
+        </div>
+      </div>
       <!-- AM -->
       <div>
         <p class="session-label am">AM Session &nbsp;·&nbsp; 9:00am – 11:30am</p>
@@ -1138,27 +1170,6 @@ body {
   </div>
 
 
-        <!-- CCC — available every week -->
-        <div class="ccc-week-card">
-          <div class="ccc-week-label">
-            <span class="ccc-pill">All Summer</span>
-            Also available this week — full day, all 8 weeks
-          </div>
-          <div class="ccc-week-inner">
-            <div class="ccc-week-img">
-              <img src="https://static.wixstatic.com/media/2d2ffb_e35820aa152e4906b44b2d2098297fc6~mv2.png" alt="Creative Conservatory Camp — All Day All Summer" loading="lazy">
-            </div>
-            <div class="ccc-week-body">
-              <h3>Creative Conservatory Camp</h3>
-              <div class="camp-meta">
-                <div class="camp-meta-item">
-                  <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 1a6 6 0 110 12A6 6 0 018 2zm-.5 3v3.25l2.5 1.5.5-.87-2-.1.18V5H7.5z"/></svg>
-                  Full Day (AM + PM)
-                </div>
-                <div class="camp-meta-item">
-                  <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a5 5 0 100 10A5 5 0 008 1zm0 1a4 4 0 110 8A4 4 0 018 2z"/></svg>
-                  Ages 5–12
-                </div>
               </div>
               <p class="ccc-week-desc">Performing arts every morning &amp; Creative STEM labs every afternoon. Enroll for one week or the whole summer.</p>
               <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRDfxUhRaN23nOmlGlBHHd6e56utrNVCAD8MOslb0FRAedMg/viewform" class="ccc-week-btn">Register for All-Day Camp</a>
@@ -1174,7 +1185,32 @@ body {
         <div class="week-dates">June 23 – 27<span>Week Three &nbsp;&middot;&nbsp; Biggest Week — 3 Camps Running</span></div>
       </div>
     </div>
-    <div class="week-sessions">
+    <div class="week-sessions week-sessions-3col">
+      <!-- ALL DAY -->
+      <div>
+        <p class="session-label allday">All Day &nbsp;&middot;&nbsp; Full Day</p>
+        <div class="camp-card allday">
+          <div class="camp-card-img">
+            <img src="https://static.wixstatic.com/media/2d2ffb_e35820aa152e4906b44b2d2098297fc6~mv2.png" alt="Creative Conservatory Camp" loading="lazy">
+          </div>
+          <div class="camp-card-body">
+            <span class="camp-type allday">All-Day Camp</span>
+            <h3>Creative Conservatory Camp</h3>
+            <div class="camp-meta">
+              <div class="camp-meta-item">
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 1a6 6 0 110 12A6 6 0 018 2zm-.5 3v3.25l2.5 1.5.5-.87-2-.1.18V5H7.5z"/></svg>
+                Full Day (AM + PM)
+              </div>
+              <div class="camp-meta-item">
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a5 5 0 100 10A5 5 0 008 1zm0 1a4 4 0 110 8A4 4 0 018 2z"/></svg>
+                Ages 5–12
+              </div>
+            </div>
+            <p class="camp-desc">Structured performing arts every morning and Creative STEM labs every afternoon. Runs all 8 weeks — enroll for one week or the whole summer.</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRDfxUhRaN23nOmlGlBHHd6e56utrNVCAD8MOslb0FRAedMg/viewform" class="camp-register">Register for All-Day Camp</a>
+          </div>
+        </div>
+      </div>
       <!-- AM -->
       <div>
         <p class="session-label am">AM Session &nbsp;·&nbsp; 9:00am – 11:30am</p>
@@ -1255,27 +1291,6 @@ body {
   </div>
 
 
-        <!-- CCC — available every week -->
-        <div class="ccc-week-card">
-          <div class="ccc-week-label">
-            <span class="ccc-pill">All Summer</span>
-            Also available this week — full day, all 8 weeks
-          </div>
-          <div class="ccc-week-inner">
-            <div class="ccc-week-img">
-              <img src="https://static.wixstatic.com/media/2d2ffb_e35820aa152e4906b44b2d2098297fc6~mv2.png" alt="Creative Conservatory Camp — All Day All Summer" loading="lazy">
-            </div>
-            <div class="ccc-week-body">
-              <h3>Creative Conservatory Camp</h3>
-              <div class="camp-meta">
-                <div class="camp-meta-item">
-                  <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 1a6 6 0 110 12A6 6 0 018 2zm-.5 3v3.25l2.5 1.5.5-.87-2-.1.18V5H7.5z"/></svg>
-                  Full Day (AM + PM)
-                </div>
-                <div class="camp-meta-item">
-                  <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a5 5 0 100 10A5 5 0 008 1zm0 1a4 4 0 110 8A4 4 0 018 2z"/></svg>
-                  Ages 5–12
-                </div>
               </div>
               <p class="ccc-week-desc">Performing arts every morning &amp; Creative STEM labs every afternoon. Enroll for one week or the whole summer.</p>
               <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRDfxUhRaN23nOmlGlBHHd6e56utrNVCAD8MOslb0FRAedMg/viewform" class="ccc-week-btn">Register for All-Day Camp</a>
@@ -1568,39 +1583,35 @@ body {
       </div>
     </div>
     <div class="week-sessions">
-      
       <div>
-        <p class="session-label pm">No additional PM camp this week</p>
-        <div class="camp-empty">
-          <p>Looking for more? The Creative Conservatory Camp runs all day, or ask us about private lesson schedules for fall 2026.</p>
-          <a href="tel:9166642516">(916) 664-2516 &nbsp; Call or text us</a>
+        <p class="session-label allday">All Day &nbsp;&middot;&nbsp; Full Day</p>
+        <div class="camp-card allday">
+          <div class="camp-card-img">
+            <img src="https://static.wixstatic.com/media/2d2ffb_e35820aa152e4906b44b2d2098297fc6~mv2.png" alt="Creative Conservatory Camp — Final Week" loading="lazy">
+          </div>
+          <div class="camp-card-body">
+            <span class="camp-type allday">All-Day Camp</span>
+            <h3>Creative Conservatory Camp</h3>
+            <div class="camp-meta">
+              <div class="camp-meta-item">
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 1a6 6 0 110 12A6 6 0 018 2zm-.5 3v3.25l2.5 1.5.5-.87-2-.1.18V5H7.5z"/></svg>
+                Full Day (AM + PM)
+              </div>
+              <div class="camp-meta-item">
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a5 5 0 100 10A5 5 0 008 1zm0 1a4 4 0 110 8A4 4 0 018 2z"/></svg>
+                Ages 5–12
+              </div>
+            </div>
+            <p class="camp-desc">Grand finale week — end-of-summer showcase prep, instrument spotlight, and STEM design challenge. The perfect close to an unforgettable summer.</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRDfxUhRaN23nOmlGlBHHd6e56utrNVCAD8MOslb0FRAedMg/viewform" class="camp-register">Register for All-Day Camp</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
 
-        <!-- CCC — available every week -->
-        <div class="ccc-week-card">
-          <div class="ccc-week-label">
-            <span class="ccc-pill">All Summer</span>
-            Also available this week — full day, all 8 weeks
-          </div>
-          <div class="ccc-week-inner">
-            <div class="ccc-week-img">
-              <img src="https://static.wixstatic.com/media/2d2ffb_e35820aa152e4906b44b2d2098297fc6~mv2.png" alt="Creative Conservatory Camp — All Day All Summer" loading="lazy">
-            </div>
-            <div class="ccc-week-body">
-              <h3>Creative Conservatory Camp</h3>
-              <div class="camp-meta">
-                <div class="camp-meta-item">
-                  <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 1a6 6 0 110 12A6 6 0 018 2zm-.5 3v3.25l2.5 1.5.5-.87-2-.1.18V5H7.5z"/></svg>
-                  Full Day (AM + PM)
-                </div>
-                <div class="camp-meta-item">
-                  <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a5 5 0 100 10A5 5 0 008 1zm0 1a4 4 0 110 8A4 4 0 018 2z"/></svg>
-                  Ages 5–12
-                </div>
+        
               </div>
               <p class="ccc-week-desc">Performing arts every morning &amp; Creative STEM labs every afternoon. Enroll for one week or the whole summer.</p>
               <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRDfxUhRaN23nOmlGlBHHd6e56utrNVCAD8MOslb0FRAedMg/viewform" class="ccc-week-btn">Register for All-Day Camp</a>
