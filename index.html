@@ -100,22 +100,45 @@ h3 { font-weight: 400; }
   font-family: var(--body);
   font-size: 0.68rem; font-weight: 700;
   letter-spacing: 0.22em; text-transform: uppercase;
-  color: var(--magenta); display: block;
+  color: var(--magenta); display: flex;
+  align-items: center; gap: 10px;
+}
+/* 3-bar mini motif — each bar with its own gradient using multi-background */
+.eyebrow::before {
+  content: '';
+  display: block;
+  width: 30px; height: 10px;
+  flex-shrink: 0;
+  border-radius: 1px;
+  /* Three bars side by side, each with top-light/bottom-dark gradient */
+  background:
+    linear-gradient(to bottom, #c8007d, #8c1865) 0    0 / 8px 100% no-repeat,
+    linear-gradient(to bottom, #98c840, #289050) 11px 0 / 8px 100% no-repeat,
+    linear-gradient(to bottom, #78c8ea, #4a96c8) 22px 0 / 8px 100% no-repeat;
 }
 
 /* The logo bar stripe — exact colors from logo */
 .logo-stripe {
-  height: 5px;
-  background: linear-gradient(90deg,
-    #c8007d 0%,     #c8007d 14.28%,
-    #e19632 14.28%, #e19632 28.57%,
-    #e1c832 28.57%, #e1c832 42.85%,
-    #7daf32 42.85%, #7daf32 57.14%,
-    #4b9632 57.14%, #4b9632 71.42%,
-    #32af96 71.42%, #32af96 85.71%,
-    #004b7d 85.71%, #004b7d 100%
-  );
+  display: flex;    /* individual bars, not gradient — matches logo exactly */
+  height: 10px;     /* thick, visible, meaningful */
+  gap: 0;
+  overflow: hidden;
 }
+.logo-stripe-bar {
+  flex: 1;
+}
+/* Logo bar gradients — lighter top, darker bottom, exact logo behavior */
+.logo-stripe-bar:nth-child(1)  { background: linear-gradient(to bottom, #78c8ea, #4a96c8); }
+.logo-stripe-bar:nth-child(2)  { background: linear-gradient(to bottom, #c8007d, #8c1865); }
+.logo-stripe-bar:nth-child(3)  { background: linear-gradient(to bottom, #98c840, #289050); }
+.logo-stripe-bar:nth-child(4)  { background: linear-gradient(to bottom, #f8c050, #e07828); }
+.logo-stripe-bar:nth-child(5)  { background: linear-gradient(to bottom, #c8007d, #8c1865); }
+.logo-stripe-bar:nth-child(6)  { background: linear-gradient(to bottom, #98c840, #289050); }
+.logo-stripe-bar:nth-child(7)  { background: linear-gradient(to bottom, #48a8d8, #1878b0); }
+.logo-stripe-bar:nth-child(8)  { background: linear-gradient(to bottom, #f8c050, #e07828); }
+.logo-stripe-bar:nth-child(9)  { background: linear-gradient(to bottom, #98c840, #289050); }
+.logo-stripe-bar:nth-child(10)  { background: linear-gradient(to bottom, #c8007d, #8c1865); }
+.logo-stripe-bar:nth-child(11)  { background: linear-gradient(to bottom, #78c8ea, #4a96c8); }
 
 /* ---- BUTTONS ---- */
 .btn {
@@ -385,20 +408,19 @@ h3 { font-weight: 400; }
 /* 3-col poster grid, music gets tall left tile */
 .finder-grid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr;
-  grid-template-rows: auto auto;
-  gap: 2px;
-  background: var(--border);
+  grid-template-columns: repeat(3, 1fr);   /* true 3x3 equal columns */
+  grid-template-rows: repeat(2, 340px);    /* 2 rows, fixed height = symmetrical */
+  gap: 3px;
+  background: var(--border-lt);
 }
 
 .ft { display: block; text-decoration: none; position: relative; overflow: hidden; }
-.ft-tall { grid-row: span 2; }
+/* No more .ft-tall — all tiles equal */
 
 .ft-photo-wrap {
   position: relative; overflow: hidden;
-  height: 100%; min-height: 300px;
+  width: 100%; height: 100%;
 }
-.ft-tall .ft-photo-wrap { min-height: 600px; }
 
 .ft-photo-wrap img {
   width: 100%; height: 100%;
@@ -422,17 +444,17 @@ h3 { font-weight: 400; }
   justify-content: flex-end; padding: 28px 24px;
 }
 
-/* Colored top strip per discipline — from logo bar palette */
+/* Colored top strip per discipline — thick like logo bars */
 .ft-overlay::before {
   content: ''; position: absolute;
-  top: 0; left: 0; right: 0; height: 4px;
+  top: 0; left: 0; right: 0; height: 8px;
 }
-.ft-music    .ft-overlay::before { background: var(--blue); }
-.ft-dance    .ft-overlay::before { background: var(--gold); }
-.ft-theatre  .ft-overlay::before { background: var(--green); }
-.ft-academic .ft-overlay::before { background: var(--magenta); }
-.ft-summer   .ft-overlay::before { background: var(--orange); }
-.ft-trial    .ft-overlay::before { background: linear-gradient(90deg, var(--magenta), var(--blue)); }
+.ft-music    .ft-overlay::before { background: linear-gradient(to right, #78c8ea, #4a96c8); }
+.ft-dance    .ft-overlay::before { background: linear-gradient(to right, #f8c050, #e07828); }
+.ft-theatre  .ft-overlay::before { background: linear-gradient(to right, #98c840, #289050); }
+.ft-academic .ft-overlay::before { background: linear-gradient(to right, #c8007d, #8c1865); }
+.ft-summer   .ft-overlay::before { background: linear-gradient(to right, #f8c050, #e07828, #c8007d); }
+.ft-trial    .ft-overlay::before { background: linear-gradient(to right, #c8007d, #78c8ea); }
 
 .ft-age-tag {
   display: inline-block;
@@ -449,7 +471,7 @@ h3 { font-weight: 400; }
   font-weight: 500; color: var(--white);
   margin-bottom: 6px; line-height: 1.15;
 }
-.ft-tall .ft-title { font-size: clamp(1.4rem, 2.2vw, 1.9rem); }
+
 
 .ft-desc {
   font-size: 0.85rem; color: rgba(255,255,255,0.68);
@@ -457,7 +479,7 @@ h3 { font-weight: 400; }
   max-height: 0; overflow: hidden; opacity: 0;
   transition: max-height 0.4s, opacity 0.3s;
 }
-.ft-tall .ft-desc { max-height: 80px; opacity: 0.75; }
+
 .ft:hover .ft-desc { max-height: 100px; opacity: 1; }
 
 .ft-action {
@@ -559,10 +581,21 @@ h3 { font-weight: 400; }
   display: grid; grid-template-columns: 1fr 1fr 1fr 1.5fr;
 }
 .proof-stat {
-  padding: 52px 36px;
+  padding: 48px 32px;
   border-right: 1px solid var(--border);
   text-align: center;
 }
+/* Mini bar accent above each stat */
+.proof-stat::before {
+  content: '';
+  display: block;
+  width: 48px; height: 5px;
+  margin: 0 auto 20px;
+  border-radius: 2px;
+}
+.proof-stat:nth-child(1)::before { background: linear-gradient(to bottom, #c8007d, #8c1865); }
+.proof-stat:nth-child(2)::before { background: linear-gradient(to bottom, #98c840, #289050); }
+.proof-stat:nth-child(3)::before { background: linear-gradient(to bottom, #78c8ea, #4a96c8); }
 .proof-stat:last-child { border-right: none; }
 .ps-num {
   font-family: var(--display);
@@ -642,11 +675,19 @@ h3 { font-weight: 400; }
 /* Credential chips — light mode */
 .cred-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 24px; }
 .cred-chip {
-  font-size: 0.78rem; font-weight: 500; color: var(--blue);
-  background: rgba(66,133,178,0.08);
-  border: 1px solid rgba(66,133,178,0.2);
+  font-size: 0.78rem; font-weight: 500; color: var(--text-dark);
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-left: 3px solid;
   padding: 6px 14px; border-radius: 2px;
 }
+/* Cycle through bar colors for visual rhythm */
+.cred-chip:nth-child(1) { border-left-color: #c8007d; }
+.cred-chip:nth-child(2) { border-left-color: #289050; }
+.cred-chip:nth-child(3) { border-left-color: #4a96c8; }
+.cred-chip:nth-child(4) { border-left-color: #e07828; }
+.cred-chip:nth-child(5) { border-left-color: #8c1865; }
+.cred-chip:nth-child(6) { border-left-color: #98c840; }
 
 .charter-box {
   padding: 16px 20px; border-left: 3px solid var(--blue);
@@ -781,9 +822,7 @@ h3 { font-weight: 400; }
    RESPONSIVE — LAYOUT CHANGES
 ============================================================ */
 @media (max-width: 1024px) {
-  .finder-grid { grid-template-columns: 1fr 1fr; }
-  .ft-tall { grid-row: span 1; }
-  .ft-tall .ft-photo-wrap { min-height: 300px; }
+  .finder-grid { grid-template-columns: 1fr 1fr 1fr; grid-template-rows: repeat(2, 280px); }
   .proof { grid-template-columns: 1fr 1fr 1fr; }
   .proof-review { grid-column: 1/-1; border-top: 1px solid var(--border); }
   .tamie { grid-template-columns: 280px 1fr; }
@@ -801,8 +840,7 @@ h3 { font-weight: 400; }
   .hero-actions { flex-direction: column; align-items: flex-start; }
   .hero-actions .btn { width: 100%; justify-content: center; }
 
-  .finder-grid { grid-template-columns: 1fr 1fr; }
-  .ft-photo-wrap { min-height: 240px; }
+  .finder-grid { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 260px); }
 
   .summer { grid-template-columns: 1fr; }
   .summer-photo { min-height: 220px; }
@@ -828,7 +866,7 @@ h3 { font-weight: 400; }
 }
 
 @media (max-width: 480px) {
-  .finder-grid { grid-template-columns: 1fr; }
+  .finder-grid { grid-template-columns: 1fr; grid-template-rows: repeat(6, 240px); }
   .proof { grid-template-columns: 1fr; }
   .proof-stat { border-right: none; border-bottom: 1px solid var(--border); padding: 28px 20px; }
   .footer-grid { grid-template-columns: 1fr; }
@@ -872,7 +910,19 @@ h3 { font-weight: 400; }
 </nav>
 
 <!-- LOGO STRIPE -->
-<div class="logo-stripe" aria-hidden="true"></div>
+<div class="logo-stripe" aria-hidden="true">
+  <div class="logo-stripe-bar"></div>
+  <div class="logo-stripe-bar"></div>
+  <div class="logo-stripe-bar"></div>
+  <div class="logo-stripe-bar"></div>
+  <div class="logo-stripe-bar"></div>
+  <div class="logo-stripe-bar"></div>
+  <div class="logo-stripe-bar"></div>
+  <div class="logo-stripe-bar"></div>
+  <div class="logo-stripe-bar"></div>
+  <div class="logo-stripe-bar"></div>
+  <div class="logo-stripe-bar"></div>
+</div>
 
 <!-- HERO -->
 <section class="hero" aria-label="Tamraloo Studios — Lincoln's performing arts studio">
@@ -923,7 +973,7 @@ h3 { font-weight: 400; }
       <p>Every program for every age &mdash; from 12 months to adult. Tap to explore.</p>
     </div>
     <div class="finder-grid">
-      <a href="https://www.tamraloo.com/music-lessons" class="ft ft-music ft-tall" aria-label="Music lessons">
+      <a href="https://www.tamraloo.com/music-lessons" class="ft ft-music" aria-label="Music lessons">
         <div class="ft-photo-wrap">
           <img src="https://static.wixstatic.com/media/fe8f49_bb920be568a34dda96cabe9ba7a30286~mv2.jpg" alt="Music lessons at Tamraloo Studios" loading="lazy">
           <div class="ft-overlay">
@@ -1034,6 +1084,21 @@ h3 { font-weight: 400; }
   </div>
 </div>
 
+<!-- BAR DIVIDER -->
+<div class="logo-stripe" aria-hidden="true">
+  <div class="logo-stripe-bar"></div>
+  <div class="logo-stripe-bar"></div>
+  <div class="logo-stripe-bar"></div>
+  <div class="logo-stripe-bar"></div>
+  <div class="logo-stripe-bar"></div>
+  <div class="logo-stripe-bar"></div>
+  <div class="logo-stripe-bar"></div>
+  <div class="logo-stripe-bar"></div>
+  <div class="logo-stripe-bar"></div>
+  <div class="logo-stripe-bar"></div>
+  <div class="logo-stripe-bar"></div>
+</div>
+
 <!-- TAMIE -->
 <section class="tamie" id="about" aria-label="About Tamie Rogers and Tamraloo Studios">
   <div class="tamie-photo">
@@ -1129,6 +1194,21 @@ h3 { font-weight: 400; }
     <p style="font-size:0.78rem;color:rgba(255,255,255,0.3);margin-bottom:20px;">Call or text anytime</p>
     <a href="https://www.tamraloo.com/free-trial" class="btn btn-primary" style="font-size:0.82rem;padding:12px 24px;">Book Free Lesson</a>
   </div>
+</div>
+
+<!-- BAR DIVIDER -->
+<div class="logo-stripe" aria-hidden="true">
+  <div class="logo-stripe-bar"></div>
+  <div class="logo-stripe-bar"></div>
+  <div class="logo-stripe-bar"></div>
+  <div class="logo-stripe-bar"></div>
+  <div class="logo-stripe-bar"></div>
+  <div class="logo-stripe-bar"></div>
+  <div class="logo-stripe-bar"></div>
+  <div class="logo-stripe-bar"></div>
+  <div class="logo-stripe-bar"></div>
+  <div class="logo-stripe-bar"></div>
+  <div class="logo-stripe-bar"></div>
 </div>
 
 <!-- FOOTER -->
