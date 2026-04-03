@@ -340,13 +340,14 @@ body {
 .session-label.am::before { background: linear-gradient(to right, #f8c050, #e07828); }
 .session-label.pm::before { background: linear-gradient(to right, #78c8ea, #4a96c8); }
 
-/* CAMP CARD — the core unit */
+/* CAMP CARD — flyer left, details right */
 .camp-card {
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: 4px;
   overflow: hidden;
-  display: flex; flex-direction: column;
+  display: grid;
+  grid-template-columns: 220px 1fr;  /* flyer | details */
   transition: box-shadow 0.25s, transform 0.22s;
   position: relative;
 }
@@ -355,52 +356,56 @@ body {
   transform: translateY(-2px);
 }
 
-/* colored top bar matching camp type */
+/* colored left bar matching camp type — replaces top bar */
 .camp-card::before {
   content: ''; position: absolute;
-  top: 0; left: 0; right: 0; height: 5px;
+  top: 0; left: 0; bottom: 0; width: 5px;
+  z-index: 2;
 }
-.camp-card.arts    ::before { background: linear-gradient(to right, #c8007d, #8c1865); }
-.camp-card.stem    ::before { background: linear-gradient(to right, #98c840, #289050); }
-.camp-card.lit     ::before { background: linear-gradient(to right, #78c8ea, #4a96c8); }
-.camp-card.dance   ::before { background: linear-gradient(to right, #f8c050, #e07828); }
-.camp-card.allday  ::before { background: linear-gradient(to right, #c8007d, #78c8ea); }
-.camp-card.craft   ::before { background: linear-gradient(to right, #98c840, #f8c050); }
+.camp-card.arts::before   { background: linear-gradient(to bottom, #c8007d, #8c1865); }
+.camp-card.stem::before   { background: linear-gradient(to bottom, #98c840, #289050); }
+.camp-card.lit::before    { background: linear-gradient(to bottom, #78c8ea, #4a96c8); }
+.camp-card.dance::before  { background: linear-gradient(to bottom, #f8c050, #e07828); }
+.camp-card.allday::before { background: linear-gradient(to bottom, #c8007d, #78c8ea); }
+.camp-card.craft::before  { background: linear-gradient(to bottom, #98c840, #f8c050); }
 
+/* LEFT — flyer at full natural portrait ratio, no cropping */
 .camp-card-img {
-  height: 180px; overflow: hidden; position: relative;
-  margin-top: 5px; /* clear the top bar */
+  position: relative;
+  background: var(--cream);
+  display: flex; align-items: stretch; justify-content: center;
+  overflow: hidden;
+  min-height: 270px;  /* floor height — tallest card drives row */
 }
 .camp-card-img img {
-  width: 100%; height: 100%; object-fit: cover;
+  width: 100%; height: 100%;
+  object-fit: contain;       /* show full flyer, never crop */
   object-position: center top;
-  filter: brightness(0.92) saturate(0.95);
-  transition: filter 0.4s, transform 0.5s;
-}
-.camp-card:hover .camp-card-img img {
-  filter: brightness(1) saturate(1);
-  transform: scale(1.04);
+  display: block;
 }
 
 /* sold out overlay */
 .sold-overlay {
   position: absolute; inset: 0;
-  background: rgba(26,21,32,0.55);
+  background: rgba(26,21,32,0.6);
   display: flex; align-items: center; justify-content: center;
   z-index: 2;
 }
 .sold-badge {
-  font-size: 0.72rem; font-weight: 700;
+  font-size: 0.68rem; font-weight: 700;
   letter-spacing: 0.18em; text-transform: uppercase;
   color: var(--white);
   background: rgba(180,40,40,0.9);
   border: 1px solid rgba(255,255,255,0.3);
-  padding: 8px 20px;
+  padding: 7px 16px;
+  transform: rotate(-8deg);
 }
 
+/* RIGHT — all the details */
 .camp-card-body {
-  padding: 18px 18px 16px;
+  padding: 20px 20px 18px;
   flex: 1; display: flex; flex-direction: column;
+  border-left: 1px solid var(--border-lt);
 }
 
 /* type pill */
@@ -774,6 +779,20 @@ body {
   .hiw-step { border-right: none; padding: 0; border-bottom: 1px solid var(--border); padding-bottom: 20px; }
   .hiw-step:last-child { border-bottom: none; }
   .week-sessions { grid-template-columns: 1fr; }
+  /* stack camp card on tablet: flyer on top, details below */
+  .camp-card {
+    grid-template-columns: 1fr;
+  }
+  .camp-card-img {
+    min-height: 0;
+    aspect-ratio: 1545 / 1904;  /* natural flyer portrait ratio */
+    height: auto;
+  }
+  .camp-card::before {
+    top: 0; left: 0; right: 0; bottom: auto;
+    width: auto; height: 5px;
+  }
+  .camp-card-body { border-left: none; border-top: 1px solid var(--border-lt); }
   .ccc-banner { grid-template-columns: 1fr; }
   .ccc-photo { min-height: 200px; }
   .detail-grid { grid-template-columns: 1fr 1fr; }
