@@ -273,8 +273,16 @@ body {
   transition: color 0.2s, border-color 0.2s;
   white-space: nowrap;
 }
-.week-tab:hover { color: var(--blue); border-bottom-color: var(--blue); }
-.week-tab.active { color: var(--magenta); border-bottom-color: var(--magenta); }
+
+/* Each tab gets its own logo bar color on hover + active */
+.wt-1:hover, .wt-1.active { color: #c8007d; border-bottom-color: #c8007d; }
+.wt-2:hover, .wt-2.active { color: #e07828; border-bottom-color: #e07828; }
+.wt-3:hover, .wt-3.active { color: #e1c832; border-bottom-color: #e1c832; }
+.wt-4:hover, .wt-4.active { color: #7daf32; border-bottom-color: #7daf32; }
+.wt-5:hover, .wt-5.active { color: #289050; border-bottom-color: #289050; }
+.wt-6:hover, .wt-6.active { color: #4285b2; border-bottom-color: #4285b2; }
+.wt-7:hover, .wt-7.active { color: #1878b0; border-bottom-color: #1878b0; }
+.wt-8:hover, .wt-8.active { color: #c8007d; border-bottom-color: #c8007d; }
 
 /* ---- WEEKLY SCHEDULE — the main purchase interface ---- */
 .schedule-section {
@@ -944,14 +952,14 @@ body {
 <nav class="week-nav" aria-label="Jump to week">
   <div class="week-nav-inner">
     <span class="week-nav-label">Jump to Week</span>
-    <a href="#week1" class="week-tab">Wk 1 &nbsp;Jun 9</a>
-    <a href="#week2" class="week-tab">Wk 2 &nbsp;Jun 16</a>
-    <a href="#week3" class="week-tab">Wk 3 &nbsp;Jun 23</a>
-    <a href="#week4" class="week-tab">Wk 4 &nbsp;Jun 30</a>
-    <a href="#week5" class="week-tab">Wk 5 &nbsp;Jul 7</a>
-    <a href="#week6" class="week-tab">Wk 6 &nbsp;Jul 14</a>
-    <a href="#week7" class="week-tab">Wk 7 &nbsp;Jul 21</a>
-    <a href="#week8" class="week-tab">Wk 8 &nbsp;Jul 28</a>
+    <a href="#week1" class="week-tab wt-1">Wk 1 &nbsp;Jun 9</a>
+    <a href="#week2" class="week-tab wt-2">Wk 2 &nbsp;Jun 16</a>
+    <a href="#week3" class="week-tab wt-3">Wk 3 &nbsp;Jun 23</a>
+    <a href="#week4" class="week-tab wt-4">Wk 4 &nbsp;Jun 30</a>
+    <a href="#week5" class="week-tab wt-5">Wk 5 &nbsp;Jul 7</a>
+    <a href="#week6" class="week-tab wt-6">Wk 6 &nbsp;Jul 14</a>
+    <a href="#week7" class="week-tab wt-7">Wk 7 &nbsp;Jul 21</a>
+    <a href="#week8" class="week-tab wt-8">Wk 8 &nbsp;Jul 28</a>
   </div>
 </nav>
 
@@ -1016,7 +1024,7 @@ body {
     </div>
   </div>
 
-  id="week2">
+  <div class="week-block" id="week2">
     <div class="week-header">
       <div class="week-label">
         <div class="week-badge">2</div>
@@ -1088,7 +1096,7 @@ body {
     </div>
   </div>
 
-  id="week3">
+  <div class="week-block" id="week3">
     <div class="week-header">
       <div class="week-label">
         <div class="week-badge">3</div>
@@ -1180,7 +1188,7 @@ body {
     </div>
   </div>
 
-  id="week4">
+  <div class="week-block" id="week4">
     <div class="week-header">
       <div class="week-label">
         <div class="week-badge">4</div>
@@ -1235,7 +1243,7 @@ body {
     </div>
   </div>
 
-  id="week5">
+  <div class="week-block" id="week5">
     <div class="week-header">
       <div class="week-label">
         <div class="week-badge">5</div>
@@ -1290,7 +1298,7 @@ body {
     </div>
   </div>
 
-  id="week6">
+  <div class="week-block" id="week6">
     <div class="week-header">
       <div class="week-label">
         <div class="week-badge">6</div>
@@ -1363,7 +1371,7 @@ body {
     </div>
   </div>
 
-  id="week7">
+  <div class="week-block" id="week7">
     <div class="week-header">
       <div class="week-label">
         <div class="week-badge">7</div>
@@ -1436,7 +1444,7 @@ body {
     </div>
   </div>
 
-  id="week8">
+  <div class="week-block" id="week8">
     <div class="week-header">
       <div class="week-label">
         <div class="week-badge">8</div>
