@@ -6,47 +6,52 @@
 <title>Music, Dance, Theatre & Tutoring in Lincoln, CA | Tamraloo Studios</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Jost:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 /* ============================================================
-   TAMRALOO STUDIOS — HOMEPAGE v2
-   Aesthetic: Luxury Black Editorial · Performing Arts Prestige
+   TAMRALOO STUDIOS — HOMEPAGE v4
+   Aesthetic: Warm Charcoal Luxury · Performing Arts Prestige
    Platform:  Wix (Custom HTML)
 
-   Palette:
-     Ink Black:    #0a0a0a
-     Off-Black:    #111111
-     Panel:        #161616
-     Border:       #242424
-     Cream:        #f5f0ea
-     Script Berry: #a41c6e
-     Script Pink:  #c63d8f
-     Gold:         #c9a84c
-     Gold Light:   #e8c96a
-     White:        #ffffff
+   The black is now warm charcoal — #0f0d0c not pure #000.
+   Every background has a faint warm undertone so it breathes.
+   Photos are embedded throughout as real atmosphere.
+   No emojis anywhere. Script only in gradient accents.
+   Announcement bar: deep plum/gold, not hot pink.
 ============================================================ */
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --ink:        #0a0a0a;
-  --off-black:  #111111;
-  --panel:      #161616;
-  --border:     #242424;
-  --cream:      #f5f0ea;
+  /* Warm dark palette — the key change */
+  --ink:        #0f0d0c;   /* warm charcoal, not pure black */
+  --ink2:       #141210;   /* slightly lighter warm dark */
+  --panel:      #1a1714;   /* warm dark panel */
+  --panel2:     #201c19;   /* alternate panel, slightly warmer */
+  --border:     #2e2824;   /* warm border */
+  --border-lt:  #3a332e;   /* lighter border for contrast */
+
+  /* Brand colors — used sparingly */
   --berry:      #a41c6e;
   --magenta:    #c63d8f;
   --gold:       #c9a84c;
-  --gold-lt:    #e8c96a;
-  --white:      #ffffff;
-  --text-dim:   rgba(255,255,255,0.5);
-  --text-mid:   rgba(255,255,255,0.72);
-  --text-full:  rgba(255,255,255,0.92);
+  --gold-lt:    #e2c26a;
+  --gold-dim:   #9a7d36;
+  --plum:       #6f1c50;
+  --plum-deep:  #3d0f2c;
 
-  --script:     'Pinyon Script', cursive;
-  --serif:      'Cormorant Garamond', Georgia, serif;
-  --sans:       'Jost', sans-serif;
+  /* Text levels */
+  --white:      #ffffff;
+  --text-full:  rgba(255,255,255,0.90);
+  --text-mid:   rgba(255,255,255,0.65);
+  --text-dim:   rgba(255,255,255,0.38);
+  --text-warm:  #d4c9b8;   /* warm off-white for body text */
+
+  /* Typography */
+  --script: 'Pinyon Script', cursive;
+  --serif:  'Cormorant Garamond', Georgia, serif;
+  --sans:   'Jost', sans-serif;
 }
 
 html { scroll-behavior: smooth; }
@@ -55,261 +60,295 @@ body {
   font-family: var(--sans);
   background: var(--ink);
   color: var(--text-full);
-  line-height: 1.6;
+  line-height: 1.65;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
-/* ---- NOISE GRAIN OVERLAY ---- */
+/* Subtle warm grain overlay */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.035;
   pointer-events: none;
   z-index: 9999;
+  mix-blend-mode: overlay;
 }
 
 /* ---- UTILITY ---- */
-.container { max-width: 1240px; margin: 0 auto; padding: 0 40px; }
+.container { max-width: 1240px; margin: 0 auto; padding: 0 48px; }
 
 .overline {
   font-family: var(--sans);
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 600;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--gold);
 }
 
-.divider-line {
-  width: 48px;
+.divider {
+  width: 40px;
   height: 1px;
-  background: var(--gold);
-  margin: 18px 0;
+  background: var(--gold-dim);
+  margin: 16px 0;
 }
-
-.divider-line.center { margin: 18px auto; }
+.divider.center { margin: 16px auto; }
 
 /* ---- BUTTONS ---- */
 .btn-gold {
   display: inline-block;
   background: transparent;
-  border: 1px solid var(--gold);
-  color: var(--gold);
+  border: 1px solid var(--gold-dim);
+  color: var(--gold-lt);
   font-family: var(--sans);
   font-weight: 500;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  padding: 15px 40px;
+  padding: 14px 38px;
   text-decoration: none;
-  transition: background 0.3s, color 0.3s;
+  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
 }
-.btn-gold::after {
+.btn-gold::before {
   content: '';
   position: absolute;
   inset: 0;
   background: var(--gold);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
-  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 0;
 }
-.btn-gold:hover { color: var(--ink); }
-.btn-gold:hover::after { transform: scaleX(1); }
+.btn-gold:hover { color: var(--ink); border-color: var(--gold); }
+.btn-gold:hover::before { opacity: 1; }
+.btn-gold span { position: relative; z-index: 1; }
 
-.btn-white {
+.btn-ghost {
   display: inline-block;
   background: transparent;
-  border: 1px solid rgba(255,255,255,0.3);
+  border: 1px solid var(--border-lt);
   color: var(--text-mid);
   font-family: var(--sans);
   font-weight: 400;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  padding: 13px 36px;
+  padding: 13px 34px;
   text-decoration: none;
   transition: border-color 0.3s, color 0.3s;
 }
-.btn-white:hover {
-  border-color: rgba(255,255,255,0.7);
-  color: var(--white);
-}
+.btn-ghost:hover { border-color: var(--text-mid); color: var(--text-full); }
 
 /* ============================================================
-   SUMMER ANNOUNCEMENT BAR
+   ANNOUNCEMENT BAR — refined plum/gold, not hot pink
 ============================================================ */
-.summer-bar {
-  background: linear-gradient(90deg, var(--berry) 0%, var(--magenta) 50%, var(--berry) 100%);
-  background-size: 200% 100%;
-  animation: barShimmer 4s linear infinite;
-  padding: 13px 24px;
+.announce-bar {
+  background: var(--plum-deep);
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+  padding: 11px 24px;
   text-align: center;
-  position: relative;
-  z-index: 10;
 }
 
-@keyframes barShimmer {
-  0%   { background-position: 0% 0%; }
-  100% { background-position: 200% 0%; }
-}
-
-.summer-bar-inner {
+.announce-inner {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 24px;
   flex-wrap: wrap;
-}
-
-.summer-bar-text {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--white);
-}
-
-.summer-bar-text strong {
-  color: var(--gold-lt);
-}
-
-.summer-bar-link {
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--ink);
-  background: var(--gold-lt);
-  padding: 5px 16px;
-  text-decoration: none;
-  border-radius: 2px;
-  transition: background 0.2s;
-  white-space: nowrap;
-}
-.summer-bar-link:hover { background: var(--white); }
-
-/* ============================================================
-   SUMMER 2026 SECTION
-============================================================ */
-.summer {
-  background: var(--off-black);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding: 0;
-}
-
-/* top header */
-.summer-header {
   max-width: 1240px;
   margin: 0 auto;
-  padding: 80px 40px 60px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: end;
+}
+
+.announce-text {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.65);
+}
+
+.announce-text strong {
+  color: var(--gold-lt);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.announce-cta {
+  font-family: var(--sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold-dim);
+  padding-bottom: 1px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.announce-cta:hover { color: var(--gold-lt); border-color: var(--gold); }
+
+/* ============================================================
+   SUMMER 2026 — TOP SECTION
+============================================================ */
+.summer {
+  background: var(--ink2);
   border-bottom: 1px solid var(--border);
 }
 
-.summer-header-left h2 {
+/* Full-bleed photo header */
+.summer-photo-header {
+  position: relative;
+  height: 520px;
+  overflow: hidden;
+}
+
+.summer-photo-header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+  filter: brightness(0.45) saturate(0.8);
+}
+
+/* warm color wash over the photo */
+.summer-photo-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(15,13,12,0.85) 0%,
+    rgba(15,13,12,0.4) 50%,
+    rgba(15,13,12,0.1) 100%
+  );
+  z-index: 1;
+}
+
+/* bottom fade to background */
+.summer-photo-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 140px;
+  background: linear-gradient(to top, var(--ink2), transparent);
+  z-index: 2;
+}
+
+.summer-photo-content {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 80px;
+  max-width: 780px;
+}
+
+.summer-photo-content .overline { margin-bottom: 16px; }
+
+.summer-photo-content h2 {
   font-family: var(--serif);
-  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
   font-weight: 300;
   color: var(--white);
   line-height: 1.15;
-  margin-bottom: 12px;
+  margin-bottom: 18px;
 }
 
-.summer-header-left h2 em {
+.summer-photo-content h2 em {
   font-style: italic;
   color: var(--gold-lt);
 }
 
-.summer-header-left p {
-  font-size: 0.87rem;
+.summer-photo-content p {
+  font-size: 0.9rem;
   font-weight: 300;
-  color: var(--text-dim);
+  color: var(--text-warm);
   line-height: 1.8;
-  max-width: 480px;
+  max-width: 520px;
+  margin-bottom: 32px;
 }
 
-.summer-header-right {
+.summer-cta-row {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 16px;
+  gap: 14px;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.sold-out-note {
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  color: var(--text-dim);
-  font-style: italic;
-}
-
-.sold-out-note strong {
-  color: #e85d5d;
-  font-style: normal;
-}
-
-/* urgency strip */
-.urgency-strip {
-  background: rgba(201,168,76,0.07);
-  border: 1px solid rgba(201,168,76,0.2);
-  border-left: 3px solid var(--gold);
-  padding: 14px 20px;
-  font-size: 0.8rem;
-  font-weight: 400;
-  color: var(--text-mid);
-  line-height: 1.6;
-  max-width: 400px;
-  text-align: left;
-}
-
-.urgency-strip strong {
-  color: var(--gold-lt);
+.sold-out-badge {
+  font-size: 0.62rem;
   font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #e8a0a0;
+  border: 1px solid rgba(232,160,160,0.3);
+  padding: 5px 14px;
 }
 
-/* Featured flagship — Creative Conservatory */
-.summer-flagship {
-  max-width: 1240px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
+/* urgency strip below photo */
+.summer-urgency {
+  background: rgba(201,168,76,0.06);
+  border-top: 1px solid rgba(201,168,76,0.15);
   border-bottom: 1px solid var(--border);
+  padding: 16px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
 }
 
-.summer-flagship-content {
-  padding: 60px 60px 60px 40px;
+.urgency-text {
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: var(--text-mid);
+  letter-spacing: 0.04em;
+}
+
+.urgency-text strong { color: var(--gold-lt); font-weight: 500; }
+
+/* flagship section */
+.summer-flagship {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid var(--border);
+  max-width: 100%;
+}
+
+.flagship-content {
+  padding: 72px 60px 72px 48px;
   border-right: 1px solid var(--border);
 }
 
-.flagship-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.65rem;
+.flagship-tag {
+  font-size: 0.62rem;
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--gold);
   margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-.flagship-label::before {
-  content: '★';
-  font-size: 0.6rem;
+.flagship-tag::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: var(--gold-dim);
 }
 
-.summer-flagship-content h3 {
+.flagship-content h3 {
   font-family: var(--serif);
-  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  font-size: clamp(1.7rem, 2.5vw, 2.3rem);
   font-weight: 300;
   font-style: italic;
   color: var(--white);
@@ -317,129 +356,107 @@ body::before {
   margin-bottom: 8px;
 }
 
-.summer-flagship-content .camp-subtitle {
-  font-size: 0.72rem;
+.flagship-content .sub {
+  font-size: 0.68rem;
   font-weight: 600;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--magenta);
-  margin-bottom: 24px;
-}
-
-.summer-flagship-content p {
-  font-size: 0.87rem;
-  font-weight: 300;
-  color: var(--text-dim);
-  line-height: 1.85;
+  opacity: 0.85;
   margin-bottom: 28px;
 }
 
-.flagship-features {
+.flagship-content p {
+  font-size: 0.87rem;
+  font-weight: 300;
+  color: var(--text-mid);
+  line-height: 1.9;
+  margin-bottom: 32px;
+}
+
+.flagship-list {
   list-style: none;
+  margin-bottom: 40px;
+}
+.flagship-list li {
+  display: grid;
+  grid-template-columns: 1px 1fr;
+  gap: 20px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: var(--text-warm);
+  line-height: 1.55;
+  align-items: start;
+}
+.flagship-list li:first-child { border-top: 1px solid var(--border); }
+.flagship-list li::before {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 100%;
+  min-height: 14px;
+  background: var(--gold-dim);
+  margin-top: 4px;
+}
+
+/* photo mosaic right side */
+.flagship-photos {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  overflow: hidden;
+}
+
+.flagship-photo-top {
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+
+.flagship-photo-top img,
+.flagship-photo-bottom img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.75) saturate(0.85);
+  transition: filter 0.5s;
+}
+.flagship-photo-top:hover img,
+.flagship-photo-bottom:hover img {
+  filter: brightness(0.85) saturate(0.95);
+}
+
+.flagship-photo-bottom {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.flagship-photo-bottom .ph2 {
+  border-left: 1px solid var(--border);
+  overflow: hidden;
+}
+
+/* camps grid */
+.camps-section {
+  padding: 60px 48px;
+  border-bottom: 1px solid var(--border);
+  background: var(--panel);
+}
+
+.camps-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
   margin-bottom: 36px;
 }
 
-.flagship-features li {
-  font-size: 0.8rem;
-  font-weight: 400;
-  color: var(--text-mid);
-  padding: 8px 0;
-  border-bottom: 1px solid var(--border);
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  line-height: 1.5;
-}
-.flagship-features li:first-child { border-top: 1px solid var(--border); }
-
-.flagship-features li .feat-icon {
-  color: var(--gold);
-  font-size: 0.75rem;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.summer-flagship-aside {
-  padding: 60px 40px 60px 60px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.aside-label {
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--text-dim);
-  margin-bottom: 24px;
-}
-
-.theatre-card {
-  border: 1px solid var(--border);
-  padding: 28px 24px;
-  margin-bottom: 16px;
-  position: relative;
-  transition: border-color 0.3s;
-}
-.theatre-card:hover { border-color: rgba(201,168,76,0.3); }
-
-.theatre-card .tc-tag {
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--magenta);
-  margin-bottom: 10px;
-}
-
-.theatre-card h4 {
+.camps-section-header h3 {
   font-family: var(--serif);
-  font-size: 1.1rem;
-  font-weight: 400;
+  font-size: 1.5rem;
+  font-weight: 300;
   font-style: italic;
   color: var(--white);
-  margin-bottom: 8px;
-}
-
-.theatre-card p {
-  font-size: 0.78rem;
-  font-weight: 300;
-  color: var(--text-dim);
-  line-height: 1.7;
-  margin-bottom: 16px;
-}
-
-.theatre-card a {
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--gold);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: gap 0.2s;
-}
-.theatre-card a::after { content: '→'; }
-.theatre-card a:hover { gap: 14px; }
-
-/* camps grid */
-.camps-grid-section {
-  border-bottom: 1px solid var(--border);
-  padding: 60px 40px;
-  max-width: 1240px;
-  margin: 0 auto;
-}
-
-.camps-grid-label {
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 32px;
 }
 
 .camps-grid {
@@ -448,191 +465,247 @@ body::before {
   gap: 1px;
   background: var(--border);
   border: 1px solid var(--border);
-  margin-bottom: 36px;
+  margin-bottom: 32px;
 }
 
 .camp-tile {
-  background: var(--off-black);
-  padding: 28px 24px;
+  background: var(--panel2);
+  padding: 26px 22px;
   transition: background 0.3s;
   position: relative;
 }
-.camp-tile:hover { background: #1a1a1a; }
+.camp-tile:hover { background: #252019; }
 
-.camp-tile.sold-out { opacity: 0.55; }
 .camp-tile.sold-out::after {
   content: 'SOLD OUT';
   position: absolute;
-  top: 12px;
-  right: 12px;
-  font-size: 0.55rem;
+  top: 10px;
+  right: 10px;
+  font-size: 0.52rem;
   font-weight: 700;
-  letter-spacing: 0.15em;
-  color: #e85d5d;
-  border: 1px solid #e85d5d;
-  padding: 3px 7px;
+  letter-spacing: 0.18em;
+  color: #c97070;
+  border: 1px solid rgba(201,112,112,0.35);
+  padding: 3px 8px;
 }
 
-.camp-tile .ct-category {
-  font-size: 0.6rem;
+.camp-tile .ct-cat {
+  font-size: 0.58rem;
   font-weight: 600;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   margin-bottom: 10px;
 }
-
-.camp-tile.performing .ct-category { color: var(--magenta); }
-.camp-tile.literacy   .ct-category { color: #7ec8e3; }
-.camp-tile.stem       .ct-category { color: #9dce50; }
-.camp-tile.allday     .ct-category { color: var(--gold); }
+.camp-tile.arts   .ct-cat { color: var(--magenta); opacity: 0.8; }
+.camp-tile.lit    .ct-cat { color: #88c4d4; }
+.camp-tile.stem   .ct-cat { color: #9dce50; opacity: 0.85; }
+.camp-tile.allday .ct-cat { color: var(--gold); }
 
 .camp-tile .ct-name {
   font-family: var(--serif);
-  font-size: 1rem;
+  font-size: 0.97rem;
   font-weight: 400;
   font-style: italic;
-  color: var(--white);
-  margin-bottom: 6px;
+  color: var(--text-full);
+  margin-bottom: 8px;
   line-height: 1.3;
 }
 
 .camp-tile .ct-meta {
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 300;
   color: var(--text-dim);
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
-.camps-register-row {
+.camps-register {
   display: flex;
-  gap: 14px;
+  gap: 12px;
   flex-wrap: wrap;
   align-items: center;
+  padding-top: 4px;
 }
 
-.camps-register-row .reg-note {
-  font-size: 0.78rem;
-  font-weight: 300;
-  color: var(--text-dim);
-}
-
-/* sibling discount note */
 .sibling-note {
-  background: rgba(255,255,255,0.02);
-  border: 1px solid var(--border);
-  padding: 14px 20px;
-  font-size: 0.78rem;
+  margin-top: 20px;
+  font-size: 0.75rem;
   font-weight: 300;
   color: var(--text-dim);
-  line-height: 1.6;
-  margin-top: 20px;
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+  line-height: 1.7;
 }
-.sibling-note strong { color: var(--text-mid); font-weight: 500; }
+.sibling-note a { color: var(--gold-dim); text-decoration: none; }
+.sibling-note a:hover { color: var(--gold-lt); }
+
+/* also this summer cards */
+.also-summer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--border);
+}
+
+.also-card {
+  padding: 48px;
+  border-right: 1px solid var(--border);
+  text-decoration: none;
+  transition: background 0.3s;
+  display: block;
+}
+.also-card:last-child { border-right: none; }
+.also-card:hover { background: rgba(255,255,255,0.02); }
+
+.also-card .ac-tag {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: 14px;
+}
+
+.also-card h4 {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--white);
+  margin-bottom: 12px;
+  line-height: 1.25;
+}
+
+.also-card p {
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: var(--text-mid);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.also-card .ac-link {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: gap 0.2s;
+}
+.also-card .ac-link::after { content: '—'; }
+.also-card:hover .ac-link { gap: 14px; }
 
 /* ============================================================
-   HERO
+   COLOR STRIPE (thin, tasteful)
+============================================================ */
+.color-stripe {
+  height: 2px;
+  background: linear-gradient(90deg,
+    var(--berry) 0%,
+    var(--magenta) 28%,
+    #f3b94d 52%,
+    #9dce50 76%,
+    var(--berry) 100%);
+  opacity: 0.6;
+}
+
+/* ============================================================
+   HERO — full page split with real photo
 ============================================================ */
 .hero {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  position: relative;
-  overflow: hidden;
+  background: var(--ink);
 }
 
-/* left side — deep black with fine texture */
 .hero-left {
-  background: var(--ink);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 120px 80px 120px 80px;
+  padding: 100px 80px;
   position: relative;
   z-index: 2;
 }
 
-/* subtle radial glow */
+/* subtle warm glow from bottom left */
 .hero-left::before {
   content: '';
   position: absolute;
-  top: 30%;
-  left: -20%;
+  bottom: -100px;
+  left: -100px;
   width: 500px;
   height: 500px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(164,28,110,0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(164,28,110,0.06) 0%, transparent 70%);
   pointer-events: none;
 }
 
-.hero-script {
+.hero-wordmark {
   font-family: var(--script);
-  font-size: clamp(5rem, 8vw, 8.5rem);
-  line-height: 0.9;
-  background: linear-gradient(135deg, var(--berry) 0%, var(--magenta) 40%, var(--gold-lt) 100%);
+  font-size: clamp(5rem, 7.5vw, 9rem);
+  line-height: 0.88;
+  background: linear-gradient(135deg, var(--berry) 0%, var(--magenta) 45%, var(--gold-lt) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin-bottom: 8px;
-  position: relative;
+  margin-bottom: 6px;
 }
 
-.hero-studios {
+.hero-studios-label {
   font-family: var(--sans);
   font-weight: 200;
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   letter-spacing: 0.55em;
   text-transform: uppercase;
   color: var(--text-dim);
-  margin-bottom: 48px;
-  padding-left: 4px;
+  margin-bottom: 52px;
+  padding-left: 3px;
 }
 
 .hero-headline {
   font-family: var(--serif);
-  font-size: clamp(1.9rem, 3vw, 2.8rem);
+  font-size: clamp(1.7rem, 2.8vw, 2.6rem);
   font-weight: 300;
   font-style: italic;
   color: var(--text-full);
   line-height: 1.25;
   margin-bottom: 20px;
-  max-width: 480px;
+  max-width: 440px;
 }
-
-.hero-headline em {
-  font-style: normal;
-  color: var(--gold-lt);
-}
+.hero-headline em { font-style: normal; color: var(--gold-lt); }
 
 .hero-body {
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   font-weight: 300;
-  color: var(--text-dim);
-  max-width: 400px;
-  line-height: 1.85;
-  margin-bottom: 48px;
+  color: var(--text-mid);
+  max-width: 380px;
+  line-height: 1.9;
+  margin-bottom: 44px;
   letter-spacing: 0.02em;
 }
 
 .hero-ctas {
   display: flex;
-  gap: 16px;
-  align-items: center;
-  margin-bottom: 60px;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 52px;
 }
 
-.hero-phone-link {
+.hero-phone {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   color: var(--text-dim);
   text-decoration: none;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 400;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   transition: color 0.2s;
 }
-.hero-phone-link:hover { color: var(--gold-lt); }
-.hero-phone-link::before {
+.hero-phone:hover { color: var(--gold-lt); }
+.hero-phone::before {
   content: '';
   display: block;
   width: 28px;
@@ -640,180 +713,161 @@ body::before {
   background: currentColor;
 }
 
-/* bottom of hero left — stat strip */
 .hero-stats {
   display: flex;
-  gap: 40px;
+  gap: 36px;
   border-top: 1px solid var(--border);
   padding-top: 36px;
+  margin-top: 36px;
 }
 
-.stat-item .stat-num {
+.stat-num {
   font-family: var(--serif);
-  font-size: 2rem;
+  font-size: 2.1rem;
   font-weight: 400;
   color: var(--white);
   line-height: 1;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
 }
-
-.stat-item .stat-num span {
+.stat-num span {
   background: linear-gradient(90deg, var(--berry), var(--magenta));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.stat-item .stat-label {
-  font-size: 0.65rem;
+.stat-label {
+  font-size: 0.62rem;
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--text-dim);
 }
 
-/* right side — dark editorial panel */
+/* right — real photo with awards overlay */
 .hero-right {
-  background: var(--panel);
-  border-left: 1px solid var(--border);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 60px;
   position: relative;
   overflow: hidden;
+  background: var(--panel);
 }
 
-/* faint vertical rule */
+.hero-right-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  filter: brightness(0.5) saturate(0.75);
+}
+
+/* gradient overlay */
 .hero-right::before {
   content: '';
   position: absolute;
-  top: 0;
-  right: 30%;
-  width: 1px;
-  height: 100%;
-  background: var(--border);
-  opacity: 0.5;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(15,13,12,0.7) 0%,
+    rgba(15,13,12,0.1) 60%,
+    transparent 100%
+  );
+  z-index: 1;
 }
 
-/* big decorative script in background */
-.hero-right::after {
-  content: 'Be Your Own Star';
-  font-family: var(--script);
-  font-size: 5rem;
-  color: rgba(255,255,255,0.025);
+/* awards panel bottom */
+.hero-awards-panel {
   position: absolute;
-  top: 50px;
-  left: 30px;
-  right: 30px;
-  line-height: 1.3;
-  pointer-events: none;
-  white-space: nowrap;
-  overflow: hidden;
+  bottom: 0; left: 0; right: 0;
+  z-index: 2;
+  padding: 36px 40px;
+  background: linear-gradient(to top, rgba(15,13,12,0.95) 0%, transparent 100%);
 }
 
-.hero-awards-label {
-  font-size: 0.65rem;
+.awards-label {
+  font-size: 0.6rem;
   font-weight: 600;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 24px;
+  color: var(--gold-dim);
+  margin-bottom: 18px;
 }
+
+.award-rows { border-top: 1px solid var(--border); }
 
 .award-row {
-  border-top: 1px solid var(--border);
-  padding: 18px 0;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
 }
-.award-row:last-of-type { border-bottom: 1px solid var(--border); }
 
 .award-name {
   font-family: var(--serif);
-  font-size: 0.95rem;
-  font-weight: 400;
-  color: var(--text-full);
+  font-size: 0.88rem;
   font-style: italic;
+  color: var(--text-mid);
 }
 
 .award-year {
-  font-size: 0.68rem;
-  font-weight: 500;
+  font-size: 0.62rem;
+  font-weight: 400;
   letter-spacing: 0.12em;
   color: var(--text-dim);
 }
 
-.hero-review-strip {
-  margin-top: 40px;
-  padding: 24px 28px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid var(--border);
+.hero-review {
+  margin-top: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
 }
 
 .review-stars {
   color: var(--gold);
-  font-size: 0.75rem;
-  letter-spacing: 4px;
-  margin-bottom: 8px;
+  font-size: 0.62rem;
+  letter-spacing: 3px;
+  margin-top: 3px;
+  white-space: nowrap;
 }
 
-.review-quote {
+.review-text {
   font-family: var(--serif);
-  font-size: 0.95rem;
+  font-size: 0.87rem;
   font-style: italic;
-  color: var(--text-mid);
-  line-height: 1.6;
-  margin-bottom: 12px;
-}
-
-.review-sig {
-  font-size: 0.68rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
   color: var(--text-dim);
+  line-height: 1.55;
 }
 
 /* ============================================================
-   THIN COLOR BAR (logo stripe, tasteful)
-============================================================ */
-.color-bar {
-  height: 3px;
-  background: linear-gradient(90deg,
-    var(--berry) 0%,
-    var(--magenta) 30%,
-    #f3b94d 55%,
-    #9dce50 80%,
-    var(--berry) 100%);
-  opacity: 0.7;
-}
-
-/* ============================================================
-   INTRO STATEMENT
+   INTRO — warm quote section
 ============================================================ */
 .intro {
-  padding: 140px 40px;
-  background: var(--ink);
+  background: var(--panel2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 120px 48px;
   text-align: center;
   position: relative;
   overflow: hidden;
 }
 
-/* faint grid lines */
+/* faint script watermark */
 .intro::before {
-  content: '';
+  content: 'Be Your Own Star';
+  font-family: var(--script);
+  font-size: 12vw;
+  color: rgba(255,255,255,0.025);
   position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-  background-size: 80px 80px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
   pointer-events: none;
 }
 
 .intro-inner {
-  max-width: 800px;
+  max-width: 780px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
@@ -821,314 +875,353 @@ body::before {
 
 .intro-script {
   font-family: var(--script);
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  background: linear-gradient(135deg, var(--berry), var(--magenta));
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  background: linear-gradient(135deg, var(--berry) 0%, var(--magenta) 50%, var(--gold-lt) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin-bottom: 36px;
   display: block;
+  margin-bottom: 28px;
 }
 
 .intro h2 {
   font-family: var(--serif);
-  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-size: clamp(1.9rem, 3.5vw, 3rem);
   font-weight: 300;
-  line-height: 1.2;
+  line-height: 1.22;
   color: var(--white);
   margin-bottom: 28px;
-  letter-spacing: -0.01em;
 }
-
-.intro h2 em {
-  font-style: italic;
-  color: var(--gold-lt);
-}
+.intro h2 em { font-style: italic; color: var(--gold-lt); }
 
 .intro-lead {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 300;
-  color: var(--text-dim);
-  line-height: 1.9;
+  color: var(--text-mid);
+  line-height: 1.95;
   max-width: 600px;
-  margin: 0 auto 48px;
-  letter-spacing: 0.02em;
+  margin: 0 auto 44px;
 }
 
 /* ============================================================
-   DISCIPLINES — ASYMMETRIC EDITORIAL GRID
+   DISCIPLINES — editorial grid with photos
 ============================================================ */
 .disciplines {
-  background: var(--off-black);
+  background: var(--ink);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  padding: 0;
 }
 
-.disciplines-header {
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 80px 40px 60px;
+.disc-header {
+  max-width: 100%;
+  padding: 72px 48px 56px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  border-bottom: 1px solid var(--border);
 }
 
-.disciplines-header-left h2 {
+.disc-header h2 {
   font-family: var(--serif);
-  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-size: clamp(2rem, 3vw, 2.8rem);
   font-weight: 300;
   color: var(--white);
   line-height: 1.15;
 }
+.disc-header h2 em { font-style: italic; color: var(--gold-lt); }
 
-.disciplines-header-left h2 em {
-  font-style: italic;
-  color: var(--gold-lt);
-}
-
-.disciplines-header-right {
+.disc-header-note {
   font-size: 0.82rem;
   font-weight: 300;
   color: var(--text-dim);
-  max-width: 280px;
+  max-width: 260px;
   text-align: right;
   line-height: 1.7;
 }
 
-/* horizontal scroll cards */
-.disciplines-track {
+.disc-track {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   border-top: 1px solid var(--border);
 }
 
-.discipline-card {
+.disc-card {
   border-right: 1px solid var(--border);
-  padding: 52px 44px 60px;
   text-decoration: none;
-  display: block;
-  position: relative;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   transition: background 0.4s;
-  cursor: pointer;
 }
-.discipline-card:last-child { border-right: none; }
+.disc-card:last-child { border-right: none; }
+.disc-card:hover { background: rgba(255,255,255,0.015); }
 
-/* hover fill from bottom */
-.discipline-card::before {
+/* photo portion */
+.disc-photo {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 1px solid var(--border);
+}
+.disc-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.55) saturate(0.7);
+  transition: filter 0.5s, transform 0.6s;
+}
+.disc-card:hover .disc-photo img {
+  filter: brightness(0.7) saturate(0.9);
+  transform: scale(1.03);
+}
+
+/* color accent line per discipline */
+.disc-photo::after {
   content: '';
   position: absolute;
   bottom: 0; left: 0; right: 0;
-  height: 0;
-  transition: height 0.4s ease;
+  height: 2px;
+}
+.disc-card.music  .disc-photo::after { background: var(--berry); }
+.disc-card.dance  .disc-photo::after { background: var(--gold); }
+.disc-card.theatre .disc-photo::after { background: #9dce50; }
+.disc-card.tutoring .disc-photo::after { background: var(--magenta); opacity: 0.7; }
+
+/* text portion */
+.disc-body {
+  padding: 36px 32px 44px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-.discipline-card:hover::before { height: 100%; }
-
-/* color variants */
-.discipline-card.music::before     { background: rgba(164,28,110,0.06); }
-.discipline-card.dance::before     { background: rgba(243,185,77,0.05); }
-.discipline-card.theatre::before   { background: rgba(157,206,80,0.05); }
-.discipline-card.tutoring::before  { background: rgba(111,28,80,0.08); }
-
-.discipline-card:hover { background: rgba(255,255,255,0.02); }
-
-.disc-number {
+.disc-num {
   font-family: var(--serif);
-  font-size: 3.5rem;
+  font-size: 2.8rem;
   font-weight: 300;
-  color: rgba(255,255,255,0.06);
-  position: absolute;
-  top: 24px;
-  right: 28px;
+  color: rgba(255,255,255,0.05);
   line-height: 1;
+  margin-bottom: -10px;
+  text-align: right;
+  pointer-events: none;
 }
 
-.disc-icon {
-  font-size: 1.6rem;
-  margin-bottom: 28px;
-  display: block;
-}
-
-.disc-label {
-  font-size: 0.65rem;
+.disc-tag {
+  font-size: 0.6rem;
   font-weight: 600;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
-
-.music    .disc-label { color: var(--berry); }
-.dance    .disc-label { color: #c9a84c; }
-.theatre  .disc-label { color: #9dce50; }
-.tutoring .disc-label { color: var(--magenta); }
+.music   .disc-tag { color: var(--berry); }
+.dance   .disc-tag { color: var(--gold); }
+.theatre .disc-tag { color: #9dce50; opacity: 0.85; }
+.tutoring .disc-tag { color: var(--magenta); opacity: 0.8; }
 
 .disc-title {
   font-family: var(--serif);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 400;
-  color: var(--white);
-  margin-bottom: 16px;
-  line-height: 1.2;
   font-style: italic;
+  color: var(--white);
+  margin-bottom: 14px;
+  line-height: 1.25;
 }
 
-.disc-body {
-  font-size: 0.8rem;
+.disc-text {
+  font-size: 0.78rem;
   font-weight: 300;
   color: var(--text-dim);
   line-height: 1.8;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
+  flex: 1;
 }
 
 .disc-offerings {
   list-style: none;
-  margin-bottom: 36px;
+  margin-bottom: 28px;
 }
-
 .disc-offerings li {
-  font-size: 0.72rem;
-  font-weight: 400;
-  color: var(--text-dim);
-  letter-spacing: 0.08em;
+  font-size: 0.7rem;
+  font-weight: 300;
+  color: var(--text-mid);
   padding: 6px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid var(--border);
+  letter-spacing: 0.04em;
   display: flex;
   align-items: center;
   gap: 10px;
-}
-.disc-offerings li::before {
-  content: '—';
-  color: var(--gold);
-  opacity: 0.5;
-  font-size: 0.65rem;
 }
 .disc-offerings li:last-child { border-bottom: none; }
+.disc-offerings li::before {
+  content: '';
+  display: block;
+  width: 14px;
+  height: 1px;
+  background: var(--border-lt);
+  flex-shrink: 0;
+}
 
 .disc-link {
-  font-size: 0.68rem;
-  font-weight: 500;
+  font-size: 0.65rem;
+  font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
+  color: var(--gold-dim);
   text-decoration: none;
-  color: var(--gold);
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
-  transition: gap 0.2s;
+  gap: 8px;
+  transition: color 0.2s, gap 0.2s;
+  margin-top: auto;
 }
-.disc-link::after { content: '→'; }
-.disc-link:hover { gap: 16px; }
+.disc-link::after { content: '—'; }
+.disc-card:hover .disc-link { color: var(--gold-lt); gap: 14px; }
 
 /* ============================================================
-   FREE LESSON FULL-WIDTH BAND
+   CTA BAND — full width, photo behind
 ============================================================ */
 .cta-band {
-  padding: 160px 40px;
-  text-align: center;
-  background: var(--ink);
   position: relative;
   overflow: hidden;
+  min-height: 440px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-/* big script watermark */
-.cta-band::before {
-  content: 'Begin';
-  font-family: var(--script);
-  font-size: 30vw;
-  color: rgba(255,255,255,0.018);
+.cta-band-photo {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  white-space: nowrap;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  filter: brightness(0.3) saturate(0.6);
+  display: block;
 }
 
-/* gold radial glow */
-.cta-band::after {
+.cta-band::before {
   content: '';
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 600px;
-  height: 600px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%);
-  pointer-events: none;
+  inset: 0;
+  background: rgba(15,13,12,0.65);
+  z-index: 1;
 }
 
 .cta-band-inner {
   position: relative;
-  z-index: 1;
-  max-width: 680px;
-  margin: 0 auto;
+  z-index: 2;
+  padding: 80px 40px;
+  max-width: 640px;
 }
 
 .cta-script {
   font-family: var(--script);
-  font-size: clamp(3rem, 7vw, 6rem);
-  display: block;
-  margin-bottom: 12px;
+  font-size: clamp(2.5rem, 5vw, 5rem);
   background: linear-gradient(135deg, var(--berry) 0%, var(--magenta) 50%, var(--gold-lt) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  display: block;
+  margin-bottom: 8px;
 }
 
 .cta-band h2 {
   font-family: var(--serif);
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
   font-weight: 300;
   color: var(--white);
-  margin-bottom: 20px;
-  letter-spacing: -0.01em;
+  margin-bottom: 16px;
+  line-height: 1.25;
 }
 
 .cta-band p {
-  font-size: 0.87rem;
+  font-size: 0.85rem;
   font-weight: 300;
-  color: var(--text-dim);
-  line-height: 1.85;
-  max-width: 480px;
-  margin: 0 auto 48px;
+  color: var(--text-mid);
+  line-height: 1.9;
+  margin-bottom: 40px;
 }
 
 .cta-note {
-  margin-top: 24px;
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
+  margin-top: 20px;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
   color: var(--text-dim);
+  line-height: 1.7;
 }
-.cta-note a {
-  color: var(--text-dim);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(255,255,255,0.15);
-  transition: color 0.2s, border-color 0.2s;
-}
-.cta-note a:hover { color: var(--gold); border-color: var(--gold); }
+.cta-note a { color: var(--text-dim); text-decoration: none; border-bottom: 1px solid var(--border-lt); }
+.cta-note a:hover { color: var(--gold-lt); }
 
 /* ============================================================
-   TAMIE — ARTISTIC DIRECTOR PROFILE
+   TAMIE — Director profile with photo
 ============================================================ */
-.tamie-section {
+.tamie {
   background: var(--panel);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
 
 .tamie-inner {
-  max-width: 1240px;
-  margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 660px;
+  grid-template-columns: 380px 1fr 1fr;
+  min-height: 620px;
 }
 
+/* photo column */
+.tamie-photo-col {
+  position: relative;
+  overflow: hidden;
+  border-right: 1px solid var(--border);
+}
+.tamie-photo-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  filter: brightness(0.7) saturate(0.8);
+}
+.tamie-photo-col::after {
+  content: '';
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: 80px;
+  background: linear-gradient(to right, transparent, var(--panel));
+}
+
+/* name overlay at bottom of photo */
+.tamie-name-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 36px 28px;
+  background: linear-gradient(to top, rgba(26,23,20,0.95) 0%, transparent 100%);
+  z-index: 1;
+}
+.tamie-name-overlay .script-name {
+  font-family: var(--script);
+  font-size: 2.4rem;
+  background: linear-gradient(90deg, var(--berry), var(--magenta));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+  margin-bottom: 2px;
+}
+.tamie-name-overlay .name-title {
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+/* content column */
 .tamie-content {
-  padding: 100px 80px 100px 40px;
+  padding: 72px 52px;
   border-right: 1px solid var(--border);
   display: flex;
   flex-direction: column;
@@ -1137,116 +1230,95 @@ body::before {
 
 .tamie-content h2 {
   font-family: var(--serif);
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-size: clamp(1.5rem, 2.2vw, 2.1rem);
   font-weight: 300;
   font-style: italic;
   color: var(--white);
-  margin-bottom: 28px;
-  line-height: 1.2;
+  line-height: 1.25;
+  margin-bottom: 24px;
 }
 
-.tamie-name-script {
-  font-family: var(--script);
-  font-size: 2.8rem;
-  background: linear-gradient(90deg, var(--berry), var(--magenta));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  display: block;
-  margin-bottom: 4px;
-}
-
-.tamie-title-line {
-  font-size: 0.68rem;
-  font-weight: 500;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--text-dim);
-  margin-bottom: 36px;
-}
-
-.tamie-body {
-  font-size: 0.87rem;
-  font-weight: 300;
-  color: var(--text-dim);
-  line-height: 1.9;
-  max-width: 520px;
-  margin-bottom: 20px;
-}
-
-.charter-callout {
-  margin-top: 32px;
-  padding: 20px 24px;
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--gold);
-  font-size: 0.82rem;
+.tamie-content p {
+  font-size: 0.85rem;
   font-weight: 300;
   color: var(--text-mid);
-  line-height: 1.7;
-  margin-bottom: 36px;
+  line-height: 1.9;
+  margin-bottom: 18px;
 }
 
-.charter-callout strong {
+.charter-block {
+  margin: 28px 0;
+  padding: 18px 22px;
+  border: 1px solid var(--border);
+  border-left: 2px solid var(--gold-dim);
+}
+.charter-block strong {
   display: block;
-  color: var(--gold);
+  font-size: 0.62rem;
   font-weight: 600;
-  font-size: 0.68rem;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
+  color: var(--gold);
   margin-bottom: 8px;
 }
+.charter-block p {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--text-dim);
+  margin-bottom: 0;
+  line-height: 1.75;
+}
 
-/* credentials side */
+/* credentials column */
 .tamie-creds {
-  padding: 100px 40px 100px 80px;
+  padding: 72px 48px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .creds-label {
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   font-weight: 600;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 28px;
+  color: var(--gold-dim);
+  margin-bottom: 24px;
 }
 
-.cred-item {
+.cred-row {
   border-bottom: 1px solid var(--border);
-  padding: 18px 0;
+  padding: 14px 0;
   display: grid;
-  grid-template-columns: 20px 1fr;
-  gap: 16px;
+  grid-template-columns: 4px 1fr;
+  gap: 18px;
   align-items: start;
 }
-.cred-item:first-of-type { border-top: 1px solid var(--border); }
+.cred-row:first-of-type { border-top: 1px solid var(--border); }
 
-.cred-bullet {
-  width: 6px;
-  height: 6px;
+.cred-accent {
+  width: 4px;
+  height: 4px;
   border-radius: 50%;
-  background: var(--gold);
-  margin-top: 6px;
-  flex-shrink: 0;
+  background: var(--gold-dim);
+  margin-top: 7px;
 }
 
 .cred-text {
   font-family: var(--serif);
-  font-size: 0.97rem;
-  font-weight: 400;
+  font-size: 0.93rem;
   font-style: italic;
   color: var(--text-mid);
   line-height: 1.4;
 }
 
 /* ============================================================
-   TESTIMONIALS — MAGAZINE PULL-QUOTE STYLE
+   TESTIMONIALS — magazine layout
 ============================================================ */
 .testimonials {
-  background: var(--ink);
-  padding: 140px 40px;
+  background: var(--ink2);
+  border-top: 1px solid var(--border);
+  padding: 100px 48px;
   position: relative;
   overflow: hidden;
 }
@@ -1254,78 +1326,71 @@ body::before {
 .testimonials::before {
   content: '"';
   font-family: var(--script);
-  font-size: 40vw;
-  color: rgba(164,28,110,0.04);
+  font-size: 36vw;
+  color: rgba(164,28,110,0.035);
   position: absolute;
-  top: -10%;
-  left: -5%;
+  top: -8%;
+  left: -4%;
   line-height: 1;
   pointer-events: none;
 }
 
-.testimonials-header {
+.test-header {
   max-width: 1240px;
-  margin: 0 auto 80px;
+  margin: 0 auto 64px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
 }
 
-.testimonials-header h2 {
+.test-header h2 {
   font-family: var(--serif);
-  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
   font-weight: 300;
   color: var(--white);
 }
+.test-header h2 em { font-style: italic; color: var(--gold-lt); }
 
-.testimonials-header h2 em {
-  font-style: italic;
-  color: var(--gold-lt);
-}
-
-.testimonials-count {
+.test-count {
   font-family: var(--serif);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-style: italic;
   color: var(--text-dim);
 }
 
-.testimonials-grid {
+.test-grid {
   max-width: 1240px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 0;
   border: 1px solid var(--border);
 }
 
-.testimonial-card {
-  padding: 52px 44px;
+.test-card {
+  padding: 48px 40px;
   border-right: 1px solid var(--border);
-  position: relative;
 }
-.testimonial-card:last-child { border-right: none; }
+.test-card:last-child { border-right: none; }
 
-.t-stars {
-  color: var(--gold);
-  font-size: 0.65rem;
+.test-stars {
+  color: var(--gold-dim);
+  font-size: 0.6rem;
   letter-spacing: 4px;
-  margin-bottom: 24px;
-  opacity: 0.8;
+  margin-bottom: 22px;
 }
 
-.t-quote {
+.test-quote {
   font-family: var(--serif);
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 300;
   font-style: italic;
   color: var(--text-mid);
-  line-height: 1.75;
-  margin-bottom: 32px;
+  line-height: 1.8;
+  margin-bottom: 28px;
 }
 
-.t-author {
-  font-size: 0.68rem;
+.test-author {
+  font-size: 0.65rem;
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -1333,7 +1398,7 @@ body::before {
 }
 
 /* ============================================================
-   AREAS + CHARTER — HORIZONTAL BAND
+   INFO BAND — areas + visit
 ============================================================ */
 .info-band {
   background: var(--panel);
@@ -1343,64 +1408,58 @@ body::before {
   grid-template-columns: 1fr 1fr;
 }
 
-.info-band-left {
-  padding: 72px 80px 72px 40px;
+.info-col {
+  padding: 72px 48px;
   border-right: 1px solid var(--border);
 }
+.info-col:last-child { border-right: none; }
 
-.info-band-right {
-  padding: 72px 40px 72px 80px;
-}
-
-.info-band h3 {
+.info-col h3 {
   font-family: var(--serif);
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 300;
   font-style: italic;
   color: var(--white);
   margin-bottom: 28px;
 }
 
-.area-list {
-  list-style: none;
+.area-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 0;
+  gap: 8px;
 }
-
-.area-list li {
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.15em;
+.area-tag {
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--text-dim);
   border: 1px solid var(--border);
-  padding: 8px 20px;
+  padding: 8px 18px;
   transition: border-color 0.2s, color 0.2s;
 }
-.area-list li:hover {
-  border-color: rgba(201,168,76,0.4);
-  color: var(--gold-lt);
-}
+.area-tag:hover { border-color: var(--border-lt); color: var(--text-mid); }
 
-.info-band p {
-  font-size: 0.85rem;
+.info-col p {
+  font-size: 0.84rem;
   font-weight: 300;
-  color: var(--text-dim);
+  color: var(--text-mid);
   line-height: 1.85;
-  max-width: 440px;
 }
+.info-col p strong { color: var(--text-full); font-weight: 400; }
+.info-col a { color: var(--gold-dim); text-decoration: none; transition: color 0.2s; }
+.info-col a:hover { color: var(--gold-lt); }
 
 /* ============================================================
    CONTACT FOOTER
 ============================================================ */
 .contact-footer {
   background: var(--ink);
-  padding: 100px 40px;
+  padding: 80px 48px;
+  border-top: 1px solid var(--border);
 }
 
-.contact-footer-inner {
+.contact-footer-grid {
   max-width: 1240px;
   margin: 0 auto;
   display: grid;
@@ -1409,7 +1468,7 @@ body::before {
   align-items: start;
 }
 
-.contact-brand .brand-script {
+.cf-brand .brand-script {
   font-family: var(--script);
   font-size: 3rem;
   background: linear-gradient(135deg, var(--berry), var(--magenta));
@@ -1420,50 +1479,49 @@ body::before {
   margin-bottom: 4px;
 }
 
-.contact-brand .brand-sub {
-  font-size: 0.65rem;
-  font-weight: 500;
-  letter-spacing: 0.3em;
+.cf-brand .brand-sub {
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.35em;
   text-transform: uppercase;
   color: var(--text-dim);
-  margin-bottom: 24px;
-}
-
-.contact-brand p {
-  font-size: 0.82rem;
-  font-weight: 300;
-  color: var(--text-dim);
-  line-height: 1.8;
-  max-width: 280px;
-}
-
-.contact-col h4 {
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--gold);
   margin-bottom: 20px;
 }
 
-.contact-col a,
-.contact-col p {
+.cf-brand p {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--text-dim);
+  line-height: 1.85;
+  max-width: 260px;
+}
+
+.cf-col h4 {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: 18px;
+}
+
+.cf-col a, .cf-col p {
   display: block;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 300;
   color: var(--text-dim);
   text-decoration: none;
-  line-height: 1.9;
+  line-height: 2;
   transition: color 0.2s;
 }
-.contact-col a:hover { color: var(--gold-lt); }
-
-.contact-col .big-phone {
+.cf-col a:hover { color: var(--gold-lt); }
+.cf-col .big-phone {
   font-family: var(--serif);
   font-size: 1.2rem;
   font-weight: 400;
   color: var(--text-full);
-  margin-bottom: 4px;
+  margin-bottom: 2px;
+  line-height: 1.3;
 }
 
 /* ============================================================
@@ -1471,118 +1529,524 @@ body::before {
 ============================================================ */
 .seo-footer {
   border-top: 1px solid var(--border);
-  padding: 48px 40px;
+  padding: 40px 48px;
   background: var(--ink);
 }
 
-.seo-footer-inner {
-  max-width: 1240px;
-  margin: 0 auto;
-}
+.seo-footer-inner { max-width: 1240px; margin: 0 auto; }
 
-.seo-links-label {
-  font-size: 0.62rem;
+.seo-label {
+  font-size: 0.58rem;
   font-weight: 600;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.2);
-  margin-bottom: 16px;
+  color: rgba(255,255,255,0.15);
+  margin-bottom: 14px;
 }
 
 .seo-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 0;
-  margin-bottom: 36px;
+  margin-bottom: 28px;
 }
 .seo-links a {
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.28);
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.22);
   text-decoration: none;
   transition: color 0.2s;
-  padding-right: 16px;
-  margin-right: 16px;
-  border-right: 1px solid rgba(255,255,255,0.08);
+  padding-right: 14px;
+  margin-right: 14px;
+  border-right: 1px solid var(--border);
+  line-height: 2;
 }
-.seo-links a:hover { color: var(--gold); }
+.seo-links a:hover { color: var(--gold-dim); }
 .seo-links a:last-child { border-right: none; }
 
 .seo-copy {
-  font-size: 0.72rem;
-  color: rgba(255,255,255,0.2);
-  line-height: 1.8;
-  border-top: 1px solid rgba(255,255,255,0.06);
-  padding-top: 24px;
-}
-.disclaimer {
   font-size: 0.7rem;
-  color: rgba(255,255,255,0.15);
-  margin-top: 10px;
+  color: rgba(255,255,255,0.18);
+  line-height: 1.8;
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+}
+.seo-copy a { color: rgba(255,255,255,0.18); text-decoration: none; }
+
+.disclaimer {
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.12);
+  margin-top: 8px;
   font-style: italic;
+}
+
+/* ============================================================
+   STICKY PAGE NAV
+============================================================ */
+.page-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(26,23,20,0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 48px;
+}
+.page-nav-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.page-nav-links {
+  display: flex;
+  list-style: none;
+  gap: 0;
+  overflow-x: auto;
+}
+.page-nav-links a {
+  display: block;
+  font-size: 0.63rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  text-decoration: none;
+  padding: 17px 20px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+.page-nav-links a:hover { color: var(--gold-lt); border-bottom-color: var(--gold-dim); }
+.page-nav-cta {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  border: 1px solid var(--gold-dim);
+  padding: 8px 18px;
+  transition: all 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-left: 20px;
+}
+.page-nav-cta:hover { background: var(--gold); color: var(--ink); }
+
+/* ============================================================
+   PROOF STAT BAR
+============================================================ */
+.proof-bar {
+  background: var(--panel2);
+  border-bottom: 1px solid var(--border);
+  padding: 36px 48px;
+}
+.proof-bar-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+.proof-stat {
+  padding: 0 36px;
+  border-right: 1px solid var(--border);
+  text-align: center;
+}
+.proof-stat:first-child { padding-left: 0; text-align: left; }
+.proof-stat:last-child  { border-right: none; padding-right: 0; }
+.proof-stat-num {
+  font-family: var(--serif);
+  font-size: 2.6rem;
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 7px;
+}
+.proof-stat-num em {
+  font-style: normal;
+  background: linear-gradient(90deg, var(--berry), var(--magenta));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.proof-stat-label {
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+  line-height: 1.55;
+}
+
+/* ============================================================
+   PROGRAMS SECTION — age brackets + what to expect + the path
+============================================================ */
+.programs-section {
+  background: var(--ink2);
+  border-bottom: 1px solid var(--border);
+}
+.programs-intro {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 80px 48px 52px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1px solid var(--border);
+}
+.programs-intro h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.15;
+}
+.programs-intro h2 em { font-style: italic; color: var(--gold-lt); }
+.programs-intro-right {
+  max-width: 300px;
+  text-align: right;
+}
+.programs-intro-right p {
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: var(--text-dim);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+/* age browse pills */
+.age-browse {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 24px 48px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+}
+.age-browse-label {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-right: 4px;
+  white-space: nowrap;
+}
+.age-pill {
+  font-size: 0.63rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  padding: 7px 16px;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+.age-pill:hover { border-color: var(--gold-dim); color: var(--gold-lt); }
+
+/* program card rows */
+.program-card {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.3s;
+}
+.program-card:hover { background: rgba(255,255,255,0.01); }
+
+.prog-photo {
+  position: relative;
+  overflow: hidden;
+  min-height: 260px;
+}
+.prog-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.55) saturate(0.7);
+  transition: filter 0.5s, transform 0.6s;
+}
+.program-card:hover .prog-photo img {
+  filter: brightness(0.7) saturate(0.88);
+  transform: scale(1.03);
+}
+.age-badge {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  background: rgba(61,15,44,0.88);
+  border: 1px solid rgba(201,168,76,0.3);
+  padding: 5px 12px;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-lt);
+  backdrop-filter: blur(4px);
+}
+
+.prog-content {
+  border-left: 1px solid var(--border);
+  padding: 40px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 0 48px;
+}
+
+.prog-header { grid-column: 1 / -1; margin-bottom: 28px; }
+
+.prog-tag {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.music-prog   { color: var(--berry); }
+.dance-prog   { color: var(--gold-dim); }
+.theatre-prog { color: #7aaa3a; }
+.acad-prog    { color: var(--magenta); opacity: 0.8; }
+.summer-prog  { color: var(--gold-lt); }
+
+.prog-title {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--white);
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+.prog-desc {
+  font-size: 0.83rem;
+  font-weight: 300;
+  color: var(--text-mid);
+  line-height: 1.85;
+}
+
+.prog-col h4 {
+  font-size: 0.57rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.expect-list {
+  list-style: none;
+}
+.expect-list li {
+  font-size: 0.77rem;
+  font-weight: 400;
+  color: var(--text-mid);
+  padding: 9px 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  gap: 12px;
+  line-height: 1.4;
+}
+.expect-list li:last-child { border-bottom: none; }
+.expect-list li::before {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 1px;
+  background: var(--gold-dim);
+  flex-shrink: 0;
+  margin-top: 9px;
+}
+.prog-path-text {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--text-dim);
+  line-height: 1.85;
+  margin-bottom: 18px;
+}
+.prog-cta {
+  font-size: 0.63rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s, gap 0.2s;
+}
+.prog-cta::after { content: '—'; }
+.prog-cta:hover { color: var(--gold-lt); gap: 14px; }
+
+/* ============================================================
+   OUTCOME REVIEWS
+============================================================ */
+.reviews-section {
+  background: var(--panel);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 90px 48px;
+}
+.reviews-header {
+  max-width: 1240px;
+  margin: 0 auto 52px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.reviews-header h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 2.8vw, 2.5rem);
+  font-weight: 300;
+  color: var(--white);
+}
+.reviews-header h2 em { font-style: italic; color: var(--gold-lt); }
+.reviews-meta {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.88rem;
+  color: var(--text-dim);
+  text-align: right;
+}
+.reviews-grid {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+.review-card {
+  background: var(--panel2);
+  padding: 44px 40px;
+}
+.review-outcome {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--gold-lt);
+  margin-bottom: 16px;
+  line-height: 1.35;
+}
+.review-body {
+  font-size: 0.84rem;
+  font-weight: 300;
+  color: var(--text-mid);
+  line-height: 1.85;
+  margin-bottom: 22px;
+}
+.review-byline {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-top: 1px solid var(--border);
+  padding-top: 18px;
+}
+.review-stars-sm {
+  color: var(--gold-dim);
+  font-size: 0.55rem;
+  letter-spacing: 3px;
+}
+.review-name {
+  font-size: 0.63rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-dim);
 }
 
 /* ============================================================
    ANIMATIONS
 ============================================================ */
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
+  from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-
-.hero-script { animation: fadeUp 0.9s ease both; }
-.hero-studios { animation: fadeUp 0.9s 0.1s ease both; }
-.hero-headline { animation: fadeUp 0.9s 0.2s ease both; }
-.hero-body { animation: fadeUp 0.9s 0.3s ease both; }
-.hero-ctas { animation: fadeUp 0.9s 0.4s ease both; }
-.hero-phone-link { animation: fadeUp 0.9s 0.45s ease both; }
-.hero-stats { animation: fadeUp 0.9s 0.5s ease both; }
+.hero-wordmark  { animation: fadeUp 1s 0.05s ease both; }
+.hero-studios-label { animation: fadeUp 1s 0.15s ease both; }
+.hero-headline  { animation: fadeUp 1s 0.25s ease both; }
+.hero-body      { animation: fadeUp 1s 0.35s ease both; }
+.hero-ctas      { animation: fadeUp 1s 0.42s ease both; }
+.hero-phone     { animation: fadeUp 1s 0.48s ease both; }
+.hero-stats     { animation: fadeUp 1s 0.55s ease both; }
 
 /* ============================================================
    RESPONSIVE
 ============================================================ */
+@media (max-width: 1100px) {
+  .tamie-inner { grid-template-columns: 280px 1fr; }
+  .tamie-creds { display: none; }
+  .contact-footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+}
+
 @media (max-width: 900px) {
-  .summer-header { grid-template-columns: 1fr; gap: 32px; }
-  .summer-header-right { align-items: flex-start; }
+  .page-nav { padding: 0 24px; }
+  .page-nav-links a { padding: 15px 12px; font-size: 0.58rem; }
+  .proof-bar { padding: 28px 24px; }
+  .proof-bar-inner { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .proof-stat { border-right: none; padding: 0; text-align: left; }
+  .proof-stat:nth-child(2n) { border-left: 1px solid var(--border); padding-left: 24px; }
+  .programs-intro { flex-direction: column; gap: 20px; padding: 52px 24px 40px; }
+  .programs-intro-right { text-align: left; max-width: 100%; }
+  .age-browse { padding: 20px 24px; }
+  .program-card { grid-template-columns: 1fr; }
+  .prog-photo { min-height: 220px; }
+  .prog-content { padding: 32px 24px; grid-template-columns: 1fr; }
+  .reviews-section { padding: 60px 24px; }
+  .reviews-header { flex-direction: column; gap: 12px; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .summer-photo-content { padding: 0 32px; }
   .summer-flagship { grid-template-columns: 1fr; }
-  .summer-flagship-content { padding: 40px 32px; border-right: none; border-bottom: 1px solid var(--border); }
-  .summer-flagship-aside { padding: 40px 32px; }
+  .flagship-content { padding: 48px 32px; border-right: none; border-bottom: 1px solid var(--border); }
+  .flagship-photos { min-height: 300px; grid-template-rows: 1fr; grid-template-columns: 1fr 1fr; }
+  .flagship-photo-top { border-bottom: none; border-right: 1px solid var(--border); }
+  .flagship-photo-bottom { grid-template-columns: 1fr; }
+  .flagship-photo-bottom .ph2 { border-left: none; border-top: 1px solid var(--border); }
   .camps-grid { grid-template-columns: 1fr 1fr; }
-  .camps-grid-section { padding: 40px 32px; }
-
+  .camps-section { padding: 48px 24px; }
+  .also-summer { grid-template-columns: 1fr; }
+  .also-card { border-right: none; border-bottom: 1px solid var(--border); }
   .hero { grid-template-columns: 1fr; min-height: auto; }
-  .hero-right { display: none; }
-  .hero-left { padding: 100px 32px 80px; }
-
-  .disciplines-track { grid-template-columns: 1fr 1fr; }
-  .discipline-card { border-bottom: 1px solid var(--border); }
-
-  .disciplines-header { flex-direction: column; gap: 20px; }
-  .disciplines-header-right { text-align: left; }
-
-  .tamie-inner { grid-template-columns: 1fr; }
-  .tamie-content { padding: 60px 32px; border-right: none; border-bottom: 1px solid var(--border); }
-  .tamie-creds { padding: 60px 32px; }
-
-  .testimonials-grid { grid-template-columns: 1fr; }
-  .testimonial-card { border-right: none; border-bottom: 1px solid var(--border); }
-
+  .hero-right { height: 360px; }
+  .hero-left { padding: 80px 32px; }
+  .disc-header { flex-direction: column; gap: 20px; }
+  .disc-header-note { text-align: left; }
+  .disc-track { grid-template-columns: 1fr 1fr; }
+  .disc-card { border-bottom: 1px solid var(--border); }
+  .test-grid { grid-template-columns: 1fr; }
+  .test-card { border-right: none; border-bottom: 1px solid var(--border); }
+  .test-header { flex-direction: column; gap: 12px; }
   .info-band { grid-template-columns: 1fr; }
-  .info-band-left { padding: 60px 32px; border-right: none; border-bottom: 1px solid var(--border); }
-  .info-band-right { padding: 60px 32px; }
-
-  .contact-footer-inner { grid-template-columns: 1fr 1fr; gap: 40px; }
-
-  .testimonials-header { flex-direction: column; gap: 12px; }
+  .info-col { border-right: none; border-bottom: 1px solid var(--border); }
+  .tamie-inner { grid-template-columns: 1fr; }
+  .tamie-photo-col { height: 340px; }
+  .tamie-photo-col::after { display: none; }
+  .tamie-content { padding: 48px 32px; border-right: none; }
   .container { padding: 0 24px; }
-  .intro { padding: 80px 24px; }
+  .hero-stats { gap: 20px; }
 }
 
 @media (max-width: 600px) {
-  .hero-left { padding: 80px 24px 60px; }
-  .hero-stats { gap: 24px; }
-  .disciplines-track { grid-template-columns: 1fr; }
-  .contact-footer-inner { grid-template-columns: 1fr; }
-  .hero-ctas { flex-direction: column; align-items: flex-start; }
+  .camps-grid { grid-template-columns: 1fr; }
+  .disc-track { grid-template-columns: 1fr; }
+  .contact-footer-grid { grid-template-columns: 1fr; gap: 36px; }
+  .summer-photo-header { height: 440px; }
+  .summer-urgency { flex-direction: column; align-items: flex-start; }
+  .hero-left { padding: 72px 24px; }
+  .cta-band-inner { padding: 60px 24px; }
+  .intro { padding: 80px 24px; }
+  .testimonials { padding: 80px 24px; }
 }
 </style>
 
@@ -1592,9 +2056,10 @@ body::before {
   "@context": "https://schema.org",
   "@type": "PerformingArtsTheater",
   "name": "Tamraloo Studios",
-  "description": "Placer County's premier performing arts studio offering music lessons, dance classes, theatre programs, and academic tutoring for all ages. Located in Lincoln, CA.",
+  "description": "Placer County's largest performing arts studio — music lessons, dance classes, theatre programs, and academic tutoring for all ages in Lincoln, CA.",
   "url": "https://www.tamraloo.com",
   "telephone": "+19166642516",
+  "email": "support@tamraloo.com",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "2800 Nicolaus Road #100",
@@ -1616,7 +2081,8 @@ body::before {
   "sameAs": [
     "https://www.facebook.com/TamralooStudios",
     "https://www.instagram.com/tamralooofficial/",
-    "https://www.tiktok.com/@tamralooofficial"
+    "https://www.tiktok.com/@tamralooofficial",
+    "https://www.yelp.com/biz/tamraloo-music-and-more-lincoln"
   ]
 }
 </script>
@@ -1624,256 +2090,513 @@ body::before {
 <body>
 
 <!-- ============================================================
-     SUMMER ANNOUNCEMENT BAR
+     ANNOUNCEMENT BAR
 ============================================================ -->
-<div class="summer-bar" role="banner" aria-label="Summer 2026 announcement">
-  <div class="summer-bar-inner">
-    <span class="summer-bar-text">🌟 <strong>Summer 2026 Registration is Open</strong> — Camps selling out fast. Shiz Academy already sold out.</span>
-    <a href="https://www.tamraloo.com/summer-camp-2026" class="summer-bar-link">Reserve Your Spot</a>
+<div class="announce-bar" role="banner">
+  <div class="announce-inner">
+    <p class="announce-text"><strong>Summer 2026 Registration is Open</strong> &nbsp;—&nbsp; Camps are filling fast. Shiz Academy is already sold out.</p>
+    <a href="https://www.tamraloo.com/summer-camp-2026" class="announce-cta">Reserve Your Spot</a>
   </div>
 </div>
 
 <!-- ============================================================
-     SUMMER 2026 SECTION
+     STICKY PAGE NAV
 ============================================================ -->
-<section class="summer" aria-label="Summer 2026 Programs">
+<nav class="page-nav" aria-label="Page sections">
+  <div class="page-nav-inner">
+    <ul class="page-nav-links">
+      <li><a href="#summer">Summer 2026</a></li>
+      <li><a href="#programs">Our Programs</a></li>
+      <li><a href="#about">About the Studio</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#visit">Visit Us</a></li>
+    </ul>
+    <a href="https://www.tamraloo.com/free-trial" class="page-nav-cta">Free Trial Lesson</a>
+  </div>
+</nav>
 
-  <!-- Header -->
-  <div class="summer-header">
-    <div class="summer-header-left">
-      <span class="overline">Summer 2026</span>
-      <div class="divider-line"></div>
+<!-- ============================================================
+     SUMMER 2026 — HERO SECTION
+============================================================ -->
+<section class="summer" id="summer" aria-label="Summer 2026 Programs">
+
+  <!-- Photo header -->
+  <div class="summer-photo-header">
+    <img src="https://static.wixstatic.com/media/0b6d63_57cb29a7039c40b38bce99375ab7d9c7~mv2.jpeg"
+         alt="Tamraloo Studios summer camp students" loading="eager">
+    <div class="summer-photo-content">
+      <p class="overline">Summer 2026 &nbsp;·&nbsp; Lincoln, California</p>
       <h2>Ten camps.<br>Eight weeks.<br><em>One unforgettable summer.</em></h2>
-      <p>From musical theatre and dance to STEM and storytelling — Tamraloo's Summer 2026 lineup is bigger, bolder, and more intentional than ever. Structured performing arts instruction every morning. Creative labs every afternoon. Real skill-building that lasts.</p>
-    </div>
-    <div class="summer-header-right">
-      <div class="urgency-strip">
-        <strong>⚡ Spaces are limited.</strong> Last year we sold out across all camps — and Shiz Academy is already full for 2026. Register now or contact us to join the waitlist.<br><br>
-        Sibling discount: 10% off lesser tuition when enrolling multiple children.
+      <p>Structured performing arts instruction every morning. Creative STEM labs every afternoon. Real skill-building in a joyful, expert-led environment — for ages 5 through adult.</p>
+      <div class="summer-cta-row">
+        <a href="https://www.tamraloo.com/summer-camp-2026" class="btn-gold"><span>View All 2026 Camps</span></a>
+        <a href="https://www.tamraloo.com/creative-conservatory-camp26" class="btn-ghost">Creative Conservatory Camp</a>
+        <span class="sold-out-badge">Shiz Academy — Sold Out</span>
       </div>
-      <p class="sold-out-note">Shiz Academy — <strong>SOLD OUT</strong> · Waitlist available</p>
-      <a href="https://www.tamraloo.com/summer-camp-2026" class="btn-gold">View All 2026 Camps</a>
     </div>
   </div>
 
-  <!-- Flagship: Creative Conservatory Camp -->
+  <!-- Urgency strip -->
+  <div class="summer-urgency">
+    <p class="urgency-text"><strong>Spaces are limited.</strong> Last year every camp sold out. Register now or contact us to join a waitlist. Sibling discount: 10% off the lesser tuition when enrolling multiple children.</p>
+    <a href="tel:9166642516" class="announce-cta">(916) 664-2516 &nbsp; Call or Text</a>
+  </div>
+
+  <!-- Flagship: Creative Conservatory -->
   <div class="summer-flagship">
-    <div class="summer-flagship-content">
-      <span class="flagship-label">Flagship Program</span>
+    <div class="flagship-content">
+      <p class="flagship-tag">Flagship Program &nbsp;·&nbsp; Summer 2026</p>
       <h3>Creative Conservatory Camp</h3>
-      <p class="camp-subtitle">All-Day · Performing Arts + STEM · Ages 5–12</p>
-      <p>Tamraloo's signature all-day camp has been completely reimagined for 2026. Mornings are now dedicated to focused, specialist-led performing arts instruction — not general activities, real training. Afternoons shift into Creative STEM Labs with engineering builds, design challenges, and hands-on collaborative projects.</p>
-      <ul class="flagship-features">
-        <li><span class="feat-icon">♪</span>Structured instrument exploration — piano, drums, guitar, ukulele, strings, and voice</li>
-        <li><span class="feat-icon">♪</span>Dance, movement, and rhythm instruction led by specialty instructors</li>
-        <li><span class="feat-icon">♪</span>Theatre, stage presence, and vocal confidence building</li>
-        <li><span class="feat-icon">♪</span>Afternoon Creative STEM Labs — weekly instrument spotlights, engineering builds, themed design challenges</li>
-        <li><span class="feat-icon">♪</span>Flexible early drop-off and extended care available</li>
-        <li><span class="feat-icon">♪</span>Spotlight Day Camp add-on available for select themed camps</li>
+      <p class="sub">All-Day &nbsp;·&nbsp; Performing Arts + Creative STEM &nbsp;·&nbsp; Ages 5–12</p>
+      <p>Tamraloo's signature all-day camp has been completely reimagined. Mornings are dedicated to focused, specialist-led performing arts instruction — not a general activity rotation, but real training in music, dance, theatre, and vocal development. Afternoons shift into Creative STEM Labs with engineering builds, themed design challenges, and hands-on collaborative projects.</p>
+      <ul class="flagship-list">
+        <li>Instrument exploration — piano, drums, guitar, ukulele, strings, and voice — led by specialty instructors</li>
+        <li>Dance, movement, rhythm, and stage presence development every morning</li>
+        <li>Weekly instrument spotlights to help students discover their path before committing to private lessons</li>
+        <li>Afternoon Creative STEM Labs — engineering builds, themed design challenges, and collaborative projects</li>
+        <li>Flexible early drop-off and extended care available</li>
       </ul>
-      <a href="https://www.tamraloo.com/creative-conservatory-camp26" class="btn-gold">Explore Creative Conservatory Camp</a>
+      <a href="https://www.tamraloo.com/creative-conservatory-camp26" class="btn-gold"><span>Explore Creative Conservatory Camp</span></a>
     </div>
 
-    <div class="summer-flagship-aside">
-      <p class="aside-label">Also This Summer</p>
-
-      <div class="theatre-card">
-        <p class="tc-tag">Theatre Production</p>
-        <h4>Summer Theatre 2026</h4>
-        <p>Full musical theatre production experience — acting, singing, choreography, and a live performance. For students ready to take the stage seriously.</p>
-        <a href="https://www.tamraloo.com/summer-theatre">Learn More</a>
+    <!-- Photo mosaic -->
+    <div class="flagship-photos">
+      <div class="flagship-photo-top">
+        <img src="https://static.wixstatic.com/media/2d2ffb_e35820aa152e4906b44b2d2098297fc6~mv2.png"
+             alt="Creative Conservatory Camp performing arts instruction">
       </div>
-
-      <div class="theatre-card">
-        <p class="tc-tag">Full Summer Schedule</p>
-        <h4>All 8 Weeks of Camp Offerings</h4>
-        <p>AM and PM options available every week. View the complete 2026 schedule — morning and afternoon camps, themes, dates, and registration links for all 10 programs.</p>
-        <a href="https://www.tamraloo.com/summer-camp-2026">View Full Schedule</a>
+      <div class="flagship-photo-bottom">
+        <div>
+          <img src="https://static.wixstatic.com/media/ec4ac0_bb70e14b3dd248af8164a1c3c9e00627~mv2.jpg"
+               alt="Tamraloo Studios awards gala performance">
+        </div>
+        <div class="ph2">
+          <img src="https://static.wixstatic.com/media/0b6d63_76500a224fb244b492afa095ad7d0116~mv2.jpg"
+               alt="Day camp students at Tamraloo Studios">
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- All Camps Grid -->
-  <div class="camps-grid-section">
-    <p class="camps-grid-label">All 2026 Summer Camps</p>
+  <!-- Camps grid -->
+  <div class="camps-section">
+    <div class="camps-section-header">
+      <div>
+        <p class="overline" style="margin-bottom:10px;">All 2026 Programs</p>
+        <h3>Every camp at a glance.</h3>
+      </div>
+      <a href="https://www.tamraloo.com/summer-camp-2026" class="btn-ghost">Full Schedule</a>
+    </div>
 
     <div class="camps-grid">
-
-      <!-- Performing Arts -->
-      <div class="camp-tile performing">
-        <p class="ct-category">Performing Arts &amp; Dance</p>
+      <div class="camp-tile arts">
+        <p class="ct-cat">Performing Arts</p>
         <p class="ct-name">Swashbuckle &amp; Sparkle</p>
-        <p class="ct-meta">Peter Pan &amp; Little Mermaid themed<br>June 23–26 · Ages 5–8 · 9–11:30am</p>
+        <p class="ct-meta">Peter Pan &amp; Little Mermaid themed<br>June 23–26 &nbsp;·&nbsp; Ages 5–8 &nbsp;·&nbsp; 9–11:30am</p>
       </div>
-
-      <div class="camp-tile performing">
-        <p class="ct-category">Performing Arts &amp; Dance</p>
+      <div class="camp-tile arts">
+        <p class="ct-cat">Dance</p>
         <p class="ct-name">Summer Beach Dance Party</p>
-        <p class="ct-meta">Moana &amp; Lilo &amp; Stitch themed<br>June 16–19 · Ages 5–8 · 9–11:30am</p>
+        <p class="ct-meta">Moana &amp; Lilo &amp; Stitch themed<br>June 16–19 &nbsp;·&nbsp; Ages 5–8 &nbsp;·&nbsp; 9–11:30am</p>
       </div>
-
-      <div class="camp-tile performing sold-out">
-        <p class="ct-category">Musical Theatre</p>
+      <div class="camp-tile arts sold-out">
+        <p class="ct-cat">Musical Theatre</p>
         <p class="ct-name">Shiz Academy</p>
-        <p class="ct-meta">Wicked-inspired Broadway camp<br>July 14–25 · Ages 6–10 · 9am–12pm</p>
+        <p class="ct-meta">Wicked-inspired Broadway camp<br>July 14–25 &nbsp;·&nbsp; Ages 6–10 &nbsp;·&nbsp; 9am–12pm</p>
       </div>
-
       <div class="camp-tile allday">
-        <p class="ct-category">All-Day Performing Arts</p>
+        <p class="ct-cat">All-Day Camp</p>
         <p class="ct-name">Creative Conservatory Camp</p>
-        <p class="ct-meta">Arts mornings + STEM afternoons<br>8 weeks · Ages 5–12 · All day</p>
+        <p class="ct-meta">Arts mornings + STEM afternoons<br>8 weeks &nbsp;·&nbsp; Ages 5–12 &nbsp;·&nbsp; Full day</p>
       </div>
-
-      <!-- Literacy -->
-      <div class="camp-tile literacy">
-        <p class="ct-category">Literacy &amp; Storytelling</p>
+      <div class="camp-tile lit">
+        <p class="ct-cat">Literacy</p>
         <p class="ct-name">Summer of Stories</p>
-        <p class="ct-meta">5 beloved children's authors<br>June 16–20 &amp; July 14–18 · Grades K–3 · 9am–12pm</p>
+        <p class="ct-meta">5 beloved children's authors<br>June 16–20 &amp; July 14–18 &nbsp;·&nbsp; Grades K–3</p>
       </div>
-
-      <div class="camp-tile literacy">
-        <p class="ct-category">Creative Writing</p>
+      <div class="camp-tile lit">
+        <p class="ct-cat">Creative Writing</p>
         <p class="ct-name">Young Author's Camp</p>
-        <p class="ct-meta">Storytelling &amp; writer's workshop<br>July 22–24 · Ages 11+ · 1–3pm</p>
+        <p class="ct-meta">Storytelling &amp; writer's workshop<br>July 22–24 &nbsp;·&nbsp; Ages 11+ &nbsp;·&nbsp; 1–3pm</p>
       </div>
-
-      <!-- STEM -->
       <div class="camp-tile stem">
-        <p class="ct-category">STEM &amp; Adventure</p>
+        <p class="ct-cat">STEM</p>
         <p class="ct-name">Mission: Space Camp</p>
-        <p class="ct-meta">Rocket engineering &amp; astronaut training<br>June 23–27 · Ages 5–12 · 12:30–3:30pm</p>
+        <p class="ct-meta">Rocket engineering &amp; astronaut training<br>June 23–27 &nbsp;·&nbsp; Ages 5–12</p>
       </div>
-
       <div class="camp-tile stem">
-        <p class="ct-category">STEM &amp; Adventure</p>
+        <p class="ct-cat">STEM</p>
         <p class="ct-name">Dino Discovery Camp</p>
-        <p class="ct-meta">Fossil digs &amp; paleontology science<br>June 30–July 3 · Ages 5–12 · 12:30–3:30pm</p>
+        <p class="ct-meta">Fossil digs &amp; paleontology<br>June 30–July 3 &nbsp;·&nbsp; Ages 5–12</p>
       </div>
-
       <div class="camp-tile stem">
-        <p class="ct-category">STEM &amp; Engineering</p>
+        <p class="ct-cat">Engineering</p>
         <p class="ct-name">LEGO Masters Camp</p>
-        <p class="ct-meta">Build, engineer, problem-solve<br>July 7–11 · Ages 7–12 · 1–3pm</p>
+        <p class="ct-meta">Build, create, problem-solve<br>July 7–11 &nbsp;·&nbsp; Ages 7–12 &nbsp;·&nbsp; 1–3pm</p>
       </div>
-
-      <div class="camp-tile performing">
-        <p class="ct-category">Pirate Adventure</p>
+      <div class="camp-tile arts">
+        <p class="ct-cat">Adventure</p>
         <p class="ct-name">Summer Pirate Camp</p>
-        <p class="ct-meta">Crafts, storytelling &amp; treasure hunts<br>June 9–13 · Ages 5–12 · 1–3pm</p>
+        <p class="ct-meta">Crafts, stories &amp; treasure hunts<br>June 9–13 &nbsp;·&nbsp; Ages 5–12 &nbsp;·&nbsp; 1–3pm</p>
       </div>
-
-      <div class="camp-tile literacy">
-        <p class="ct-category">Fiber Arts</p>
+      <div class="camp-tile lit">
+        <p class="ct-cat">Fiber Arts</p>
         <p class="ct-name">Crochet Camp</p>
-        <p class="ct-meta">Create a custom granny square tote<br>June 23–27 · Ages 10+ · 1–2pm</p>
+        <p class="ct-meta">Hand-make a granny square tote<br>June 23–27 &nbsp;·&nbsp; Ages 10+</p>
       </div>
-
       <div class="camp-tile allday">
-        <p class="ct-category">All-Day Add-On</p>
+        <p class="ct-cat">Add-On Option</p>
         <p class="ct-name">Spotlight Day Camp</p>
         <p class="ct-meta">Full-day acting, singing &amp; movement<br>Available as add-on for select camps</p>
       </div>
-
     </div>
 
-    <div class="camps-register-row">
-      <a href="https://forms.gle/hoFqpHjUujnLxP1N8" class="btn-gold">Register — Performing Arts &amp; Dance</a>
-      <a href="https://forms.gle/R3ZfvZ4Y7JNkcsND7" class="btn-white">Register — STEM &amp; Adventure</a>
-      <a href="https://forms.gle/yzJS3fHiqmgSGyi88" class="btn-white">Register — Literacy Camps</a>
+    <div class="camps-register">
+      <a href="https://forms.gle/hoFqpHjUujnLxP1N8" class="btn-gold"><span>Register — Performing Arts &amp; Dance</span></a>
+      <a href="https://forms.gle/R3ZfvZ4Y7JNkcsND7" class="btn-ghost">Register — STEM &amp; Adventure</a>
+      <a href="https://forms.gle/yzJS3fHiqmgSGyi88" class="btn-ghost">Register — Literacy Camps</a>
     </div>
 
-    <div class="sibling-note">
-      <strong>Sibling Discount:</strong> Families enrolling multiple children receive 10% off the lesser tuition. Cannot be combined with Early Bird pricing. Questions? Call or text <a href="tel:9166642516" style="color:var(--gold-lt);text-decoration:none;">(916) 664-2516</a> or email <a href="mailto:support@Tamraloo.com" style="color:var(--gold-lt);text-decoration:none;">support@Tamraloo.com</a>
+    <p class="sibling-note">
+      Sibling discount: 10% off lesser tuition when enrolling multiple children. Cannot be combined with Early Bird pricing. &nbsp;Questions? <a href="tel:9166642516">(916) 664-2516</a> &nbsp;|&nbsp; <a href="mailto:support@Tamraloo.com">support@Tamraloo.com</a>
+    </p>
+  </div>
+
+  <!-- Also this summer -->
+  <div class="also-summer">
+    <a href="https://www.tamraloo.com/summer-theatre" class="also-card">
+      <p class="ac-tag">Theatre Production</p>
+      <h4>Summer Theatre 2026</h4>
+      <p>Full musical theatre production experience — acting, singing, choreography, and a live performance for an audience. For students who are ready to take the stage seriously.</p>
+      <span class="ac-link">Learn More</span>
+    </a>
+    <a href="https://www.tamraloo.com/summer-camp-2026" class="also-card">
+      <p class="ac-tag">Full Schedule</p>
+      <h4>View All 8 Weeks of Camp</h4>
+      <p>AM and PM options every week across all 8 weeks of summer. View dates, themes, age ranges, and registration links for every 2026 program in one place.</p>
+      <span class="ac-link">View Full Schedule</span>
+    </a>
+  </div>
+
+</section>
+
+<!-- thin color stripe -->
+<div class="color-stripe" aria-hidden="true"></div>
+
+<!-- ============================================================
+     PROOF STAT BAR
+============================================================ -->
+<div class="proof-bar" aria-label="Studio credentials at a glance">
+  <div class="proof-bar-inner">
+    <div class="proof-stat">
+      <p class="proof-stat-num"><em>500</em>+</p>
+      <p class="proof-stat-label">Five-star Google reviews — one of Placer County's most-reviewed arts studios</p>
+    </div>
+    <div class="proof-stat">
+      <p class="proof-stat-num"><em>30</em>+</p>
+      <p class="proof-stat-label">Years of teaching excellence under Tamie Rogers, BA, MTNA, CAMTA</p>
+    </div>
+    <div class="proof-stat">
+      <p class="proof-stat-num"><em>80</em>+</p>
+      <p class="proof-stat-label">Active students across music, dance, theatre, and academics</p>
+    </div>
+    <div class="proof-stat">
+      <p class="proof-stat-num"><em>10</em>+</p>
+      <p class="proof-stat-label">Regional and state awards — consistently voted best in the arts</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     PROGRAMS SECTION — age brackets, what to expect, the path
+============================================================ -->
+<section class="programs-section" id="programs" aria-label="Programs we offer">
+
+  <div class="programs-intro">
+    <div>
+      <p class="overline" style="margin-bottom:14px;">Programs We Offer</p>
+      <h2>Every discipline.<br><em>Every age. Every stage.</em></h2>
+    </div>
+    <div class="programs-intro-right">
+      <p>From the very first lesson to the scholarship audition stage — Tamraloo's programs are built around where your student is now, and where they want to go.</p>
+      <a href="https://www.tamraloo.com/free-trial" class="btn-gold"><span>Start with a Free Lesson</span></a>
+    </div>
+  </div>
+
+  <!-- Age browse -->
+  <div class="age-browse" aria-label="Browse programs by age">
+    <span class="age-browse-label">Find by Age</span>
+    <a href="#prog-music-early" class="age-pill">Ages 12 mo – 5</a>
+    <a href="#prog-music" class="age-pill">Ages 5 – 12</a>
+    <a href="#prog-dance" class="age-pill">Ages 5 – 18</a>
+    <a href="#prog-theatre" class="age-pill">Ages 6 – 18</a>
+    <a href="#prog-triple" class="age-pill">Pre-Professional</a>
+    <a href="#prog-academic" class="age-pill">All Ages — Academics</a>
+    <a href="#prog-adult" class="age-pill">Adults</a>
+  </div>
+
+  <!-- Program: Early Music (youngest) -->
+  <div class="program-card" id="prog-music-early">
+    <div class="prog-photo">
+      <img src="https://static.wixstatic.com/media/fe8f49_bb920be568a34dda96cabe9ba7a30286~mv2.jpg"
+           alt="Early childhood music program at Tamraloo Studios" loading="lazy">
+      <span class="age-badge">Ages 12 mo – 5</span>
+    </div>
+    <div class="prog-content">
+      <div class="prog-header">
+        <p class="prog-tag music-prog">Music — Early Childhood</p>
+        <h3 class="prog-title">Preschool Performers &amp; Storybook Stars</h3>
+        <p class="prog-desc">Music and movement programs designed for the youngest learners — building rhythm, listening skills, and a lifelong love of music through play, story, and song. No experience required. No pressure. Just joyful, structured discovery in a warm studio environment.</p>
+      </div>
+      <div class="prog-col">
+        <h4>What to Expect</h4>
+        <ul class="expect-list">
+          <li>Weekly group music &amp; movement class</li>
+          <li>Rhythm, melody, and song structure through play</li>
+          <li>Age-appropriate instrument exploration</li>
+          <li>Preschool Performers: ages 3–6</li>
+          <li>Storybook Stars: ages 5–8</li>
+        </ul>
+      </div>
+      <div class="prog-col">
+        <h4>The Path Forward</h4>
+        <p class="prog-path-text">Early childhood programs are the first step in a student's musical journey. Students who discover a passion for a specific instrument naturally progress into private lessons in piano, voice, guitar, or any other instrument we offer. Many of Tamraloo's most accomplished older students started right here.</p>
+        <a href="https://www.tamraloo.com/music-lessons" class="prog-cta">Explore Music Programs</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Program: Private Music Lessons -->
+  <div class="program-card" id="prog-music">
+    <div class="prog-photo">
+      <img src="https://static.wixstatic.com/media/0b6d63_788d9319236c445c899bfb15925db423~mv2.jpg"
+           alt="Private music lessons at Tamraloo Studios" loading="lazy">
+      <span class="age-badge">Ages 5 – Adult</span>
+    </div>
+    <div class="prog-content">
+      <div class="prog-header">
+        <p class="prog-tag music-prog">Music — Private &amp; Group Instruction</p>
+        <h3 class="prog-title">Piano · Voice · Guitar · Drums · Strings · Woodwinds · Ukulele</h3>
+        <p class="prog-desc">One-on-one private lessons with degreed, credentialed instructors — each matched carefully to your student's personality, learning style, and goals. Every lesson is a custom experience. Every instructor is a working musician in their field.</p>
+      </div>
+      <div class="prog-col">
+        <h4>What to Expect</h4>
+        <ul class="expect-list">
+          <li>Weekly 30-minute private lesson (upgradable to 45 or 60 min)</li>
+          <li>Technique, theory, and repertoire — tailored to the student</li>
+          <li>Performance opportunities throughout the year</li>
+          <li>Annual Spring Showcase — memorized solo performance</li>
+          <li>Bel Canto group voice available ages 5–10</li>
+          <li>Instrument rentals available through the studio</li>
+        </ul>
+      </div>
+      <div class="prog-col">
+        <h4>The Path Forward</h4>
+        <p class="prog-path-text">Private lesson students build toward Tamraloo's Spring Showcase — a full solo performance before a live audience. Students preparing for conservatory auditions, scholarship competitions, or pre-professional programs work directly with Tamie Rogers on advanced repertoire and audition strategy.</p>
+        <a href="https://www.tamraloo.com/music-lessons" class="prog-cta">Explore Music Lessons</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Program: Dance -->
+  <div class="program-card" id="prog-dance">
+    <div class="prog-photo">
+      <img src="https://static.wixstatic.com/media/2d2ffb_b3b659c68e2f42d686ea6ca02e6ed16a~mv2.jpeg"
+           alt="Dance classes at Tamraloo Studios" loading="lazy">
+      <span class="age-badge">Ages 5 – Adult</span>
+    </div>
+    <div class="prog-content">
+      <div class="prog-header">
+        <p class="prog-tag dance-prog">Dance — Classical &amp; Contemporary</p>
+        <h3 class="prog-title">Ballet · Tap · Jazz · Hip-Hop · Musical Theatre Dance · Adult Dance</h3>
+        <p class="prog-desc">Technique-first training across every major style — taught by instructors who have performed and trained professionally. Whether your student is stepping into a ballet class for the first time or preparing a dance audition for a performing arts college, our faculty meets them where they are.</p>
+      </div>
+      <div class="prog-col">
+        <h4>What to Expect</h4>
+        <ul class="expect-list">
+          <li>Weekly group class by style and level</li>
+          <li>Technique, artistry, and injury prevention emphasis</li>
+          <li>Spring Showcase performance opportunities</li>
+          <li>Adult dance classes for all experience levels</li>
+          <li>Musical theatre dance integrates acting and vocals</li>
+        </ul>
+      </div>
+      <div class="prog-col">
+        <h4>The Path Forward</h4>
+        <p class="prog-path-text">Dance students at every level have the opportunity to perform at Tamraloo's seasonal showcases. Advanced students interested in triple-threat (voice, dance, acting) training can progress into Tamraloo's Pre-Professional program — designed specifically for students pursuing scholarship auditions and conservatory programs.</p>
+        <a href="https://www.tamraloo.com/dance-lessons-lincoln-ca" class="prog-cta">Explore Dance Classes</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Program: Theatre -->
+  <div class="program-card" id="prog-theatre">
+    <div class="prog-photo">
+      <img src="https://static.wixstatic.com/media/ec4ac0_bb70e14b3dd248af8164a1c3c9e00627~mv2.jpg"
+           alt="Theatre and musical theatre programs at Tamraloo Studios" loading="lazy">
+      <span class="age-badge">Ages 6 – 18</span>
+    </div>
+    <div class="prog-content">
+      <div class="prog-header">
+        <p class="prog-tag theatre-prog">Theatre — Musical &amp; Performance</p>
+        <h3 class="prog-title">Musical Theatre · Summer Theatre Production · Spring Showcase</h3>
+        <p class="prog-desc">Acting, scene work, audition technique, and full musical production experience — taught by instructors with professional stage, film, and conservatory backgrounds. Students learn to perform, not just learn about performing.</p>
+      </div>
+      <div class="prog-col">
+        <h4>What to Expect</h4>
+        <ul class="expect-list">
+          <li>Musical theatre classes combining acting, singing, and movement</li>
+          <li>Audition technique and cold-reading skills</li>
+          <li>Full Summer Theatre production with live audience</li>
+          <li>Spring Showcase performance — memorized solo or ensemble</li>
+          <li>Stagecraft, confidence, and public speaking built in</li>
+        </ul>
+      </div>
+      <div class="prog-col">
+        <h4>The Path Forward</h4>
+        <p class="prog-path-text">Theatre students progress naturally into Summer Theatre productions and Tamraloo's Pre-Professional Triple Threat program. Students preparing for university auditions, conservatory programs, or competitive performing arts scholarship applications receive targeted guidance from Tamraloo's faculty — including Tamie Rogers, who has coached two consecutive Miss Sac Outstanding Teen winners.</p>
+        <a href="https://www.tamraloo.com/dance" class="prog-cta">Explore Theatre Programs</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Program: Pre-Professional -->
+  <div class="program-card" id="prog-triple">
+    <div class="prog-photo">
+      <img src="https://static.wixstatic.com/media/2d2ffb_23ae2d28b6874138836caf3b9d7b452d~mv2.jpg"
+           alt="Pre-professional triple threat training at Tamraloo Studios" loading="lazy">
+      <span class="age-badge">Pre-Professional &nbsp;·&nbsp; By Placement</span>
+    </div>
+    <div class="prog-content">
+      <div class="prog-header">
+        <p class="prog-tag summer-prog">Pre-Professional — Triple Threat Instruction</p>
+        <h3 class="prog-title">For Students Pursuing Scholarships, Conservatories &amp; Professional Careers</h3>
+        <p class="prog-desc">Tamraloo's most intensive program — designed for serious students who are preparing for conservatory auditions, performing arts scholarships, or professional careers in music, dance, and theatre. Entry is by placement. Instruction is personal, rigorous, and outcome-focused.</p>
+      </div>
+      <div class="prog-col">
+        <h4>What to Expect</h4>
+        <ul class="expect-list">
+          <li>Voice, dance, and acting training integrated and sequenced</li>
+          <li>Audition repertoire selection and coaching</li>
+          <li>Scholarship application and audition strategy guidance</li>
+          <li>Direct mentorship with Tamie Rogers and senior faculty</li>
+          <li>Performance opportunities in community and regional venues</li>
+        </ul>
+      </div>
+      <div class="prog-col">
+        <h4>The Path Forward</h4>
+        <p class="prog-path-text">This program has produced students who have gone on to win pageant scholarship titles, earn performing arts college acceptances, and build professional performance careers. If your student has a serious goal — a program, a scholarship, a career — this is where we build the plan to get them there. Contact us to schedule a placement consultation.</p>
+        <a href="https://www.tamraloo.com/free-trial" class="prog-cta">Schedule a Consultation</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Program: Academic -->
+  <div class="program-card" id="prog-academic">
+    <div class="prog-photo">
+      <img src="https://static.wixstatic.com/media/e612e1_ac4d4b9688e4413ab229eae1c6e9f1e0~mv2.jpg"
+           alt="Academic tutoring programs at Tamraloo Studios" loading="lazy">
+      <span class="age-badge">All School Ages</span>
+    </div>
+    <div class="prog-content">
+      <div class="prog-header">
+        <p class="prog-tag acad-prog">Academics — Literacy &amp; Mathematics</p>
+        <h3 class="prog-title">Literacy Intervention &amp; Enrichment (LIE) · Math Assessment &amp; Intervention</h3>
+        <p class="prog-desc">Structured, compassionate academic support grounded in proven intervention methodology. Students have moved from failing grades to thriving. Our credentialed academic instructors work in small settings with personalized learning plans — the same standard of individualized attention we apply to every performing arts lesson.</p>
+      </div>
+      <div class="prog-col">
+        <h4>What to Expect</h4>
+        <ul class="expect-list">
+          <li>Initial academic assessment to identify gaps and strengths</li>
+          <li>Customized intervention plan per student</li>
+          <li>Weekly sessions with a credentialed instructor</li>
+          <li>Literacy: reading fluency, comprehension, writing</li>
+          <li>Math: 1st grade through college-level, including AP and physics</li>
+        </ul>
+      </div>
+      <div class="prog-col">
+        <h4>The Path Forward</h4>
+        <p class="prog-path-text">Academic programs at Tamraloo are designed to be temporary — the goal is to build genuine, lasting skills so students can thrive independently. Many families who start with academic tutoring discover that their students also benefit from arts instruction, finding that confidence in one area translates powerfully into the other.</p>
+        <a href="https://www.tamraloo.com/tutoring-lincoln-ca" class="prog-cta">Explore Academic Programs</a>
+      </div>
     </div>
   </div>
 
 </section>
 
 <!-- ============================================================
-     HERO
+     PROOF STAT BAR
 ============================================================ -->
-<section class="hero" aria-label="Tamraloo Studios — Lincoln's Premier Performing Arts Studio">
+<section class="hero" id="about" aria-label="Tamraloo Studios — Lincoln's Premier Performing Arts Studio">
   <div class="hero-left">
-    <p class="hero-script">Tamraloo</p>
-    <p class="hero-studios">Studios &nbsp;·&nbsp; Lincoln, California</p>
-
-    <h1 class="hero-headline">
-      Where serious artists<br>discover their <em>voice.</em>
-    </h1>
-    <p class="hero-body">
-      Placer County's largest performing arts studio — offering elite instruction in music, dance, theatre, and academics for students at every stage of their journey, from first lesson to scholarship audition.
-    </p>
-
+    <p class="hero-wordmark">Tamraloo</p>
+    <p class="hero-studios-label">Studios &nbsp;&middot;&nbsp; Lincoln, California</p>
+    <h1 class="hero-headline">Where serious artists discover their <em>voice.</em></h1>
+    <p class="hero-body">Placer County's largest performing arts studio — offering elite instruction in music, dance, theatre, and academics for students at every stage of their journey, from first lesson to scholarship audition.</p>
     <div class="hero-ctas">
-      <a href="https://www.tamraloo.com/free-trial" class="btn-gold">Begin with a Free Lesson</a>
-      <a href="https://www.tamraloo.com/class-registration" class="btn-white">View All Programs</a>
+      <a href="https://www.tamraloo.com/free-trial" class="btn-gold"><span>Claim Your Free Lesson</span></a>
+      <a href="https://www.tamraloo.com/class-registration" class="btn-ghost">View All Programs</a>
     </div>
-
-    <a href="tel:9166642516" class="hero-phone-link">(916) 664-2516 &nbsp; Call or text anytime</a>
-
+    <a href="tel:9166642516" class="hero-phone">(916) 664-2516 &nbsp; Call or text anytime</a>
     <div class="hero-stats">
-      <div class="stat-item">
+      <div>
         <p class="stat-num"><span>30</span>+</p>
         <p class="stat-label">Years of Excellence</p>
       </div>
-      <div class="stat-item">
+      <div>
         <p class="stat-num"><span>500</span>+</p>
         <p class="stat-label">Five-Star Reviews</p>
       </div>
-      <div class="stat-item">
+      <div>
         <p class="stat-num"><span>80</span>+</p>
         <p class="stat-label">Active Students</p>
       </div>
     </div>
   </div>
 
-  <div class="hero-right" aria-label="Awards and recognition">
-    <p class="hero-awards-label">Recognition &amp; Awards</p>
-
-    <div class="award-row">
-      <span class="award-name">Sacramento A-List — Best Music Instruction</span>
-      <span class="award-year">2016 · 2017 · 2018</span>
-    </div>
-    <div class="award-row">
-      <span class="award-name">Lincoln Best of the Best</span>
-      <span class="award-year">2017 · 2018 · 2019 · 2021</span>
-    </div>
-    <div class="award-row">
-      <span class="award-name">SARTA Elly Award — Musical Direction &amp; Performance</span>
-      <span class="award-year">Multiple</span>
-    </div>
-    <div class="award-row">
-      <span class="award-name">Best of Lessons.com</span>
-      <span class="award-year">2020</span>
-    </div>
-    <div class="award-row">
-      <span class="award-name">Hulafrogs Most Loved</span>
-      <span class="award-year">2018</span>
-    </div>
-
-    <div class="hero-review-strip">
-      <div class="review-stars">★ ★ ★ ★ ★</div>
-      <p class="review-quote">"The studio fosters positivity and a growth mindset — everyone has a smile on their face and it's a safe space to create and express yourself."</p>
-      <p class="review-sig">— Madison P., Student &nbsp;·&nbsp; Google Review</p>
+  <div class="hero-right" aria-label="Studio performance and awards">
+    <img class="hero-right-photo"
+         src="https://static.wixstatic.com/media/2d2ffb_b3b659c68e2f42d686ea6ca02e6ed16a~mv2.jpeg"
+         alt="Tamraloo Studios spring showcase performance">
+    <div class="hero-awards-panel">
+      <p class="awards-label">Recognition &amp; Awards</p>
+      <div class="award-rows">
+        <div class="award-row">
+          <span class="award-name">Sacramento A-List — Best Music Instruction</span>
+          <span class="award-year">2016 &middot; 2017 &middot; 2018</span>
+        </div>
+        <div class="award-row">
+          <span class="award-name">Lincoln Best of the Best</span>
+          <span class="award-year">2017 &middot; 2018 &middot; 2019 &middot; 2021</span>
+        </div>
+        <div class="award-row">
+          <span class="award-name">SARTA Elly Award — Multiple</span>
+          <span class="award-year">Direction &amp; Performance</span>
+        </div>
+        <div class="award-row">
+          <span class="award-name">Best of Lessons.com</span>
+          <span class="award-year">2020</span>
+        </div>
+      </div>
+      <div class="hero-review">
+        <div class="review-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+        <p class="review-text">"The studio fosters positivity and a growth mindset — a safe space to create, express, and grow." — Madison P.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<div class="color-bar" aria-hidden="true"></div>
-
 <!-- ============================================================
      INTRO STATEMENT
 ============================================================ -->
-<section class="intro" aria-label="Studio mission">
+<section class="intro" aria-label="Studio mission and philosophy">
   <div class="intro-inner">
-    <span class="overline">Our Purpose</span>
-    <div class="divider-line center"></div>
+    <p class="overline">Our Purpose</p>
+    <div class="divider center"></div>
     <span class="intro-script">Be Your Own Star</span>
     <h2>Accessible, inclusive, and <em>uncompromising</em><br>in the quality of every lesson.</h2>
-    <p class="intro-lead">
-      Tamraloo Studios was built on one belief: every student deserves instruction that meets them where they are — and takes them further than they imagined. Whether you're enrolling a three-year-old in their first music class or preparing a high schooler for a college performing arts audition, this is where that journey belongs.
-    </p>
-    <a href="https://www.tamraloo.com/about" class="btn-gold">Discover Our Story</a>
+    <p class="intro-lead">Tamraloo Studios was built on one belief: every student deserves instruction that meets them where they are — and takes them further than they imagined. Whether you're enrolling a child in their first music class or preparing a high schooler for a conservatory audition, this is where that journey belongs.</p>
+    <a href="https://www.tamraloo.com/about" class="btn-gold"><span>Discover Our Story</span></a>
   </div>
 </section>
 
@@ -1881,230 +2604,240 @@ body::before {
      DISCIPLINES
 ============================================================ -->
 <section class="disciplines" aria-label="Programs and disciplines">
-  <div class="disciplines-header">
-    <div class="disciplines-header-left">
-      <span class="overline">Our Programs</span>
-      <div class="divider-line"></div>
+  <div class="disc-header">
+    <div>
+      <p class="overline" style="margin-bottom:14px;">Our Programs</p>
       <h2>Four disciplines.<br><em>One extraordinary studio.</em></h2>
     </div>
-    <p class="disciplines-header-right">
-      From private one-on-one instruction to group performance programs — every offering at Tamraloo is built around producing confident, capable, and inspired artists.
-    </p>
+    <p class="disc-header-note">Private one-on-one instruction to full ensemble performance programs — every offering built to produce confident, capable, inspired artists.</p>
   </div>
 
-  <div class="disciplines-track">
+  <div class="disc-track">
 
-    <a href="https://www.tamraloo.com/music-lessons" class="discipline-card music" aria-label="Music Lessons">
-      <span class="disc-number">01</span>
-      <span class="disc-icon">🎹</span>
-      <p class="disc-label">Music</p>
-      <h3 class="disc-title">Private & Group Music Instruction</h3>
-      <p class="disc-body">From the first note to the performance stage — our degreed instructors bring 30+ years of teaching expertise to every session.</p>
-      <ul class="disc-offerings">
-        <li>Voice & Vocal Coaching</li>
-        <li>Piano</li>
-        <li>Guitar</li>
-        <li>Drums & Percussion</li>
-        <li>Strings &amp; Woodwinds</li>
-        <li>Ukulele</li>
-        <li>Group & Ensemble</li>
-      </ul>
-      <span class="disc-link">Explore Music</span>
+    <a href="https://www.tamraloo.com/music-lessons" class="disc-card music" aria-label="Music Lessons">
+      <div class="disc-photo">
+        <img src="https://static.wixstatic.com/media/fe8f49_bb920be568a34dda96cabe9ba7a30286~mv2.jpg"
+             alt="Tamraloo Studios music teachers and students" loading="lazy">
+      </div>
+      <div class="disc-body">
+        <p class="disc-num">01</p>
+        <p class="disc-tag">Music</p>
+        <h3 class="disc-title">Private &amp; Group Music Instruction</h3>
+        <p class="disc-text">From the first note to the performance stage — our degreed instructors bring decades of expertise to every session.</p>
+        <ul class="disc-offerings">
+          <li>Voice &amp; Vocal Coaching</li>
+          <li>Piano</li>
+          <li>Guitar</li>
+          <li>Drums &amp; Percussion</li>
+          <li>Strings &amp; Woodwinds</li>
+          <li>Ukulele</li>
+        </ul>
+        <span class="disc-link">Explore Music</span>
+      </div>
     </a>
 
-    <a href="https://www.tamraloo.com/dance-lessons-lincoln-ca" class="discipline-card dance" aria-label="Dance Classes">
-      <span class="disc-number">02</span>
-      <span class="disc-icon">🩰</span>
-      <p class="disc-label">Dance</p>
-      <h3 class="disc-title">Classical & Contemporary Dance Training</h3>
-      <p class="disc-body">Technique, artistry, and stage presence — built from the ground up across every major dance style, for students of all ages and levels.</p>
-      <ul class="disc-offerings">
-        <li>Ballet</li>
-        <li>Tap Dance</li>
-        <li>Jazz</li>
-        <li>Hip-Hop</li>
-        <li>Musical Theatre Dance</li>
-        <li>Adult Dance Classes</li>
-      </ul>
-      <span class="disc-link">Explore Dance</span>
+    <a href="https://www.tamraloo.com/dance-lessons-lincoln-ca" class="disc-card dance" aria-label="Dance Classes">
+      <div class="disc-photo">
+        <img src="https://static.wixstatic.com/media/0b6d63_788d9319236c445c899bfb15925db423~mv2.jpg"
+             alt="Tamraloo Studios spring showcase dance performance" loading="lazy">
+      </div>
+      <div class="disc-body">
+        <p class="disc-num">02</p>
+        <p class="disc-tag">Dance</p>
+        <h3 class="disc-title">Classical &amp; Contemporary Dance Training</h3>
+        <p class="disc-text">Technique, artistry, and stage presence built from the ground up across every major dance style.</p>
+        <ul class="disc-offerings">
+          <li>Ballet</li>
+          <li>Tap Dance</li>
+          <li>Jazz</li>
+          <li>Hip-Hop</li>
+          <li>Musical Theatre Dance</li>
+          <li>Adult Dance</li>
+        </ul>
+        <span class="disc-link">Explore Dance</span>
+      </div>
     </a>
 
-    <a href="https://www.tamraloo.com/dance" class="discipline-card theatre" aria-label="Theatre Programs">
-      <span class="disc-number">03</span>
-      <span class="disc-icon">🎭</span>
-      <p class="disc-label">Theatre</p>
-      <h3 class="disc-title">Performance & Musical Theatre</h3>
-      <p class="disc-body">Stagecraft, character work, and performance confidence — developed through intensive programs and live showcase productions throughout the year.</p>
-      <ul class="disc-offerings">
-        <li>Musical Theatre</li>
-        <li>Triple Threat Training</li>
-        <li>Spring Showcase</li>
-        <li>Summer Theatre Production</li>
-        <li>Pre-Professional Programs</li>
-      </ul>
-      <span class="disc-link">Explore Theatre</span>
+    <a href="https://www.tamraloo.com/dance" class="disc-card theatre" aria-label="Theatre Programs">
+      <div class="disc-photo">
+        <img src="https://static.wixstatic.com/media/ec4ac0_bb70e14b3dd248af8164a1c3c9e00627~mv2.jpg"
+             alt="Tamraloo Studios theatre awards gala" loading="lazy">
+      </div>
+      <div class="disc-body">
+        <p class="disc-num">03</p>
+        <p class="disc-tag">Theatre</p>
+        <h3 class="disc-title">Performance &amp; Musical Theatre</h3>
+        <p class="disc-text">Stagecraft, character work, and performance confidence developed through intensive programs and live showcase productions.</p>
+        <ul class="disc-offerings">
+          <li>Musical Theatre</li>
+          <li>Triple Threat Training</li>
+          <li>Spring Showcase</li>
+          <li>Summer Theatre Production</li>
+        </ul>
+        <span class="disc-link">Explore Theatre</span>
+      </div>
     </a>
 
-    <a href="https://www.tamraloo.com/tutoring-lincoln-ca" class="discipline-card tutoring" aria-label="Academic Tutoring">
-      <span class="disc-number">04</span>
-      <span class="disc-icon">📐</span>
-      <p class="disc-label">Academics</p>
-      <h3 class="disc-title">Literacy &amp; Mathematics Programs</h3>
-      <p class="disc-body">Structured, compassionate academic support grounded in proven intervention methods — helping students build real skills and lasting confidence in the classroom.</p>
-      <ul class="disc-offerings">
-        <li>Literacy Intervention (LIE)</li>
-        <li>Literary Enrichment</li>
-        <li>Math Assessment</li>
-        <li>Math Intervention</li>
-      </ul>
-      <span class="disc-link">Explore Tutoring</span>
+    <a href="https://www.tamraloo.com/tutoring-lincoln-ca" class="disc-card tutoring" aria-label="Academic Tutoring">
+      <div class="disc-photo">
+        <img src="https://static.wixstatic.com/media/e612e1_ac4d4b9688e4413ab229eae1c6e9f1e0~mv2.jpg"
+             alt="Tamraloo Studios literacy and academic programs" loading="lazy">
+      </div>
+      <div class="disc-body">
+        <p class="disc-num">04</p>
+        <p class="disc-tag">Academics</p>
+        <h3 class="disc-title">Literacy &amp; Mathematics Programs</h3>
+        <p class="disc-text">Structured, compassionate academic support grounded in proven intervention methods — building real skills and lasting classroom confidence.</p>
+        <ul class="disc-offerings">
+          <li>Literacy Intervention (LIE)</li>
+          <li>Literary Enrichment</li>
+          <li>Math Assessment</li>
+          <li>Math Intervention</li>
+        </ul>
+        <span class="disc-link">Explore Tutoring</span>
+      </div>
     </a>
 
   </div>
 </section>
 
 <!-- ============================================================
-     FREE LESSON CTA BAND
+     FREE LESSON CTA — photo behind
 ============================================================ -->
 <section class="cta-band" aria-label="Free trial lesson offer">
+  <img class="cta-band-photo"
+       src="https://static.wixstatic.com/media/2d2ffb_23ae2d28b6874138836caf3b9d7b452d~mv2.jpg"
+       alt="Tamraloo Studios performance event" loading="lazy">
   <div class="cta-band-inner">
     <span class="cta-script">Your first step.</span>
     <h2>Every great artist starts somewhere.<br>Start here — for free.</h2>
-    <p>We offer one complimentary trial lesson for every new student. Come experience the Tamraloo difference before you commit to anything — and let us find the right instructor, the right program, and the right fit for your goals.</p>
-    <a href="https://www.tamraloo.com/free-trial" class="btn-gold" style="font-size:0.8rem;padding:18px 52px;">Reserve Your Free Lesson</a>
-    <p class="cta-note">Questions first? Call or text <a href="tel:9166642516">(916) 664-2516</a> — we're happy to talk through the right program for your student.</p>
+    <p>We offer one complimentary trial lesson for every new student. Experience the Tamraloo difference before you commit to anything — and let us find the right instructor, the right program, and the right fit for your goals.</p>
+    <a href="https://www.tamraloo.com/free-trial" class="btn-gold"><span>Reserve Your Free Lesson</span></a>
+    <p class="cta-note">Questions first? Call or text <a href="tel:9166642516">(916) 664-2516</a> — we'll talk through the right program for your student.</p>
   </div>
 </section>
 
 <!-- ============================================================
-     TAMIE — DIRECTOR PROFILE
+     TAMIE — Director profile
 ============================================================ -->
-<section class="tamie-section" aria-label="Meet Tamie Rogers, Artistic Director">
+<section class="tamie" aria-label="Meet Tamie Rogers, Artistic Director">
   <div class="tamie-inner">
+
+    <!-- Photo -->
+    <div class="tamie-photo-col">
+      <img src="https://static.wixstatic.com/media/5be615_5e382224e80948cd844c455c9db0686a~mv2.jpeg"
+           alt="Tamie Rogers, Artistic Director of Tamraloo Studios" loading="lazy">
+      <div class="tamie-name-overlay">
+        <span class="script-name">Tamie Rogers</span>
+        <p class="name-title">Owner &amp; Artistic Director</p>
+      </div>
+    </div>
+
+    <!-- Content -->
     <div class="tamie-content">
-      <span class="overline">Artistic Director</span>
-      <div class="divider-line"></div>
-      <span class="tamie-name-script">Tamie Rogers</span>
-      <p class="tamie-title-line">BA Music · MTNA · CAMTA · Elly Award Winner</p>
-
+      <p class="overline">Artistic Director</p>
+      <div class="divider"></div>
       <h2>Three decades of teaching. A lifelong commitment to her students.</h2>
-
-      <p class="tamie-body">
-        Tamraloo Studios is owned and directed by Tamra Rogers — an Elly Award-winning actress, professional soprano, collaborative pianist, and music educator whose teaching career spans more than 30 years across California and the Pacific Northwest.
-      </p>
-      <p class="tamie-body">
-        Tamie personally trains and mentors every instructor on the Tamraloo team, ensuring that the quality of instruction is consistent — whether your child is in their first group class or working with an advanced private coach toward a scholarship audition.
-      </p>
-
-      <div class="charter-callout">
+      <p>Tamraloo Studios is owned and directed by Tamra Rogers — an Elly Award-winning actress, professional soprano, collaborative pianist, and music educator whose career spans more than 30 years across California and the Pacific Northwest.</p>
+      <p>Tamie personally trains and mentors every instructor on the Tamraloo team, ensuring consistent quality from a child's very first group class through advanced private coaching toward a conservatory audition.</p>
+      <div class="charter-block">
         <strong>Charter School Families</strong>
-        Tamraloo Studios is an approved vendor for most major charter schools in Placer County. We also accept Alta and Own My Own funds. Ask us how to apply your education funding toward lessons.
+        <p>Tamraloo is an approved vendor for most major charter schools in Placer County. We also accept Alta and Own My Own funds. Ask us how to apply your education funding toward lessons.</p>
       </div>
-
-      <a href="https://www.tamraloo.com/about" class="btn-gold">Meet the Full Faculty</a>
+      <a href="https://www.tamraloo.com/about" class="btn-gold"><span>Meet the Full Faculty</span></a>
     </div>
 
-    <div class="tamie-creds" aria-label="Credentials and background">
+    <!-- Credentials -->
+    <div class="tamie-creds">
       <p class="creds-label">Credentials &amp; Background</p>
-      <div class="cred-item">
-        <div class="cred-bullet"></div>
-        <p class="cred-text">Bachelor of Arts in Music — William Jessup University</p>
+      <div class="cred-row"><div class="cred-accent"></div><p class="cred-text">Bachelor of Arts in Music — William Jessup University</p></div>
+      <div class="cred-row"><div class="cred-accent"></div><p class="cred-text">MTNA Certified Music Teacher</p></div>
+      <div class="cred-row"><div class="cred-accent"></div><p class="cred-text">CAMTA Certified</p></div>
+      <div class="cred-row"><div class="cred-accent"></div><p class="cred-text">Multiple SARTA Elly Awards — Musical Direction &amp; Performance</p></div>
+      <div class="cred-row"><div class="cred-accent"></div><p class="cred-text">Accomplished collaborative pianist &amp; choral conductor</p></div>
+      <div class="cred-row"><div class="cred-accent"></div><p class="cred-text">Professional soprano vocalist — Merrie Olde Christmas Carolers</p></div>
+      <div class="cred-row"><div class="cred-accent"></div><p class="cred-text">Vocal coach to two consecutive Miss Sac Outstanding Teen winners</p></div>
+      <div class="cred-row"><div class="cred-accent"></div><p class="cred-text">Former Board Member — Downtown Lincoln Association</p></div>
+      <div class="cred-row"><div class="cred-accent"></div><p class="cred-text">Artistic Director, Placer County's largest performing arts studio</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     OUTCOME-FOCUSED REVIEWS
+============================================================ -->
+<section class="reviews-section" id="reviews" aria-label="Student and parent reviews">
+  <div class="reviews-header">
+    <h2>What families say about <em>the difference.</em></h2>
+    <p class="reviews-meta">4.5 stars &nbsp;&middot;&nbsp; 500+ Google reviews</p>
+  </div>
+
+  <div class="reviews-grid">
+    <div class="review-card">
+      <p class="review-outcome">"Skill and personal confidence — both grew leaps and bounds."</p>
+      <p class="review-body">Tamie worked with both of our girls a few years back and was instrumental in setting them up for success. Their ages were 7 and 11 at the time and Tamie always made them feel comfortable. We are thankful for Tamie and her studio for helping to set the vocal foundation for our daughters and giving them a safe and enjoyable place to learn.</p>
+      <div class="review-byline">
+        <span class="review-stars-sm">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+        <span class="review-name">Chris H. &nbsp;&middot;&nbsp; Parent</span>
       </div>
-      <div class="cred-item">
-        <div class="cred-bullet"></div>
-        <p class="cred-text">MTNA Certified Music Teacher</p>
+    </div>
+
+    <div class="review-card">
+      <p class="review-outcome">"A D turned into an A — and her confidence changed everything."</p>
+      <p class="review-body">Not only did Tamie help my daughters find their voices as singers, but when my high schooler was struggling in math, Tony turned her D into an A. From music to academics, I do not think you can go wrong choosing Tamraloo. It is a place that genuinely cares about what happens to your student.</p>
+      <div class="review-byline">
+        <span class="review-stars-sm">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+        <span class="review-name">Miss Tracy &nbsp;&middot;&nbsp; Parent of Three</span>
       </div>
-      <div class="cred-item">
-        <div class="cred-bullet"></div>
-        <p class="cred-text">CAMTA Member &amp; Certified</p>
+    </div>
+
+    <div class="review-card">
+      <p class="review-outcome">"Eight years. Five instruments. One family that keeps coming back."</p>
+      <p class="review-body">For over eight years we have been utilizing the many services offered. My two girls have tried it all — voice, piano, guitar, bassoon, saxophone, theatre, and dance. I am proud to be part of the Tamraloo family. They have supported us and our community in a way no other studio has.</p>
+      <div class="review-byline">
+        <span class="review-stars-sm">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+        <span class="review-name">Kristi M. &nbsp;&middot;&nbsp; Parent, 8-Year Student Family</span>
       </div>
-      <div class="cred-item">
-        <div class="cred-bullet"></div>
-        <p class="cred-text">Multiple SARTA Elly Awards — Musical Direction &amp; Performance</p>
-      </div>
-      <div class="cred-item">
-        <div class="cred-bullet"></div>
-        <p class="cred-text">Accomplished collaborative pianist &amp; choral conductor</p>
-      </div>
-      <div class="cred-item">
-        <div class="cred-bullet"></div>
-        <p class="cred-text">Professional soprano in the Merrie Olde Christmas Carolers</p>
-      </div>
-      <div class="cred-item">
-        <div class="cred-bullet"></div>
-        <p class="cred-text">Former Board Member — Downtown Lincoln Association</p>
-      </div>
-      <div class="cred-item">
-        <div class="cred-bullet"></div>
-        <p class="cred-text">Vocal coach to two consecutive Miss Sac Outstanding Teen winners</p>
-      </div>
-      <div class="cred-item">
-        <div class="cred-bullet"></div>
-        <p class="cred-text">Artistic Director, Placer County's largest performing arts studio</p>
+    </div>
+
+    <div class="review-card">
+      <p class="review-outcome">"A growth mindset, a safe space, and a genuine community."</p>
+      <p class="review-body">Tamraloo has helped me grow as a performer for years. What I appreciate most is the wide variety of services available to all ages. I have taken piano, voice, and dance — both group and private — and every instructor has supported my growth. The studio fosters positivity and the environment is genuinely welcoming.</p>
+      <div class="review-byline">
+        <span class="review-stars-sm">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+        <span class="review-name">Madison P. &nbsp;&middot;&nbsp; Multi-Year Student</span>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     TESTIMONIALS
+     SERVICE AREAS + VISIT
 ============================================================ -->
-<section class="testimonials" aria-label="Student and parent testimonials">
-  <div class="testimonials-header">
-    <h2>What our families <em>say.</em></h2>
-    <p class="testimonials-count">4.5 stars · 500+ Google reviews</p>
-  </div>
-
-  <div class="testimonials-grid">
-    <div class="testimonial-card">
-      <div class="t-stars">★ ★ ★ ★ ★</div>
-      <p class="t-quote">"Tamraloo has helped me grow as a performer for years. The studio fosters positivity and a growth mindset — it's a safe space to create art and express yourself."</p>
-      <p class="t-author">— Madison P. &nbsp;·&nbsp; Student, Multi-Year</p>
-    </div>
-
-    <div class="testimonial-card">
-      <div class="t-stars">★ ★ ★ ★ ★</div>
-      <p class="t-quote">"Three daughters in piano, voice, dance, and theatre over many years. Tamie treats every student with kindness and patience. She understands that every child is different — and she meets them where they are."</p>
-      <p class="t-author">— Sherri P. &nbsp;·&nbsp; Parent of Three Students</p>
-    </div>
-
-    <div class="testimonial-card">
-      <div class="t-stars">★ ★ ★ ★ ★</div>
-      <p class="t-quote">"When my high schooler was struggling in math, Tony turned her D into an A. When my daughters needed vocal foundation, Tamie delivered. From music to academics — you cannot go wrong here."</p>
-      <p class="t-author">— Miss Tracy &nbsp;·&nbsp; Parent</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     SERVICE AREAS + CHARTER
-============================================================ -->
-<section class="info-band" aria-label="Service areas and charter information">
-  <div class="info-band-left">
-    <span class="overline">Where We Serve</span>
-    <div class="divider-line"></div>
+<section class="info-band" id="visit" aria-label="Service areas and studio location">
+  <div class="info-col">
+    <p class="overline" style="margin-bottom:14px;">Where We Serve</p>
     <h3>Proudly serving all of Placer County.</h3>
-    <ul class="area-list" aria-label="Service areas">
-      <li>Lincoln, CA</li>
-      <li>Rocklin, CA</li>
-      <li>Roseville, CA</li>
-      <li>Granite Bay, CA</li>
-      <li>Sun City, CA</li>
-      <li>Placer County</li>
-    </ul>
+    <div class="area-tags">
+      <span class="area-tag">Lincoln, CA</span>
+      <span class="area-tag">Rocklin, CA</span>
+      <span class="area-tag">Roseville, CA</span>
+      <span class="area-tag">Granite Bay, CA</span>
+      <span class="area-tag">Sun City, CA</span>
+      <span class="area-tag">Placer County</span>
+    </div>
   </div>
-
-  <div class="info-band-right">
-    <span class="overline">Visit the Studio</span>
-    <div class="divider-line"></div>
+  <div class="info-col">
+    <p class="overline" style="margin-bottom:14px;">Visit the Studio</p>
     <h3>State-of-the-art facility in Lincoln.</h3>
     <p>
-      Our spacious performing arts facility is located at <strong style="color:var(--text-full)">2800 Nicolaus Road #100, Lincoln, CA 95648</strong> — next to Empire Gymnastics.<br><br>
-      <strong style="color:var(--text-full)">Teaching Hours:</strong><br>
-      Monday – Friday &nbsp;·&nbsp; 8:00am – 7:00pm<br>
-      Saturday &nbsp;·&nbsp; 9:00am – 2:00pm<br>
-      Sunday &nbsp;·&nbsp; Closed<br><br>
-      By appointment. Call or text <a href="tel:9166642516" style="color:var(--gold);text-decoration:none;">(916) 664-2516</a> to schedule.
+      <strong>2800 Nicolaus Road #100, Lincoln, CA 95648</strong><br>
+      Located next to Empire Gymnastics &nbsp;&middot;&nbsp; By appointment<br><br>
+      <strong>Teaching Hours</strong><br>
+      Monday – Friday &nbsp;&middot;&nbsp; 8:00am – 7:00pm<br>
+      Saturday &nbsp;&middot;&nbsp; 9:00am – 2:00pm<br>
+      Sunday &nbsp;&middot;&nbsp; Closed<br><br>
+      Call or text <a href="tel:9166642516">(916) 664-2516</a> to schedule.
     </p>
   </div>
 </section>
@@ -2112,37 +2845,34 @@ body::before {
 <!-- ============================================================
      CONTACT FOOTER
 ============================================================ -->
-<footer class="contact-footer" aria-label="Contact information and site navigation">
-  <div class="contact-footer-inner">
-    <div class="contact-brand">
+<footer class="contact-footer" aria-label="Contact information">
+  <div class="contact-footer-grid">
+    <div class="cf-brand">
       <span class="brand-script">Tamraloo</span>
-      <p class="brand-sub">Studios &nbsp;·&nbsp; Lincoln, California</p>
+      <p class="brand-sub">Studios &nbsp;&middot;&nbsp; Lincoln, California</p>
       <p>Placer County's largest performing arts studio — music, dance, theatre, and academics for all ages and stages.</p>
     </div>
-
-    <div class="contact-col">
+    <div class="cf-col">
       <h4>Contact</h4>
       <a href="tel:9166642516" class="big-phone">(916) 664-2516</a>
-      <p style="font-size:0.72rem;letter-spacing:0.08em;color:rgba(255,255,255,0.3);">Call or Text</p>
-      <a href="https://www.tamraloo.com/free-trial" style="margin-top:16px;color:var(--gold);">Reserve Free Lesson →</a>
+      <p style="font-size:0.68rem;letter-spacing:0.08em;">Call or Text</p>
+      <a href="https://www.tamraloo.com/free-trial" style="margin-top:14px;color:var(--gold-dim);">Free Lesson &nbsp;—</a>
     </div>
-
-    <div class="contact-col">
+    <div class="cf-col">
       <h4>Programs</h4>
       <a href="https://www.tamraloo.com/music-lessons">Music Lessons</a>
       <a href="https://www.tamraloo.com/dance-lessons-lincoln-ca">Dance Classes</a>
       <a href="https://www.tamraloo.com/dance">Theatre Programs</a>
       <a href="https://www.tamraloo.com/tutoring-lincoln-ca">Academic Tutoring</a>
-      <a href="https://www.tamraloo.com/summer-camps-in-lincoln-ca">Summer Camps</a>
+      <a href="https://www.tamraloo.com/summer-camp-2026">Summer 2026</a>
     </div>
-
-    <div class="contact-col">
+    <div class="cf-col">
       <h4>Studio</h4>
       <a href="https://www.tamraloo.com/about">About Tamraloo</a>
       <a href="https://www.tamraloo.com/our-teachers">Our Faculty</a>
       <a href="https://www.tamraloo.com/faq">FAQs</a>
-      <a href="https://www.tamraloo.com/tamraloo-blog">Studio Blog</a>
-      <a href="https://www.tamraloo.com/class-registration">Register Now</a>
+      <a href="https://www.tamraloo.com/tamraloo-blog">Blog</a>
+      <a href="https://www.tamraloo.com/class-registration">Register</a>
     </div>
   </div>
 </footer>
@@ -2152,13 +2882,13 @@ body::before {
 ============================================================ -->
 <div class="seo-footer" aria-label="Site index">
   <div class="seo-footer-inner">
-    <p class="seo-links-label">All Pages</p>
+    <p class="seo-label">All Pages</p>
     <nav class="seo-links" aria-label="Full site navigation">
       <a href="https://www.tamraloo.com">Home</a>
       <a href="https://www.tamraloo.com/about">About</a>
       <a href="https://www.tamraloo.com/our-teachers">Our Teachers</a>
       <a href="https://www.tamraloo.com/music-lessons">Music Lessons</a>
-      <a href="https://www.tamraloo.com/voice-lessons-in-lincoln-ca">Voice Lessons</a>
+      <a href="https://www.tamraloo.com/voice-lessons-in-lincoln-ca">Voice</a>
       <a href="https://www.tamraloo.com/piano-lessons-lincoln-ca">Piano</a>
       <a href="https://www.tamraloo.com/guitar-lessons-lincoln-ca">Guitar</a>
       <a href="https://www.tamraloo.com/drum-lessons-lincoln-ca">Drums</a>
@@ -2169,21 +2899,24 @@ body::before {
       <a href="https://www.tamraloo.com/ballet-classes-in-lincoln-ca">Ballet</a>
       <a href="https://www.tamraloo.com/tap-dance-lessons-in-lincoln-ca">Tap Dance</a>
       <a href="https://www.tamraloo.com/jazz-dance-classes-in-lincoln-ca">Jazz Dance</a>
-      <a href="https://www.tamraloo.com/hip-hop-dance-classes-in-lincoln-ca">Hip-Hop Dance</a>
+      <a href="https://www.tamraloo.com/hip-hop-dance-classes-in-lincoln-ca">Hip-Hop</a>
       <a href="https://www.tamraloo.com/musical-theatre-classes-in-lincoln-ca">Musical Theatre</a>
       <a href="https://www.tamraloo.com/adult-dance-classes">Adult Dance</a>
       <a href="https://www.tamraloo.com/tutoring-lincoln-ca">Tutoring</a>
-      <a href="https://www.tamraloo.com/literacy-intervention-enrichment">Literacy Program</a>
+      <a href="https://www.tamraloo.com/literacy-intervention-enrichment">Literacy</a>
       <a href="https://www.tamraloo.com/math-tutoring-and-assesment">Math Tutoring</a>
-      <a href="https://www.tamraloo.com/summer-camps-in-lincoln-ca">Summer Camps</a>
+      <a href="https://www.tamraloo.com/summer-camp-2026">Summer 2026</a>
+      <a href="https://www.tamraloo.com/creative-conservatory-camp26">Creative Conservatory Camp</a>
+      <a href="https://www.tamraloo.com/summer-theatre">Summer Theatre</a>
       <a href="https://www.tamraloo.com/free-trial">Free Trial Lesson</a>
       <a href="https://www.tamraloo.com/class-registration">Register</a>
       <a href="https://www.tamraloo.com/faq">FAQs</a>
       <a href="https://www.tamraloo.com/tamraloo-blog">Blog</a>
     </nav>
     <div class="seo-copy">
-      Tamraloo Studios &nbsp;|&nbsp; 2800 Nicolaus Road #100, Lincoln, CA 95648 &nbsp;|&nbsp; <a href="tel:9166642516" style="color:rgba(255,255,255,0.2);">(916) 664-2516</a><br>
-      Music lessons · Dance classes · Theatre programs · Academic tutoring · Summer camps · Charter school vendor · Serving Lincoln, Rocklin, Roseville, Granite Bay &amp; Placer County, CA
+      Tamraloo Studios &nbsp;|&nbsp; 2800 Nicolaus Road #100, Lincoln, CA 95648 &nbsp;|&nbsp; <a href="tel:9166642516">(916) 664-2516</a><br>
+      Music lessons &middot; Dance classes &middot; Theatre programs &middot; Academic tutoring &middot; Summer camps &middot; Charter school vendor<br>
+      Serving Lincoln, Rocklin, Roseville, Granite Bay &amp; Placer County, CA
     </div>
     <p class="disclaimer">Results may vary based on individual student effort and engagement. Tamraloo Studios does not guarantee specific academic or performance outcomes.</p>
   </div>
