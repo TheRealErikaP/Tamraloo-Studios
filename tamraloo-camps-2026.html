@@ -3,8 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Summer Camps 2026 | Tamraloo Studios | Lincoln, CA</title>
-<meta name="description" content="Tamraloo Studios Summer Camps 2026 in Lincoln, CA — 10 themed camps across 8 weeks. Performing arts, STEM, literacy, dance and all-day options. Ages 5–12. Register now, spots filling fast.">
+<title>Summer Camps 2026 | Placer County, CA | Tamraloo Studios Lincoln</title>
+<meta name="description" content="Summer camps 2026 in Placer County, CA for kids ages 5–12. Tamraloo Studios in Lincoln serves Rocklin, Roseville, Granite Bay & beyond. 10 themed camps: performing arts, STEM, dance, musical theatre & literacy.">
+<link rel="canonical" href="https://www.tamraloo.com/summer-camp-2026">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Summer Camps 2026 | Placer County CA | Tamraloo Studios">
+<meta property="og:description" content="10 themed summer camps for kids ages 5–12 across Placer County. Tamraloo Studios in Lincoln, CA serves Rocklin, Roseville, Granite Bay & beyond. Performing arts, STEM, dance & more.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.tamraloo.com/summer-camp-2026">
+<meta property="og:image" content="https://static.wixstatic.com/media/2d2ffb_e35820aa152e4906b44b2d2098297fc6~mv2.png">
+<meta property="og:site_name" content="Tamraloo Studios">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Summer Camps 2026 | Placer County CA | Tamraloo Studios">
+<meta name="twitter:description" content="10 themed summer camps for kids ages 5–12 across Placer County, CA. Performing arts, STEM, dance & more. Serving Lincoln, Rocklin, Roseville & Granite Bay.">
+<meta name="twitter:image" content="https://static.wixstatic.com/media/2d2ffb_e35820aa152e4906b44b2d2098297fc6~mv2.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -361,6 +378,42 @@ body {
 .session-label.am::before     { background: linear-gradient(to right, #f8c050, #e07828); }
 .session-label.pm::before     { background: linear-gradient(to right, #78c8ea, #4a96c8); }
 .session-label.allday::before { background: linear-gradient(to right, #c8007d, #8c1865); }
+
+/* INFO CARD — designed slot for AM/PM covered by CCC */
+.info-card {
+  border: 1.5px dashed rgba(200,0,125,0.25);
+  border-radius: 4px;
+  background: rgba(200,0,125,0.03);
+  padding: 28px 24px;
+  display: flex; flex-direction: column;
+  align-items: flex-start; gap: 10px;
+  height: 100%;
+}
+.info-card-pm {
+  border-color: rgba(66,133,178,0.25);
+  background: rgba(66,133,178,0.03);
+}
+.info-card-icon {
+  font-size: 1.6rem; line-height: 1;
+  opacity: 0.4;
+}
+.info-card h3 {
+  font-family: var(--display);
+  font-size: 1rem; font-weight: 500;
+  color: var(--ink); line-height: 1.2;
+}
+.info-card p {
+  font-size: 0.82rem; color: var(--text-mid);
+  line-height: 1.7; flex: 1;
+}
+.info-card-link {
+  font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--magenta); text-decoration: none;
+  transition: opacity 0.2s;
+}
+.info-card-pm .info-card-link { color: var(--blue); }
+.info-card-link:hover { opacity: 0.7; }
 
 /* CAMP CARD — tile format: full flyer on top, details below */
 .camp-card {
@@ -844,16 +897,507 @@ body {
 <!-- SCHEMA -->
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org","@type":"Event",
-  "name":"Tamraloo Studios Summer Camps 2026",
-  "description":"10 themed summer camps in Lincoln, CA across 8 weeks. Performing arts, STEM, literacy, and all-day programs for ages 5–12.",
-  "startDate":"2026-06-09","endDate":"2026-07-25",
-  "location":{"@type":"Place","name":"Tamraloo Studios","address":{"@type":"PostalAddress","streetAddress":"2800 Nicolaus Road #100","addressLocality":"Lincoln","addressRegion":"CA","postalCode":"95648"}},
-  "organizer":{"@type":"Organization","name":"Tamraloo Studios","url":"https://www.tamraloo.com","telephone":"+19166642516"},
-  "offers":[
-    {"@type":"Offer","name":"Performing Arts & Dance Camps","url":"https://forms.gle/hoFqpHjUujnLxP1N8","availability":"https://schema.org/InStock"},
-    {"@type":"Offer","name":"STEM & Adventure Camps","url":"https://forms.gle/R3ZfvZ4Y7JNkcsND7","availability":"https://schema.org/InStock"},
-    {"@type":"Offer","name":"Literacy & Storytelling Camps","url":"https://forms.gle/yzJS3fHiqmgSGyi88","availability":"https://schema.org/InStock"}
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Summer Camps 2026 at Tamraloo Studios \u2014 Lincoln, CA",
+  "description": "10 themed summer camps for kids ages 5-12 across Placer County, CA. Tamraloo Studios in Lincoln serves Rocklin, Roseville, Granite Bay and beyond. Performing arts, STEM, literacy, dance and all-day options.",
+  "url": "https://www.tamraloo.com/summer-camp-2026",
+  "numberOfItems": 11,
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "ChildrensEvent",
+        "name": "Summer Pirate Camp 2026",
+        "startDate": "2026-06-09",
+        "endDate": "2026-06-13",
+        "description": "Adventure camp for kids ages 5-12. Crafts, storytelling, treasure hunts and team activities. Lincoln, CA — serving all of Placer County.",
+        "url": "https://forms.gle/R3ZfvZ4Y7JNkcsND7",
+        "location": {
+          "@type": "Place",
+          "name": "Tamraloo Studios",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "2800 Nicolaus Road #100",
+            "addressLocality": "Lincoln",
+            "addressRegion": "CA",
+            "postalCode": "95648",
+            "addressCountry": "US"
+          }
+        },
+        "organizer": {
+          "@type": "Organization",
+          "name": "Tamraloo Studios",
+          "url": "https://www.tamraloo.com",
+          "telephone": "+19166642516"
+        },
+        "typicalAgeRange": "5-12",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "inLanguage": "en"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "ChildrensEvent",
+        "name": "Summer Beach Dance Party 2026",
+        "startDate": "2026-06-16",
+        "endDate": "2026-06-19",
+        "description": "Dance camp for kids ages 5-8 inspired by Moana and Lilo & Stitch. Jazz, hip-hop, and hula in Lincoln, CA — serving all of Placer County.",
+        "url": "https://forms.gle/hoFqpHjUujnLxP1N8",
+        "location": {
+          "@type": "Place",
+          "name": "Tamraloo Studios",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "2800 Nicolaus Road #100",
+            "addressLocality": "Lincoln",
+            "addressRegion": "CA",
+            "postalCode": "95648",
+            "addressCountry": "US"
+          }
+        },
+        "organizer": {
+          "@type": "Organization",
+          "name": "Tamraloo Studios",
+          "url": "https://www.tamraloo.com",
+          "telephone": "+19166642516"
+        },
+        "typicalAgeRange": "5-12",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "inLanguage": "en"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "ChildrensEvent",
+        "name": "Summer of Stories Literacy Camp 2026",
+        "startDate": "2026-06-16",
+        "endDate": "2026-06-20",
+        "description": "Literacy camp for grades K-3. Explore beloved children's authors through storytelling, crafts and games. Lincoln, CA — serving all of Placer County.",
+        "url": "https://forms.gle/yzJS3fHiqmgSGyi88",
+        "location": {
+          "@type": "Place",
+          "name": "Tamraloo Studios",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "2800 Nicolaus Road #100",
+            "addressLocality": "Lincoln",
+            "addressRegion": "CA",
+            "postalCode": "95648",
+            "addressCountry": "US"
+          }
+        },
+        "organizer": {
+          "@type": "Organization",
+          "name": "Tamraloo Studios",
+          "url": "https://www.tamraloo.com",
+          "telephone": "+19166642516"
+        },
+        "typicalAgeRange": "5-12",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "inLanguage": "en"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "ChildrensEvent",
+        "name": "Swashbuckle & Sparkle Dance Camp 2026",
+        "startDate": "2026-06-23",
+        "endDate": "2026-06-26",
+        "description": "Performing arts and dance camp for kids ages 5-8. Peter Pan and Little Mermaid themed adventure in Lincoln, CA — serving all of Placer County.",
+        "url": "https://forms.gle/hoFqpHjUujnLxP1N8",
+        "location": {
+          "@type": "Place",
+          "name": "Tamraloo Studios",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "2800 Nicolaus Road #100",
+            "addressLocality": "Lincoln",
+            "addressRegion": "CA",
+            "postalCode": "95648",
+            "addressCountry": "US"
+          }
+        },
+        "organizer": {
+          "@type": "Organization",
+          "name": "Tamraloo Studios",
+          "url": "https://www.tamraloo.com",
+          "telephone": "+19166642516"
+        },
+        "typicalAgeRange": "5-12",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "inLanguage": "en"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "item": {
+        "@type": "ChildrensEvent",
+        "name": "Mission Space STEM Camp 2026",
+        "startDate": "2026-06-23",
+        "endDate": "2026-06-27",
+        "description": "Space and engineering STEM camp for kids ages 5-12. Rocket building and astronaut training in Lincoln, CA — serving all of Placer County.",
+        "url": "https://forms.gle/R3ZfvZ4Y7JNkcsND7",
+        "location": {
+          "@type": "Place",
+          "name": "Tamraloo Studios",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "2800 Nicolaus Road #100",
+            "addressLocality": "Lincoln",
+            "addressRegion": "CA",
+            "postalCode": "95648",
+            "addressCountry": "US"
+          }
+        },
+        "organizer": {
+          "@type": "Organization",
+          "name": "Tamraloo Studios",
+          "url": "https://www.tamraloo.com",
+          "telephone": "+19166642516"
+        },
+        "typicalAgeRange": "5-12",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "inLanguage": "en"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "item": {
+        "@type": "ChildrensEvent",
+        "name": "Crochet Camp 2026",
+        "startDate": "2026-06-23",
+        "endDate": "2026-06-27",
+        "description": "Fiber arts camp for ages 10 and up. Learn crochet basics and make a granny square tote bag. Lincoln, CA — serving all of Placer County.",
+        "url": "https://forms.gle/Wz3nT33rkCP45sK96",
+        "location": {
+          "@type": "Place",
+          "name": "Tamraloo Studios",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "2800 Nicolaus Road #100",
+            "addressLocality": "Lincoln",
+            "addressRegion": "CA",
+            "postalCode": "95648",
+            "addressCountry": "US"
+          }
+        },
+        "organizer": {
+          "@type": "Organization",
+          "name": "Tamraloo Studios",
+          "url": "https://www.tamraloo.com",
+          "telephone": "+19166642516"
+        },
+        "typicalAgeRange": "5-12",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "inLanguage": "en"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "item": {
+        "@type": "ChildrensEvent",
+        "name": "Dino Discovery STEM Camp 2026",
+        "startDate": "2026-06-30",
+        "endDate": "2026-07-03",
+        "description": "Dinosaur and paleontology STEM camp for kids ages 5-12. Fossil digs and science projects in Lincoln, CA — serving all of Placer County.",
+        "url": "https://forms.gle/R3ZfvZ4Y7JNkcsND7",
+        "location": {
+          "@type": "Place",
+          "name": "Tamraloo Studios",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "2800 Nicolaus Road #100",
+            "addressLocality": "Lincoln",
+            "addressRegion": "CA",
+            "postalCode": "95648",
+            "addressCountry": "US"
+          }
+        },
+        "organizer": {
+          "@type": "Organization",
+          "name": "Tamraloo Studios",
+          "url": "https://www.tamraloo.com",
+          "telephone": "+19166642516"
+        },
+        "typicalAgeRange": "5-12",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "inLanguage": "en"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 8,
+      "item": {
+        "@type": "ChildrensEvent",
+        "name": "LEGO Masters Engineering Camp 2026",
+        "startDate": "2026-07-07",
+        "endDate": "2026-07-11",
+        "description": "LEGO engineering camp for kids ages 7-12. Daily building challenges and STEM problem-solving in Lincoln, CA — serving all of Placer County.",
+        "url": "https://forms.gle/R3ZfvZ4Y7JNkcsND7",
+        "location": {
+          "@type": "Place",
+          "name": "Tamraloo Studios",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "2800 Nicolaus Road #100",
+            "addressLocality": "Lincoln",
+            "addressRegion": "CA",
+            "postalCode": "95648",
+            "addressCountry": "US"
+          }
+        },
+        "organizer": {
+          "@type": "Organization",
+          "name": "Tamraloo Studios",
+          "url": "https://www.tamraloo.com",
+          "telephone": "+19166642516"
+        },
+        "typicalAgeRange": "5-12",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "inLanguage": "en"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 9,
+      "item": {
+        "@type": "ChildrensEvent",
+        "name": "Shiz Academy Musical Theatre Camp 2026",
+        "startDate": "2026-07-14",
+        "endDate": "2026-07-25",
+        "description": "Wicked-inspired Broadway musical theatre camp for ages 6-10 in Lincoln, CA — serving all of Placer County. Acting, singing and dance. SOLD OUT.",
+        "url": "https://www.tamraloo.com/summer-camp-2026",
+        "location": {
+          "@type": "Place",
+          "name": "Tamraloo Studios",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "2800 Nicolaus Road #100",
+            "addressLocality": "Lincoln",
+            "addressRegion": "CA",
+            "postalCode": "95648",
+            "addressCountry": "US"
+          }
+        },
+        "organizer": {
+          "@type": "Organization",
+          "name": "Tamraloo Studios",
+          "url": "https://www.tamraloo.com",
+          "telephone": "+19166642516"
+        },
+        "typicalAgeRange": "5-12",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "inLanguage": "en"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 10,
+      "item": {
+        "@type": "ChildrensEvent",
+        "name": "Young Authors Creative Writing Camp 2026",
+        "startDate": "2026-07-22",
+        "endDate": "2026-07-24",
+        "description": "Creative writing camp for ages 11 and up. Workshopping, storytelling and peer collaboration in Lincoln, CA — serving all of Placer County.",
+        "url": "https://forms.gle/R3ZfvZ4Y7JNkcsND7",
+        "location": {
+          "@type": "Place",
+          "name": "Tamraloo Studios",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "2800 Nicolaus Road #100",
+            "addressLocality": "Lincoln",
+            "addressRegion": "CA",
+            "postalCode": "95648",
+            "addressCountry": "US"
+          }
+        },
+        "organizer": {
+          "@type": "Organization",
+          "name": "Tamraloo Studios",
+          "url": "https://www.tamraloo.com",
+          "telephone": "+19166642516"
+        },
+        "typicalAgeRange": "5-12",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "inLanguage": "en"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 11,
+      "item": {
+        "@type": "ChildrensEvent",
+        "name": "Creative Conservatory All-Day Camp 2026",
+        "startDate": "2026-06-09",
+        "endDate": "2026-08-01",
+        "description": "All-day performing arts and STEM summer camp for kids ages 5-12. Runs all 8 weeks in Lincoln, CA — serving all of Placer County. Music, dance, theatre and Creative STEM labs.",
+        "url": "https://docs.google.com/forms/d/e/1FAIpQLSfRDfxUhRaN23nOmlGlBHHd6e56utrNVCAD8MOslb0FRAedMg/viewform",
+        "location": {
+          "@type": "Place",
+          "name": "Tamraloo Studios",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "2800 Nicolaus Road #100",
+            "addressLocality": "Lincoln",
+            "addressRegion": "CA",
+            "postalCode": "95648",
+            "addressCountry": "US"
+          }
+        },
+        "organizer": {
+          "@type": "Organization",
+          "name": "Tamraloo Studios",
+          "url": "https://www.tamraloo.com",
+          "telephone": "+19166642516"
+        },
+        "typicalAgeRange": "5-12",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "inLanguage": "en"
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Tamraloo Studios",
+  "description": "Placer County's largest performing arts studio offering music lessons, dance classes, theatre programs, academic tutoring and summer camps in Lincoln, CA — serving all of Placer County.",
+  "url": "https://www.tamraloo.com",
+  "telephone": "+19166642516",
+  "email": "support@tamraloo.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "2800 Nicolaus Road #100",
+    "addressLocality": "Lincoln",
+    "addressRegion": "CA",
+    "postalCode": "95648",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 38.8916,
+    "longitude": -121.293
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Lincoln, CA"
+    },
+    {
+      "@type": "City",
+      "name": "Rocklin, CA"
+    },
+    {
+      "@type": "City",
+      "name": "Roseville, CA"
+    },
+    {
+      "@type": "City",
+      "name": "Granite Bay, CA"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Placer County, CA"
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.5",
+    "reviewCount": "500"
+  },
+  "sameAs": [
+    "https://www.facebook.com/TamralooStudios",
+    "https://www.instagram.com/tamralooofficial/",
+    "https://www.yelp.com/biz/tamraloo-music-and-more-lincoln"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Where are Tamraloo Studios summer camps located?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tamraloo Studios summer camps are held at 2800 Nicolaus Road #100, Lincoln, CA 95648. We are Placer County's most-attended performing arts summer camp program, serving families from Lincoln, Rocklin, Roseville, Granite Bay, Loomis, Auburn and surrounding areas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What ages are Tamraloo summer camps for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most Tamraloo summer camps are designed for kids ages 5\u201312. The Crochet Camp is for ages 10 and up, Young Authors Camp is for ages 11 and up, and the Shiz Academy musical theatre camp is for ages 6\u201310. The Creative Conservatory all-day camp serves ages 5\u201312 all 8 weeks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much do Tamraloo summer camps cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Camp pricing varies by program. LEGO Masters is $150 with early bird savings. Contact Tamraloo Studios at (916) 664-2516 or support@Tamraloo.com for current pricing on all camps. A 10% sibling discount is available for families enrolling multiple children."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What types of summer camps does Tamraloo offer in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tamraloo Studios offers 10 themed summer camps in 2026: performing arts (Swashbuckle & Sparkle, Shiz Academy), dance (Summer Beach Dance Party), STEM (Mission Space Camp, Dino Discovery Camp, LEGO Masters Camp), literacy (Summer of Stories), creative writing (Young Authors Camp), fiber arts (Crochet Camp), adventure (Summer Pirate Camp), and the all-day Creative Conservatory Camp running all 8 weeks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Tamraloo accept charter school funds for summer camps?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Tamraloo Studios is an approved vendor for most major Placer County charter schools and accepts Alta and Own My Own education funds toward summer camp enrollment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the cancellation policy for Tamraloo summer camps?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cancellations 14 or more days before camp starts receive a full refund minus a $25 processing fee, or a full credit toward another camp. Cancellations within 14 days receive a credit only. No refunds or credits after the first day of camp."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are there summer camps near Rocklin and Roseville in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Tamraloo Studios in Lincoln, CA is conveniently located for families throughout Placer County including Rocklin, Roseville, Granite Bay and Sun City. The studio is located at 2800 Nicolaus Road #100, Lincoln, CA 95648."
+      }
+    }
   ]
 }
 </script>
@@ -893,8 +1437,8 @@ body {
 <div style="background:var(--white); border-bottom:1px solid var(--border);">
 <div class="page-hero">
   <div class="hero-text">
-    <p class="eyebrow">Summer 2026 &nbsp;&middot;&nbsp; Lincoln, CA</p>
-    <h1>Ten camps. Eight weeks.<br><em>One amazing summer.</em></h1>
+    <p class="eyebrow">Summer 2026 &nbsp;&middot;&nbsp; Placer County, CA</p>
+    <h1>Summer Camps 2026<br><em>Placer County, CA</em></h1>
     <p>Performing arts mornings, Creative STEM afternoons, and themed weekly camps — for ages 5 through 12. Every camp is designed to build real skills alongside genuine fun. Browse the schedule below and register for the weeks that work for your family.</p>
     <div class="hero-ctas">
       <a href="#week1" class="btn-primary">Browse the Schedule</a>
@@ -904,7 +1448,7 @@ body {
       <div class="hs"><div class="hs-num">10</div><div class="hs-label">Themed Camps</div></div>
       <div class="hs"><div class="hs-num">8</div><div class="hs-label">Weeks of Fun</div></div>
       <div class="hs"><div class="hs-num">5–12</div><div class="hs-label">Ages Served</div></div>
-      <div class="hs"><div class="hs-num">2800</div><div class="hs-label">Nicolaus Rd, Lincoln</div></div>
+      <div class="hs"><div class="hs-num">30+</div><div class="hs-label">Years Teaching</div></div>
     </div>
   </div>
   <div class="hero-photos">
@@ -976,13 +1520,13 @@ body {
         <div class="week-dates">June 9 – 13<span>Week One</span></div>
       </div>
     </div>
-    <div class="week-sessions week-sessions-2col">
+    <div class="week-sessions week-sessions-3col">
       <!-- ALL DAY -->
       <div>
         <p class="session-label allday">All Day &nbsp;&middot;&nbsp; Full Day</p>
         <div class="camp-card allday">
           <div class="camp-card-img">
-            <img src="https://static.wixstatic.com/media/2d2ffb_e35820aa152e4906b44b2d2098297fc6~mv2.png" alt="Creative Conservatory Camp" loading="lazy">
+            <img src="https://static.wixstatic.com/media/2d2ffb_e35820aa152e4906b44b2d2098297fc6~mv2.png" alt="Creative Conservatory All-Day Summer Camp 2026 — Lincoln CA" loading="lazy">
           </div>
           <div class="camp-card-body">
             <span class="camp-type allday">All-Day Camp</span>
@@ -1004,10 +1548,19 @@ body {
       </div>
 
       <div>
+        <p class="session-label am">AM Session &nbsp;&middot;&nbsp; Included in All Day</p>
+        <div class="info-card">
+          <div class="info-card-icon">&#9834;</div>
+          <h3>Performing Arts Morning</h3>
+          <p>Music exploration, dance, vocal confidence, rhythm, and stage presence — led by specialty instructors. This week's instrument spotlight is part of the Creative Conservatory all-day program.</p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRDfxUhRaN23nOmlGlBHHd6e56utrNVCAD8MOslb0FRAedMg/viewform" class="info-card-link">Register for All-Day Camp &rarr;</a>
+        </div>
+      </div>
+      <div>
         <p class="session-label pm">PM Session &nbsp;&middot;&nbsp; 1:00pm – 3:00pm</p>
         <div class="camp-card arts">
           <div class="camp-card-img">
-            <img src="https://static.wixstatic.com/media/2d2ffb_f6d19a34c39e414eb2a7fc1e3ed607d3~mv2.png" alt="Summer Pirate Camp" loading="lazy">
+            <img src="https://static.wixstatic.com/media/2d2ffb_f6d19a34c39e414eb2a7fc1e3ed607d3~mv2.png" alt="Summer Pirate Adventure Camp for Kids Ages 5-12 — Lincoln CA 2026" loading="lazy">
           </div>
           <div class="camp-card-body">
             <span class="camp-type arts">Adventure</span>
@@ -1037,7 +1590,7 @@ body {
         <p class="session-label allday">All Day &nbsp;&middot;&nbsp; Full Day</p>
         <div class="camp-card allday">
           <div class="camp-card-img">
-            <img src="https://static.wixstatic.com/media/2d2ffb_e35820aa152e4906b44b2d2098297fc6~mv2.png" alt="Creative Conservatory Camp" loading="lazy">
+            <img src="https://static.wixstatic.com/media/2d2ffb_e35820aa152e4906b44b2d2098297fc6~mv2.png" alt="Creative Conservatory All-Day Summer Camp 2026 — Lincoln CA" loading="lazy">
           </div>
           <div class="camp-card-body">
             <span class="camp-type allday">All-Day Camp</span>
@@ -1061,7 +1614,7 @@ body {
         <p class="session-label am">AM Session &nbsp;&middot;&nbsp; 9:00am – 11:30am</p>
         <div class="camp-card dance">
           <div class="camp-card-img">
-            <img src="https://static.wixstatic.com/media/0b6d63_57cb29a7039c40b38bce99375ab7d9c7~mv2.jpeg" alt="Summer Beach Dance Party" loading="lazy">
+            <img src="https://static.wixstatic.com/media/0b6d63_57cb29a7039c40b38bce99375ab7d9c7~mv2.jpeg" alt="Summer Beach Dance Party Camp for Kids Ages 5-8 — Lincoln CA 2026" loading="lazy">
           </div>
           <div class="camp-card-body">
             <span class="camp-type dance">Dance</span>
@@ -1079,7 +1632,7 @@ body {
         <p class="session-label pm">PM Session &nbsp;&middot;&nbsp; 9:00am – 12:00pm</p>
         <div class="camp-card lit">
           <div class="camp-card-img">
-            <img src="https://static.wixstatic.com/media/2d2ffb_99597cfe98954979a1ff2a9eed679973~mv2.png" alt="Summer of Stories" loading="lazy">
+            <img src="https://static.wixstatic.com/media/2d2ffb_99597cfe98954979a1ff2a9eed679973~mv2.png" alt="Summer of Stories Literacy Camp for Grades K-3 — Lincoln CA 2026" loading="lazy">
           </div>
           <div class="camp-card-body">
             <span class="camp-type lit">Literacy</span>
@@ -1109,7 +1662,7 @@ body {
         <p class="session-label allday">All Day &nbsp;&middot;&nbsp; Full Day</p>
         <div class="camp-card allday">
           <div class="camp-card-img">
-            <img src="https://static.wixstatic.com/media/2d2ffb_e35820aa152e4906b44b2d2098297fc6~mv2.png" alt="Creative Conservatory Camp" loading="lazy">
+            <img src="https://static.wixstatic.com/media/2d2ffb_e35820aa152e4906b44b2d2098297fc6~mv2.png" alt="Creative Conservatory All-Day Summer Camp 2026 — Lincoln CA" loading="lazy">
           </div>
           <div class="camp-card-body">
             <span class="camp-type allday">All-Day Camp</span>
@@ -1133,7 +1686,7 @@ body {
         <p class="session-label am">AM Session &nbsp;&middot;&nbsp; 9:00am – 11:30am</p>
         <div class="camp-card arts">
           <div class="camp-card-img">
-            <img src="https://static.wixstatic.com/media/2d2ffb_d937b6bca0da414db28759d7caafaa72~mv2.png" alt="Swashbuckle and Sparkle" loading="lazy">
+            <img src="https://static.wixstatic.com/media/2d2ffb_d937b6bca0da414db28759d7caafaa72~mv2.png" alt="Swashbuckle and Sparkle Performing Arts Dance Camp Ages 5-8 — Lincoln CA 2026" loading="lazy">
           </div>
           <div class="camp-card-body">
             <span class="camp-type arts">Performing Arts</span>
@@ -1152,7 +1705,7 @@ body {
           <p class="session-label pm">PM Session 1 &nbsp;&middot;&nbsp; 12:30pm – 3:30pm</p>
           <div class="camp-card stem">
             <div class="camp-card-img">
-              <img src="https://static.wixstatic.com/media/2d2ffb_262c67b58b794ada9c06b7053387a5fb~mv2.png" alt="Mission Space Camp" loading="lazy">
+              <img src="https://static.wixstatic.com/media/2d2ffb_262c67b58b794ada9c06b7053387a5fb~mv2.png" alt="Mission Space STEM Camp for Kids Ages 5-12 — Lincoln CA 2026" loading="lazy">
             </div>
             <div class="camp-card-body">
               <span class="camp-type stem">STEM</span>
@@ -1170,7 +1723,7 @@ body {
           <p class="session-label pm">PM Session 2 &nbsp;&middot;&nbsp; 1:00pm – 2:00pm</p>
           <div class="camp-card craft">
             <div class="camp-card-img">
-              <img src="https://static.wixstatic.com/media/2d2ffb_a027df9e2c10493787afb6bca00a66cc~mv2.png" alt="Crochet Camp" loading="lazy">
+              <img src="https://static.wixstatic.com/media/2d2ffb_a027df9e2c10493787afb6bca00a66cc~mv2.png" alt="Crochet Fiber Arts Camp for Ages 10 and Up — Lincoln CA 2026" loading="lazy">
             </div>
             <div class="camp-card-body">
               <span class="camp-type craft">Fiber Arts</span>
@@ -1195,13 +1748,13 @@ body {
         <div class="week-dates">June 30 – July 3<span>Week Four &nbsp;&middot;&nbsp; 4-Day Week</span></div>
       </div>
     </div>
-    <div class="week-sessions week-sessions-2col">
+    <div class="week-sessions week-sessions-3col">
       <!-- ALL DAY -->
       <div>
         <p class="session-label allday">All Day &nbsp;&middot;&nbsp; Full Day</p>
         <div class="camp-card allday">
           <div class="camp-card-img">
-            <img src="https://static.wixstatic.com/media/2d2ffb_e35820aa152e4906b44b2d2098297fc6~mv2.png" alt="Creative Conservatory Camp" loading="lazy">
+            <img src="https://static.wixstatic.com/media/2d2ffb_e35820aa152e4906b44b2d2098297fc6~mv2.png" alt="Creative Conservatory All-Day Summer Camp 2026 — Lincoln CA" loading="lazy">
           </div>
           <div class="camp-card-body">
             <span class="camp-type allday">All-Day Camp</span>
@@ -1223,10 +1776,19 @@ body {
       </div>
 
       <div>
+        <p class="session-label am">AM Session &nbsp;&middot;&nbsp; Included in All Day</p>
+        <div class="info-card">
+          <div class="info-card-icon">&#9834;</div>
+          <h3>Performing Arts Morning</h3>
+          <p>Music exploration, dance, vocal confidence, rhythm, and stage presence — led by specialty instructors. This week's instrument spotlight is part of the Creative Conservatory all-day program.</p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRDfxUhRaN23nOmlGlBHHd6e56utrNVCAD8MOslb0FRAedMg/viewform" class="info-card-link">Register for All-Day Camp &rarr;</a>
+        </div>
+      </div>
+      <div>
         <p class="session-label pm">PM Session &nbsp;&middot;&nbsp; 12:30pm – 3:30pm</p>
         <div class="camp-card stem">
           <div class="camp-card-img">
-            <img src="https://static.wixstatic.com/media/2d2ffb_3804ece8a3fe4736bd3675acf3376f3a~mv2.png" alt="Dino Discovery Camp" loading="lazy">
+            <img src="https://static.wixstatic.com/media/2d2ffb_3804ece8a3fe4736bd3675acf3376f3a~mv2.png" alt="Dino Discovery Paleontology STEM Camp Ages 5-12 — Lincoln CA 2026" loading="lazy">
           </div>
           <div class="camp-card-body">
             <span class="camp-type stem">STEM</span>
@@ -1250,13 +1812,13 @@ body {
         <div class="week-dates">July 7 – 11<span>Week Five</span></div>
       </div>
     </div>
-    <div class="week-sessions week-sessions-2col">
+    <div class="week-sessions week-sessions-3col">
       <!-- ALL DAY -->
       <div>
         <p class="session-label allday">All Day &nbsp;&middot;&nbsp; Full Day</p>
         <div class="camp-card allday">
           <div class="camp-card-img">
-            <img src="https://static.wixstatic.com/media/2d2ffb_e35820aa152e4906b44b2d2098297fc6~mv2.png" alt="Creative Conservatory Camp" loading="lazy">
+            <img src="https://static.wixstatic.com/media/2d2ffb_e35820aa152e4906b44b2d2098297fc6~mv2.png" alt="Creative Conservatory All-Day Summer Camp 2026 — Lincoln CA" loading="lazy">
           </div>
           <div class="camp-card-body">
             <span class="camp-type allday">All-Day Camp</span>
@@ -1278,10 +1840,19 @@ body {
       </div>
 
       <div>
+        <p class="session-label am">AM Session &nbsp;&middot;&nbsp; Included in All Day</p>
+        <div class="info-card">
+          <div class="info-card-icon">&#9834;</div>
+          <h3>Performing Arts Morning</h3>
+          <p>Music exploration, dance, vocal confidence, rhythm, and stage presence — led by specialty instructors. This week's instrument spotlight is part of the Creative Conservatory all-day program.</p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRDfxUhRaN23nOmlGlBHHd6e56utrNVCAD8MOslb0FRAedMg/viewform" class="info-card-link">Register for All-Day Camp &rarr;</a>
+        </div>
+      </div>
+      <div>
         <p class="session-label pm">PM Session &nbsp;&middot;&nbsp; 1:00pm – 3:00pm</p>
         <div class="camp-card stem">
           <div class="camp-card-img">
-            <img src="https://static.wixstatic.com/media/2d2ffb_8474fb6c879348ecae718bd3b07ec129~mv2.png" alt="LEGO Masters Camp" loading="lazy">
+            <img src="https://static.wixstatic.com/media/2d2ffb_8474fb6c879348ecae718bd3b07ec129~mv2.png" alt="LEGO Masters Engineering Camp for Kids Ages 7-12 — Lincoln CA 2026" loading="lazy">
           </div>
           <div class="camp-card-body">
             <span class="camp-type stem">STEM / Engineering</span>
@@ -1311,7 +1882,7 @@ body {
         <p class="session-label allday">All Day &nbsp;&middot;&nbsp; Full Day</p>
         <div class="camp-card allday">
           <div class="camp-card-img">
-            <img src="https://static.wixstatic.com/media/2d2ffb_e35820aa152e4906b44b2d2098297fc6~mv2.png" alt="Creative Conservatory Camp" loading="lazy">
+            <img src="https://static.wixstatic.com/media/2d2ffb_e35820aa152e4906b44b2d2098297fc6~mv2.png" alt="Creative Conservatory All-Day Summer Camp 2026 — Lincoln CA" loading="lazy">
           </div>
           <div class="camp-card-body">
             <span class="camp-type allday">All-Day Camp</span>
@@ -1335,7 +1906,7 @@ body {
         <p class="session-label am">AM Session &nbsp;&middot;&nbsp; 9:00am – 12:00pm</p>
         <div class="camp-card arts">
           <div class="camp-card-img">
-            <img src="https://static.wixstatic.com/media/2d2ffb_5d724cf9a13947cd880f881ce2a481be~mv2.jpg" alt="Shiz Academy — Sold Out" loading="lazy">
+            <img src="https://static.wixstatic.com/media/2d2ffb_5d724cf9a13947cd880f881ce2a481be~mv2.jpg" alt="Shiz Academy Musical Theatre Camp Ages 6-10 — Lincoln CA 2026 Sold Out" loading="lazy">
             <div class="sold-overlay"><span class="sold-badge">Sold Out</span></div>
           </div>
           <div class="camp-card-body">
@@ -1354,7 +1925,7 @@ body {
         <p class="session-label pm">PM Session &nbsp;&middot;&nbsp; 9:00am – 12:00pm</p>
         <div class="camp-card lit">
           <div class="camp-card-img">
-            <img src="https://static.wixstatic.com/media/2d2ffb_99597cfe98954979a1ff2a9eed679973~mv2.png" alt="Summer of Stories Session 2" loading="lazy">
+            <img src="https://static.wixstatic.com/media/2d2ffb_99597cfe98954979a1ff2a9eed679973~mv2.png" alt="Summer of Stories Literacy Camp Session 2 — Lincoln CA 2026" loading="lazy">
           </div>
           <div class="camp-card-body">
             <span class="camp-type lit">Literacy</span>
@@ -1384,7 +1955,7 @@ body {
         <p class="session-label allday">All Day &nbsp;&middot;&nbsp; Full Day</p>
         <div class="camp-card allday">
           <div class="camp-card-img">
-            <img src="https://static.wixstatic.com/media/2d2ffb_e35820aa152e4906b44b2d2098297fc6~mv2.png" alt="Creative Conservatory Camp" loading="lazy">
+            <img src="https://static.wixstatic.com/media/2d2ffb_e35820aa152e4906b44b2d2098297fc6~mv2.png" alt="Creative Conservatory All-Day Summer Camp 2026 — Lincoln CA" loading="lazy">
           </div>
           <div class="camp-card-body">
             <span class="camp-type allday">All-Day Camp</span>
@@ -1408,7 +1979,7 @@ body {
         <p class="session-label am">AM Session &nbsp;&middot;&nbsp; 9:00am – 12:00pm</p>
         <div class="camp-card arts">
           <div class="camp-card-img">
-            <img src="https://static.wixstatic.com/media/2d2ffb_5d724cf9a13947cd880f881ce2a481be~mv2.jpg" alt="Shiz Academy Week 2 — Sold Out" loading="lazy">
+            <img src="https://static.wixstatic.com/media/2d2ffb_5d724cf9a13947cd880f881ce2a481be~mv2.jpg" alt="Shiz Academy Musical Theatre Camp Week 2 — Lincoln CA 2026 Sold Out" loading="lazy">
             <div class="sold-overlay"><span class="sold-badge">Sold Out</span></div>
           </div>
           <div class="camp-card-body">
@@ -1427,7 +1998,7 @@ body {
         <p class="session-label pm">PM Session &nbsp;&middot;&nbsp; 1:00pm – 3:00pm (Jul 22–24)</p>
         <div class="camp-card lit">
           <div class="camp-card-img">
-            <img src="https://static.wixstatic.com/media/2d2ffb_1c104e33ee014cd4bfa5b40ddaed407b~mv2.png" alt="Young Author's Camp" loading="lazy">
+            <img src="https://static.wixstatic.com/media/2d2ffb_1c104e33ee014cd4bfa5b40ddaed407b~mv2.png" alt="Young Authors Creative Writing Camp for Ages 11 and Up — Lincoln CA 2026" loading="lazy">
           </div>
           <div class="camp-card-body">
             <span class="camp-type lit">Creative Writing</span>
@@ -1451,13 +2022,13 @@ body {
         <div class="week-dates">July 28 – Aug 1<span>Week Eight &nbsp;&middot;&nbsp; Final Week</span></div>
       </div>
     </div>
-    <div class="week-sessions week-sessions-1col">
+    <div class="week-sessions week-sessions-3col">
       <!-- ALL DAY -->
       <div>
         <p class="session-label allday">All Day &nbsp;&middot;&nbsp; Full Day</p>
         <div class="camp-card allday">
           <div class="camp-card-img">
-            <img src="https://static.wixstatic.com/media/2d2ffb_e35820aa152e4906b44b2d2098297fc6~mv2.png" alt="Creative Conservatory Camp" loading="lazy">
+            <img src="https://static.wixstatic.com/media/2d2ffb_e35820aa152e4906b44b2d2098297fc6~mv2.png" alt="Creative Conservatory All-Day Summer Camp 2026 — Lincoln CA" loading="lazy">
           </div>
           <div class="camp-card-body">
             <span class="camp-type allday">All-Day Camp</span>
@@ -1479,6 +2050,24 @@ body {
       </div>
 
 
+      <div>
+        <p class="session-label am">AM Session &nbsp;&middot;&nbsp; Included in All Day</p>
+        <div class="info-card">
+          <div class="info-card-icon">&#9834;</div>
+          <h3>Performing Arts Morning</h3>
+          <p>Music exploration, dance, vocal confidence, rhythm, and stage presence — led by specialty instructors. This week's instrument spotlight is part of the Creative Conservatory all-day program.</p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRDfxUhRaN23nOmlGlBHHd6e56utrNVCAD8MOslb0FRAedMg/viewform" class="info-card-link">Register for All-Day Camp &rarr;</a>
+        </div>
+      </div>
+      <div>
+        <p class="session-label pm">PM Session &nbsp;&middot;&nbsp; Included in All Day</p>
+        <div class="info-card info-card-pm">
+          <div class="info-card-icon">&#9881;</div>
+          <h3>Creative STEM Afternoon</h3>
+          <p>Engineering builds, themed design challenges, and collaborative projects. The grand finale week features an end-of-summer showcase and STEM design challenge.</p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRDfxUhRaN23nOmlGlBHHd6e56utrNVCAD8MOslb0FRAedMg/viewform" class="info-card-link">Register for All-Day Camp &rarr;</a>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -1551,6 +2140,9 @@ body {
       </a>
     </div>
 
+    <div class="sibling-note" style="margin-bottom:14px;border-left-color:var(--green);">
+      <strong style="color:var(--green-dk);">Serving All of Placer County:</strong> Families drive to Tamraloo Studios from Lincoln, Rocklin, Roseville, Granite Bay, Sun City, Loomis, Auburn and beyond. We are located at 2800 Nicolaus Road #100 in Lincoln, CA — easy freeway access from Highway 65.
+    </div>
     <div class="sibling-note">
       <strong>Sibling Discount:</strong> Families enrolling multiple children receive 10% off the lesser tuition. Applies to weekly and multi-week enrollments. Cannot be combined with Early Bird pricing. Questions? <a href="tel:9166642516" style="color:var(--blue)">(916) 664-2516</a> or <a href="mailto:support@Tamraloo.com" style="color:var(--blue)">support@Tamraloo.com</a>
     </div>
@@ -1609,7 +2201,7 @@ body {
     </div>
     <div class="footer-contact">
       <a href="tel:9166642516">(916) 664-2516</a><br>
-      <span style="font-size:0.75rem;">2800 Nicolaus Road #100, Lincoln, CA 95648</span>
+      <span style="font-size:0.75rem;">2800 Nicolaus Road #100, Lincoln, CA 95648 &nbsp;&middot;&nbsp; Serving Placer County: Lincoln &middot; Rocklin &middot; Roseville &middot; Granite Bay</span>
     </div>
   </div>
   <p class="disclaimer">Results may vary based on individual student effort and engagement. Tamraloo Studios does not guarantee specific academic or performance outcomes. Camp details, dates, and availability subject to change — contact us to confirm.</p>
