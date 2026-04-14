@@ -1,0 +1,484 @@
+<!-- ============================================================
+     TAMRALOO STUDIOS — SEO FOOTER
+     Paste into a Wix HTML iframe widget in your footer section.
+     Width: 100% | No fixed height needed (auto)
+     Font: imports Plus Jakarta Sans from Google Fonts
+============================================================ -->
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;1,400&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --magenta:   #c8007d;
+  --blue:      #4285b2;
+  --green:     #7daf32;
+  --orange:    #e19632;
+  --ink:       #1a1520;
+  --cream:     #faf7f4;
+  --text-mid:  #5a4e5f;
+  --text-light:#8a7a8f;
+  --border:    rgba(26,21,32,0.08);
+}
+
+body, html {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  background: transparent;
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.seo-footer {
+  background: #1a1520;
+  padding: 52px 0 0;
+  width: 100%;
+}
+
+/* ---- Logo bar stripe ---- */
+.stripe {
+  display: flex; height: 8px; overflow: hidden; margin-bottom: 48px;
+}
+.stripe-bar { flex: 1; }
+.stripe-bar:nth-child(1)  { background: linear-gradient(to bottom, #78c8ea, #4a96c8); }
+.stripe-bar:nth-child(2)  { background: linear-gradient(to bottom, #c8007d, #8c1865); }
+.stripe-bar:nth-child(3)  { background: linear-gradient(to bottom, #98c840, #289050); }
+.stripe-bar:nth-child(4)  { background: linear-gradient(to bottom, #f8c050, #e07828); }
+.stripe-bar:nth-child(5)  { background: linear-gradient(to bottom, #c8007d, #8c1865); }
+.stripe-bar:nth-child(6)  { background: linear-gradient(to bottom, #98c840, #289050); }
+.stripe-bar:nth-child(7)  { background: linear-gradient(to bottom, #48a8d8, #1878b0); }
+.stripe-bar:nth-child(8)  { background: linear-gradient(to bottom, #f8c050, #e07828); }
+.stripe-bar:nth-child(9)  { background: linear-gradient(to bottom, #98c840, #289050); }
+.stripe-bar:nth-child(10) { background: linear-gradient(to bottom, #c8007d, #8c1865); }
+.stripe-bar:nth-child(11) { background: linear-gradient(to bottom, #78c8ea, #4a96c8); }
+
+.inner {
+  max-width: 1200px; margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* ---- Main link grid ---- */
+.link-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 36px 28px;
+  margin-bottom: 44px;
+}
+
+.col-label {
+  font-size: 0.58rem; font-weight: 700;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: #e1af4b; /* gold */
+  margin-bottom: 14px; display: block;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.link-list { list-style: none; }
+.link-list li { margin-bottom: 0; }
+.link-list a {
+  display: block;
+  font-size: 0.8rem; font-weight: 400;
+  color: rgba(255,255,255,0.42);
+  text-decoration: none; line-height: 2.1;
+  transition: color 0.18s;
+}
+.link-list a:hover { color: rgba(255,255,255,0.82); }
+
+/* ---- Service area strip ---- */
+.service-area {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 20px 0;
+  margin-bottom: 28px;
+}
+.sa-label {
+  font-size: 0.6rem; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+  margin-bottom: 10px; display: block;
+}
+.sa-cities {
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+/* sa-city now defined in CTA section above */
+
+/* ---- Bottom bar ---- */
+.bottom-bar {
+  display: flex; align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px; flex-wrap: wrap;
+  padding-bottom: 32px;
+}
+/* ---- Contact block ---- */
+.contact-block {
+  display: flex; flex-direction: column; gap: 18px;
+}
+.studio-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic; font-size: 1.3rem;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 2px;
+}
+.contact-address {
+  display: flex; align-items: flex-start; gap: 12px;
+}
+.contact-address-icon {
+  flex-shrink: 0; margin-top: 3px;
+  width: 16px; height: 16px; opacity: 0.4;
+}
+.address-text {
+  font-size: 0.95rem; font-weight: 500;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.6;
+}
+.address-text strong { display: block; font-size: 1rem; font-weight: 600; }
+.map-links {
+  display: flex; gap: 8px; margin-top: 6px;
+}
+.map-link {
+  font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 4px 12px; border-radius: 2px;
+  text-decoration: none; transition: opacity 0.2s;
+  white-space: nowrap;
+}
+.map-link.google {
+  background: #4285b2;
+  color: #fff;
+}
+.map-link.apple {
+  background: rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.7);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.map-link:hover { opacity: 0.8; }
+
+.contact-phone {
+  display: flex; align-items: center; gap: 12px;
+}
+.contact-phone-icon { flex-shrink: 0; opacity: 0.4; width: 16px; height: 16px; }
+.phone-link {
+  font-size: 1.4rem; font-weight: 700;
+  font-family: 'Playfair Display', Georgia, serif;
+  color: #fff; text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: color 0.2s;
+}
+.phone-link:hover { color: #e1af4b; }
+.phone-sub {
+  font-size: 0.72rem; color: rgba(255,255,255,0.3);
+  margin-top: 2px;
+}
+
+.contact-email {
+  display: flex; align-items: center; gap: 12px;
+}
+.contact-email-icon { flex-shrink: 0; opacity: 0.4; width: 16px; height: 16px; }
+.email-link {
+  font-size: 0.92rem; font-weight: 500;
+  color: #e1af4b; text-decoration: none;
+  transition: opacity 0.2s;
+}
+.email-link:hover { opacity: 0.75; }
+
+.contact-hours {
+  font-size: 0.78rem; color: rgba(255,255,255,0.35);
+  line-height: 1.9;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.contact-hours strong { color: rgba(255,255,255,0.5); }
+
+.social-row {
+  display: flex; gap: 10px; flex-wrap: wrap;
+  padding-top: 12px;
+}
+.social-link {
+  font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(255,255,255,0.35); text-decoration: none;
+  padding: 5px 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 2px; transition: all 0.2s;
+}
+.social-link:hover {
+  color: rgba(255,255,255,0.75);
+  border-color: rgba(255,255,255,0.2);
+}
+
+.tagline {
+  font-size: 0.68rem; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(255,255,255,0.18);
+}
+.disclaimer {
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.14);
+  line-height: 1.7; max-width: 400px;
+  font-style: italic; margin-top: 8px;
+}
+
+/* ---- CTA row ---- */
+.footer-cta-row {
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 24px;
+  padding: 28px 0 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+.footer-cta-heading {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.4rem; font-weight: 500; font-style: italic;
+  color: rgba(255,255,255,0.75); margin-bottom: 4px;
+}
+.footer-cta-sub {
+  font-size: 0.82rem; color: rgba(255,255,255,0.35);
+}
+.footer-cta-actions {
+  display: flex; gap: 10px; flex-wrap: wrap; flex-shrink: 0;
+}
+.footer-cta-btn {
+  font-size: 0.8rem; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 12px 24px; text-decoration: none;
+  border-radius: 2px; transition: all 0.2s;
+  white-space: nowrap;
+}
+.footer-cta-primary {
+  background: #c8007d; color: #fff;
+}
+.footer-cta-primary:hover { background: #e0338f; }
+.footer-cta-secondary {
+  background: transparent; color: rgba(255,255,255,0.55);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.footer-cta-secondary:hover {
+  color: rgba(255,255,255,0.85);
+  border-color: rgba(255,255,255,0.35);
+}
+
+/* ---- Service area — city pills not links ---- */
+.sa-city {
+  font-size: 0.75rem; font-weight: 500;
+  color: rgba(255,255,255,0.32);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 4px 12px; border-radius: 2px;
+}
+.sa-city-anchor {
+  color: #e1af4b;
+  background: rgba(225,175,75,0.08);
+  border-color: rgba(225,175,75,0.2);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+  .link-grid { grid-template-columns: 1fr 1fr; gap: 28px 20px; }
+  .bottom-bar { flex-direction: column; gap: 32px; }
+  .bottom-bar > div:last-child { text-align: left; }
+}
+@media (max-width: 540px) {
+  .inner { padding: 0 20px; }
+  .link-grid { grid-template-columns: 1fr 1fr; gap: 24px 16px; }
+  .seo-footer { padding-top: 36px; }
+  .stripe { margin-bottom: 32px; }
+  .phone-link { font-size: 1.2rem; }
+  .map-links { flex-direction: column; gap: 6px; }
+}
+</style>
+
+<div class="seo-footer">
+
+  <!-- Logo bar stripe — matches logo exactly -->
+  <div class="stripe">
+    <div class="stripe-bar"></div><div class="stripe-bar"></div>
+    <div class="stripe-bar"></div><div class="stripe-bar"></div>
+    <div class="stripe-bar"></div><div class="stripe-bar"></div>
+    <div class="stripe-bar"></div><div class="stripe-bar"></div>
+    <div class="stripe-bar"></div><div class="stripe-bar"></div>
+    <div class="stripe-bar"></div>
+  </div>
+
+  <div class="inner">
+
+    <!-- CTA row — final catch before links -->
+    <div class="footer-cta-row">
+      <div class="footer-cta-left">
+        <p class="footer-cta-heading">Ready to start?</p>
+        <p class="footer-cta-sub">One free lesson. No commitment. Every age.</p>
+      </div>
+      <div class="footer-cta-actions">
+        <a href="https://www.tamraloo.com/free-trial" class="footer-cta-btn footer-cta-primary">Claim Your Free Lesson</a>
+        <a href="https://app.mymusicstaff.com/" target="_blank" rel="noopener" class="footer-cta-btn footer-cta-secondary">Parent &amp; Student Portal</a>
+      </div>
+    </div>
+
+    <!-- Main link columns -->
+    <div class="link-grid">
+
+      <!-- MUSIC -->
+      <div>
+        <span class="col-label">Music Lessons</span>
+        <ul class="link-list">
+          <li><a href="https://www.tamraloo.com/music-lessons">All Music Lessons</a></li>
+          <li><a href="https://www.tamraloo.com/voice-lessons-in-lincoln-ca">Voice Lessons</a></li>
+          <li><a href="https://www.tamraloo.com/piano-lessons-lincoln-ca">Piano Lessons</a></li>
+          <li><a href="https://www.tamraloo.com/guitar-lessons-lincoln-ca">Guitar Lessons</a></li>
+          <li><a href="https://www.tamraloo.com/drum-lessons-lincoln-ca">Drum Lessons</a></li>
+          <li><a href="https://www.tamraloo.com/strings-lessons-in-lincoln-ca">Strings Lessons</a></li>
+          <li><a href="https://www.tamraloo.com/woodwind-lessons-in-lincoln-ca">Woodwind Lessons</a></li>
+          <li><a href="https://www.tamraloo.com/ukulele-lessons-in-lincoln-ca">Ukulele Lessons</a></li>
+          <li><a href="https://www.tamraloo.com/private-lessons">Private Lessons</a></li>
+        </ul>
+      </div>
+
+      <!-- DANCE + THEATRE -->
+      <div>
+        <span class="col-label">Dance &amp; Theatre</span>
+        <ul class="link-list">
+          <li><a href="https://www.tamraloo.com/dance-lessons-lincoln-ca">All Dance Classes</a></li>
+          <li><a href="https://www.tamraloo.com/ballet-classes-in-lincoln-ca">Ballet Classes</a></li>
+          <li><a href="https://www.tamraloo.com/jazz-dance-classes-in-lincoln-ca">Jazz Dance</a></li>
+          <li><a href="https://www.tamraloo.com/musical-theatre-classes-in-lincoln-ca">Musical Theatre Dance</a></li>
+          <li><a href="https://www.tamraloo.com/tap-dance-lessons-in-lincoln-ca">Tap Dance</a></li>
+          <li><a href="https://www.tamraloo.com/hip-hop-dance-classes-in-lincoln-ca">Hip-Hop Dance</a></li>
+          <li><a href="https://www.tamraloo.com/adult-dance-classes">Adult Dance Classes</a></li>
+          <li><a href="https://www.tamraloo.com/dance">Theatre Programs</a></li>
+          <li><a href="https://www.tamraloo.com/summer-theatre">Summer Theatre 2026</a></li>
+        </ul>
+      </div>
+
+      <!-- TUTORING + SUMMER -->
+      <div>
+        <span class="col-label">Tutoring &amp; Camps</span>
+        <ul class="link-list">
+          <li><a href="https://www.tamraloo.com/tutoring-lincoln-ca">Academic Tutoring</a></li>
+          <li><a href="https://www.tamraloo.com/literacy-intervention-enrichment">Literacy Program (LIE)</a></li>
+          <li><a href="https://www.tamraloo.com/math-tutoring-and-assesment">Math Tutoring</a></li>
+          <li><a href="https://www.tamraloo.com/summer-camp-2026">Summer Camps 2026</a></li>
+          <li><a href="https://www.tamraloo.com/creative-conservatory-camp26">Creative Conservatory Camp</a></li>
+          <li><a href="https://www.tamraloo.com/summer-theatre">Summer Theatre</a></li>
+          <li><a href="https://www.tamraloo.com/free-trial">Free Trial Lesson</a></li>
+          <li><a href="https://www.tamraloo.com/class-registration">Register for Classes</a></li>
+        </ul>
+      </div>
+
+      <!-- STUDIO -->
+      <div>
+        <span class="col-label">Studio</span>
+        <ul class="link-list">
+          <li><a href="https://www.tamraloo.com/about">About Tamraloo</a></li>
+          <li><a href="https://www.tamraloo.com/our-teachers">Our Faculty</a></li>
+          <li><a href="https://www.tamraloo.com/prestige">Prestige Program</a></li>
+          <li><a href="https://www.tamraloo.com/instrument-rentals">Instrument Rentals</a></li>
+          <li><a href="https://www.tamraloo.com/lesson-calendar">Lesson Calendar</a></li>
+          <li><a href="https://www.tamraloo.com/faq">FAQs</a></li>
+          <li><a href="https://www.tamraloo.com/tamraloo-blog">Blog</a></li>
+          <li><a href="https://www.tamraloo.com/class-registration">Register for Classes</a></li>
+          <li><a href="https://app.mymusicstaff.com/" target="_blank" rel="noopener">Parent &amp; Student Portal</a></li>
+        </ul>
+      </div>
+
+    </div><!-- /link-grid -->
+
+    <!-- Service area strip — geographic signal to Google, honest to humans -->
+    <div class="service-area">
+      <span class="sa-label">Located in Lincoln, CA &nbsp;&middot;&nbsp; Students travel from across Placer County</span>
+      <div class="sa-cities">
+        <span class="sa-city sa-city-anchor">&#x2605; Lincoln, CA</span>
+        <span class="sa-city">Rocklin</span>
+        <span class="sa-city">Roseville</span>
+        <span class="sa-city">Granite Bay</span>
+        <span class="sa-city">Loomis</span>
+        <span class="sa-city">Auburn</span>
+        <span class="sa-city">Folsom</span>
+        <span class="sa-city">Sun City Lincoln Hills</span>
+        <span class="sa-city">Penryn</span>
+        <span class="sa-city">Placer County, CA</span>
+      </div>
+    </div>
+
+    <!-- Bottom bar — contact prominent, maps clickable -->
+    <div class="bottom-bar">
+
+      <!-- LEFT: contact info — big, scannable, clickable -->
+      <div class="contact-block">
+
+        <div class="studio-name">Tamraloo Studios</div>
+
+        <!-- Address — both map apps -->
+        <div class="contact-address">
+          <svg class="contact-address-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:rgba(255,255,255,0.6)">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+          </svg>
+          <div>
+            <div class="address-text">
+              <strong>2800 Nicolaus Road #100</strong>
+              Lincoln, CA 95648<br>
+              <span style="font-size:0.8rem;color:rgba(255,255,255,0.4);">Next to Empire Gymnastics &nbsp;&middot;&nbsp; Highway 65 access</span>
+            </div>
+            <div class="map-links">
+              <a href="https://maps.google.com/?q=Tamraloo+Studios+2800+Nicolaus+Road+Lincoln+CA+95648"
+                 target="_blank" rel="noopener" class="map-link google">&#9654; Google Maps</a>
+              <a href="https://maps.apple.com/?q=Tamraloo+Studios&address=2800+Nicolaus+Road+%23100+Lincoln+CA+95648"
+                 target="_blank" rel="noopener" class="map-link apple">&#9654; Apple Maps</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phone -->
+        <div class="contact-phone">
+          <svg class="contact-phone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:rgba(255,255,255,0.6)">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 5.55 5.55l1.63-1.64a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <div>
+            <a href="tel:9166642516" class="phone-link">(916) 664-2516</a>
+            <div class="phone-sub">Call or text &nbsp;&middot;&nbsp; By appointment</div>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="contact-email">
+          <svg class="contact-email-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:rgba(255,255,255,0.6)">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+          </svg>
+          <a href="mailto:support@Tamraloo.com" class="email-link">support@Tamraloo.com</a>
+        </div>
+
+        <!-- Hours -->
+        <div class="contact-hours">
+          <strong>Teaching Hours</strong><br>
+          Mon – Fri &nbsp; 8:00am – 7:00pm &nbsp;&nbsp;
+          Sat &nbsp; 9:00am – 2:00pm &nbsp;&nbsp;
+          Sun &nbsp; Closed
+        </div>
+
+        <!-- Social -->
+        <div class="social-row">
+          <a href="https://www.facebook.com/TamralooStudios" target="_blank" rel="noopener" class="social-link">Facebook</a>
+          <a href="https://www.instagram.com/tamralooofficial/" target="_blank" rel="noopener" class="social-link">Instagram</a>
+          <a href="https://www.tiktok.com/@tamralooofficial" target="_blank" rel="noopener" class="social-link">TikTok</a>
+          <a href="https://www.youtube.com/channel/UCgXKDB1wAcze_SOOZ_ItLzQ" target="_blank" rel="noopener" class="social-link">YouTube</a>
+          <a href="https://www.yelp.com/biz/tamraloo-music-and-more-lincoln" target="_blank" rel="noopener" class="social-link">Yelp</a>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: tagline + disclaimer -->
+      <div style="text-align:right; max-width:380px;">
+        <div class="tagline">Be Your Own Star</div>
+        <div class="disclaimer">
+          Music lessons &bull; Dance classes &bull; Theatre programs<br>
+          Academic tutoring &bull; Summer camps &bull; Charter school vendor<br><br>
+          Placer County&rsquo;s most-awarded performing arts studio.<br>
+          Results may vary based on individual student effort and engagement.
+        </div>
+      </div>
+
+    </div>
+
+  </div><!-- /inner -->
+</div><!-- /seo-footer -->
