@@ -142,17 +142,32 @@ body{font-family:var(--bd);background:var(--cream);color:var(--ink);-webkit-font
 .info-title{font-family:var(--dp);font-size:0.95rem;font-weight:600;color:var(--ink);}
 .info-desc{font-size:0.78rem;color:var(--text-mid);line-height:1.65;flex:1;}
 
-/* MMS WIDGET GLOBAL */
+/* MMS WIDGET */
 .mms-embed{min-height:50px;}
 .reg-label{
-  padding:8px 12px;
+  padding:8px 12px 6px;
   background:rgba(200,0,125,0.07);
-  border-bottom:1px solid rgba(200,0,125,0.15);
   font-size:0.71rem;
   color:var(--mag);
   font-weight:500;
 }
 .reg-label strong{font-weight:700;}
+.widget-toggle{
+  display:block; width:100%;
+  background:var(--mag); color:#fff;
+  font-family:var(--bd); font-size:0.8rem;
+  font-weight:700; letter-spacing:0.08em;
+  text-transform:uppercase; padding:13px 20px;
+  border:none; cursor:pointer; text-align:center;
+  transition:background 0.2s;
+}
+.widget-toggle:hover{background:var(--mag-lt);}
+.widget-toggle.blue{background:var(--blue);}
+.widget-toggle.blue:hover{background:var(--blue-dk);}
+.widget-toggle.green{background:var(--green-dk);}
+.widget-toggle.orange{background:var(--orange);}
+.widget-collapsed{display:none;}
+.widget-collapsed.open{display:block;}
 
 /* FAQ */
 .faq-section{background:var(--ink);padding:52px 32px;}
@@ -240,16 +255,32 @@ body{font-family:var(--bd);background:var(--cream);color:var(--ink);-webkit-font
             <span>&#127774; Ages 5–12</span>
           </div>
           <p class="camp-desc">Performing arts mornings + Creative STEM labs every afternoon. Week 1 instrument spotlight included.</p>
-          <div class="camp-widget-wrap"><div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbVdmSlQifQ=="></script></div></div>
-        </div>
+          <div class="camp-widget-wrap">
+            
+            <button class="widget-toggle" 
+                    onclick="var d=document.getElementById('mms_1');d.classList.toggle('open');this.style.display='none';">
+              Register for This Camp &rarr;
+            </button>
+            <div id="mms_1" class="widget-collapsed">
+              <div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbVdmSlQifQ=="></script></div>
+            </div>
+          </div>
       </div>
     <div class="info-card">
       <span class="info-label" style="color:var(--mag)">AM &nbsp;&middot;&nbsp; Included in All Day</span>
       <div class="info-icon">&#9834;</div>
       <h3 class="info-title">Performing Arts Morning</h3>
       <p class="info-desc">Music, dance, vocal confidence and stage presence led by specialty instructors. Included in the all-day program.</p>
-      <div class="camp-widget-wrap"><div class="reg-label">&#128203; Registering for: <strong>Week 1 — Jun 8–12</strong></div><div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbVB6SlEifQ=="></script></div></div>
-    </div>
+      <div class="camp-widget-wrap">
+            <div class="reg-label">&#128203; Registering for: <strong>Week 1 — Jun 8–12</strong></div>
+            <button class="widget-toggle" 
+                    onclick="var d=document.getElementById('mms_2');d.classList.toggle('open');this.style.display='none';">
+              Register for This Camp &rarr;
+            </button>
+            <div id="mms_2" class="widget-collapsed">
+              <div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbVB6SlEifQ=="></script></div>
+            </div>
+          </div>
           <div class="camp-card">
         <div class="camp-img-wrap">
           <img src="https://static.wixstatic.com/media/2d2ffb_f6d19a34c39e414eb2a7fc1e3ed607d3~mv2.png/v1/fill/w_600,h_740,al_c,q_85,usm_0.33_1.00_0.00,enc_avif,quality_auto/img.png" alt="Pirate Adventure Camp — Tamraloo Studios Lincoln CA 2026" class="camp-img" loading="lazy">
@@ -263,8 +294,16 @@ body{font-family:var(--bd);background:var(--cream);color:var(--ink);-webkit-font
             <span>&#127774; Ages 5–12</span>
           </div>
           <p class="camp-desc">Set sail! Crafts, storytelling, treasure hunts and team challenges in a swashbuckling themed week.</p>
-          <div class="camp-widget-wrap"><div class="reg-label">&#128203; Registering for: <strong>Week 1 — Jun 8–12</strong></div><div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbVB6SlEifQ=="></script></div></div>
-        </div>
+          <div class="camp-widget-wrap">
+            <div class="reg-label">&#128203; Registering for: <strong>Week 1 — Jun 8–12</strong></div>
+            <button class="widget-toggle" 
+                    onclick="var d=document.getElementById('mms_3');d.classList.toggle('open');this.style.display='none';">
+              Register for This Camp &rarr;
+            </button>
+            <div id="mms_3" class="widget-collapsed">
+              <div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbVB6SlEifQ=="></script></div>
+            </div>
+          </div>
       </div>
   </div>
 
@@ -290,8 +329,16 @@ body{font-family:var(--bd);background:var(--cream);color:var(--ink);-webkit-font
             <span>&#127774; Ages 5–12</span>
           </div>
           <p class="camp-desc">Performing arts mornings + Creative STEM labs every afternoon.</p>
-          <div class="camp-widget-wrap"><div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbVdmSlQifQ=="></script></div></div>
-        </div>
+          <div class="camp-widget-wrap">
+            
+            <button class="widget-toggle" 
+                    onclick="var d=document.getElementById('mms_4');d.classList.toggle('open');this.style.display='none';">
+              Register for This Camp &rarr;
+            </button>
+            <div id="mms_4" class="widget-collapsed">
+              <div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbVdmSlQifQ=="></script></div>
+            </div>
+          </div>
       </div>
           <div class="camp-card">
         <div class="camp-img-wrap">
@@ -306,8 +353,16 @@ body{font-family:var(--bd);background:var(--cream);color:var(--ink);-webkit-font
             <span>&#127774; Ages 5–8</span>
           </div>
           <p class="camp-desc">Moana and Lilo &amp; Stitch inspired! Jazz, hip-hop, and hula bring the beach to life for young performers.</p>
-          <div class="camp-widget-wrap"><div class="reg-label">&#128203; Registering for: <strong>Week 2 — Jun 15–19</strong></div><div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbVA1SmMifQ=="></script></div></div>
-        </div>
+          <div class="camp-widget-wrap">
+            <div class="reg-label">&#128203; Registering for: <strong>Week 2 — Jun 15–19</strong></div>
+            <button class="widget-toggle" 
+                    onclick="var d=document.getElementById('mms_5');d.classList.toggle('open');this.style.display='none';">
+              Register for This Camp &rarr;
+            </button>
+            <div id="mms_5" class="widget-collapsed">
+              <div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbVA1SmMifQ=="></script></div>
+            </div>
+          </div>
       </div>
           <div class="camp-card">
         <div class="camp-img-wrap">
@@ -322,8 +377,16 @@ body{font-family:var(--bd);background:var(--cream);color:var(--ink);-webkit-font
             <span>&#127774; Ages Grades K–3</span>
           </div>
           <p class="camp-desc">Beloved children's authors, storytelling, crafts and games for early readers and budding bookworms.</p>
-          <div class="camp-widget-wrap"><div class="reg-label">&#128203; Registering for: <strong>Week 2 — Jun 15–19</strong></div><div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbVA1SmMifQ=="></script></div></div>
-        </div>
+          <div class="camp-widget-wrap">
+            <div class="reg-label">&#128203; Registering for: <strong>Week 2 — Jun 15–19</strong></div>
+            <button class="widget-toggle" 
+                    onclick="var d=document.getElementById('mms_6');d.classList.toggle('open');this.style.display='none';">
+              Register for This Camp &rarr;
+            </button>
+            <div id="mms_6" class="widget-collapsed">
+              <div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbVA1SmMifQ=="></script></div>
+            </div>
+          </div>
       </div>
   </div>
 
@@ -349,8 +412,16 @@ body{font-family:var(--bd);background:var(--cream);color:var(--ink);-webkit-font
             <span>&#127774; Ages 5–12</span>
           </div>
           <p class="camp-desc">Performing arts mornings + Creative STEM labs every afternoon.</p>
-          <div class="camp-widget-wrap"><div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbVdmSlQifQ=="></script></div></div>
-        </div>
+          <div class="camp-widget-wrap">
+            
+            <button class="widget-toggle" 
+                    onclick="var d=document.getElementById('mms_7');d.classList.toggle('open');this.style.display='none';">
+              Register for This Camp &rarr;
+            </button>
+            <div id="mms_7" class="widget-collapsed">
+              <div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbVdmSlQifQ=="></script></div>
+            </div>
+          </div>
       </div>
           <div class="camp-card">
         <div class="camp-img-wrap">
@@ -365,8 +436,16 @@ body{font-family:var(--bd);background:var(--cream);color:var(--ink);-webkit-font
             <span>&#127774; Ages 5–8</span>
           </div>
           <p class="camp-desc">Peter Pan meets The Little Mermaid! Character work, storytelling, dance and beginner violin.</p>
-          <div class="camp-widget-wrap"><div class="reg-label">&#128203; Registering for: <strong>Week 3 — Jun 22–26</strong></div><div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbUdnSmsifQ=="></script></div></div>
-        </div>
+          <div class="camp-widget-wrap">
+            <div class="reg-label">&#128203; Registering for: <strong>Week 3 — Jun 22–26</strong></div>
+            <button class="widget-toggle" 
+                    onclick="var d=document.getElementById('mms_8');d.classList.toggle('open');this.style.display='none';">
+              Register for This Camp &rarr;
+            </button>
+            <div id="mms_8" class="widget-collapsed">
+              <div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbUdnSmsifQ=="></script></div>
+            </div>
+          </div>
       </div>
     <div style="display:flex;flex-direction:column;gap:14px;">
             <div class="camp-card">
@@ -382,8 +461,16 @@ body{font-family:var(--bd);background:var(--cream);color:var(--ink);-webkit-font
             <span>&#127774; Ages 5–12</span>
           </div>
           <p class="camp-desc">Rocket builds, astronaut training and space-themed engineering challenges.</p>
-          <div class="camp-widget-wrap"><div class="reg-label">&#128203; Registering for: <strong>Week 3 — Jun 22–26</strong></div><div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbUdnSmsifQ=="></script></div></div>
-        </div>
+          <div class="camp-widget-wrap">
+            <div class="reg-label">&#128203; Registering for: <strong>Week 3 — Jun 22–26</strong></div>
+            <button class="widget-toggle" 
+                    onclick="var d=document.getElementById('mms_9');d.classList.toggle('open');this.style.display='none';">
+              Register for This Camp &rarr;
+            </button>
+            <div id="mms_9" class="widget-collapsed">
+              <div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbUdnSmsifQ=="></script></div>
+            </div>
+          </div>
       </div>
             <div class="camp-card">
         <div class="camp-img-wrap">
@@ -398,8 +485,16 @@ body{font-family:var(--bd);background:var(--cream);color:var(--ink);-webkit-font
             <span>&#127774; Ages 10+</span>
           </div>
           <p class="camp-desc">Learn crochet from scratch. Complete a granny square tote bag.</p>
-          <div class="camp-widget-wrap"><div class="reg-label">&#128203; Registering for: <strong>Week 3 — Jun 22–26</strong></div><div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbUdnSmsifQ=="></script></div></div>
-        </div>
+          <div class="camp-widget-wrap">
+            <div class="reg-label">&#128203; Registering for: <strong>Week 3 — Jun 22–26</strong></div>
+            <button class="widget-toggle" 
+                    onclick="var d=document.getElementById('mms_10');d.classList.toggle('open');this.style.display='none';">
+              Register for This Camp &rarr;
+            </button>
+            <div id="mms_10" class="widget-collapsed">
+              <div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbUdnSmsifQ=="></script></div>
+            </div>
+          </div>
       </div>
     </div>
   </div>
@@ -426,16 +521,32 @@ body{font-family:var(--bd);background:var(--cream);color:var(--ink);-webkit-font
             <span>&#127774; Ages 5–12</span>
           </div>
           <p class="camp-desc">Performing arts mornings + Creative STEM labs. 4-day week, no camp July 4th.</p>
-          <div class="camp-widget-wrap"><div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbVdmSlQifQ=="></script></div></div>
-        </div>
+          <div class="camp-widget-wrap">
+            
+            <button class="widget-toggle" 
+                    onclick="var d=document.getElementById('mms_11');d.classList.toggle('open');this.style.display='none';">
+              Register for This Camp &rarr;
+            </button>
+            <div id="mms_11" class="widget-collapsed">
+              <div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbVdmSlQifQ=="></script></div>
+            </div>
+          </div>
       </div>
     <div class="info-card">
       <span class="info-label" style="color:var(--mag)">AM &nbsp;&middot;&nbsp; Included in All Day</span>
       <div class="info-icon">&#9834;</div>
       <h3 class="info-title">Performing Arts Morning</h3>
       <p class="info-desc">Music, dance, vocal confidence and stage presence. Included in the all-day program.</p>
-      <div class="camp-widget-wrap"><div class="reg-label">&#128203; Registering for: <strong>Week 4 — Jun 29–Jul 3</strong></div><div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbWtSSkgifQ=="></script></div></div>
-    </div>
+      <div class="camp-widget-wrap">
+            <div class="reg-label">&#128203; Registering for: <strong>Week 4 — Jun 29–Jul 3</strong></div>
+            <button class="widget-toggle" 
+                    onclick="var d=document.getElementById('mms_12');d.classList.toggle('open');this.style.display='none';">
+              Register for This Camp &rarr;
+            </button>
+            <div id="mms_12" class="widget-collapsed">
+              <div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbWtSSkgifQ=="></script></div>
+            </div>
+          </div>
           <div class="camp-card">
         <div class="camp-img-wrap">
           <img src="https://static.wixstatic.com/media/2d2ffb_8474fb6c879348ecae718bd3b07ec129~mv2.png/v1/fill/w_600,h_740,al_c,q_85,usm_0.33_1.00_0.00,enc_avif,quality_auto/img.png" alt="Dino Discovery STEM Camp — Tamraloo Studios Lincoln CA 2026" class="camp-img" loading="lazy">
@@ -449,8 +560,16 @@ body{font-family:var(--bd);background:var(--cream);color:var(--ink);-webkit-font
             <span>&#127774; Ages 5–12</span>
           </div>
           <p class="camp-desc">Fossil digs, prehistoric science and dino-themed engineering. 4 action-packed days.</p>
-          <div class="camp-widget-wrap"><div class="reg-label">&#128203; Registering for: <strong>Week 4 — Jun 29–Jul 3</strong></div><div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbWtSSkgifQ=="></script></div></div>
-        </div>
+          <div class="camp-widget-wrap">
+            <div class="reg-label">&#128203; Registering for: <strong>Week 4 — Jun 29–Jul 3</strong></div>
+            <button class="widget-toggle" 
+                    onclick="var d=document.getElementById('mms_13');d.classList.toggle('open');this.style.display='none';">
+              Register for This Camp &rarr;
+            </button>
+            <div id="mms_13" class="widget-collapsed">
+              <div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbWtSSkgifQ=="></script></div>
+            </div>
+          </div>
       </div>
   </div>
 
@@ -476,16 +595,32 @@ body{font-family:var(--bd);background:var(--cream);color:var(--ink);-webkit-font
             <span>&#127774; Ages 5–12</span>
           </div>
           <p class="camp-desc">Performing arts mornings + Creative STEM labs every afternoon.</p>
-          <div class="camp-widget-wrap"><div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbVdmSlQifQ=="></script></div></div>
-        </div>
+          <div class="camp-widget-wrap">
+            
+            <button class="widget-toggle" 
+                    onclick="var d=document.getElementById('mms_14');d.classList.toggle('open');this.style.display='none';">
+              Register for This Camp &rarr;
+            </button>
+            <div id="mms_14" class="widget-collapsed">
+              <div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbVdmSlQifQ=="></script></div>
+            </div>
+          </div>
       </div>
     <div class="info-card">
       <span class="info-label" style="color:var(--mag)">AM &nbsp;&middot;&nbsp; Included in All Day</span>
       <div class="info-icon">&#9834;</div>
       <h3 class="info-title">Performing Arts Morning</h3>
       <p class="info-desc">Music, dance, vocal confidence and stage presence. Included in the all-day program.</p>
-      <div class="camp-widget-wrap"><div class="reg-label">&#128203; Registering for: <strong>Week 5 — Jul 6–10</strong></div><div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbVpxSmwifQ=="></script></div></div>
-    </div>
+      <div class="camp-widget-wrap">
+            <div class="reg-label">&#128203; Registering for: <strong>Week 5 — Jul 6–10</strong></div>
+            <button class="widget-toggle" 
+                    onclick="var d=document.getElementById('mms_15');d.classList.toggle('open');this.style.display='none';">
+              Register for This Camp &rarr;
+            </button>
+            <div id="mms_15" class="widget-collapsed">
+              <div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbVpxSmwifQ=="></script></div>
+            </div>
+          </div>
           <div class="camp-card">
         <div class="camp-img-wrap">
           <img src="https://static.wixstatic.com/media/2d2ffb_8474fb6c879348ecae718bd3b07ec129~mv2.png/v1/fill/w_600,h_740,al_c,q_85,usm_0.33_1.00_0.00,enc_avif,quality_auto/img.png" alt="LEGO Masters Engineering Camp — Tamraloo Studios Lincoln CA 2026" class="camp-img" loading="lazy">
@@ -499,8 +634,16 @@ body{font-family:var(--bd);background:var(--cream);color:var(--ink);-webkit-font
             <span>&#127774; Ages 7–12</span>
           </div>
           <p class="camp-desc">Daily building challenges and STEM problem-solving for hands-on learners who love to build.</p>
-          <div class="camp-widget-wrap"><div class="reg-label">&#128203; Registering for: <strong>Week 5 — Jul 6–10</strong></div><div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbVpxSmwifQ=="></script></div></div>
-        </div>
+          <div class="camp-widget-wrap">
+            <div class="reg-label">&#128203; Registering for: <strong>Week 5 — Jul 6–10</strong></div>
+            <button class="widget-toggle" 
+                    onclick="var d=document.getElementById('mms_16');d.classList.toggle('open');this.style.display='none';">
+              Register for This Camp &rarr;
+            </button>
+            <div id="mms_16" class="widget-collapsed">
+              <div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbVpxSmwifQ=="></script></div>
+            </div>
+          </div>
       </div>
   </div>
 
@@ -526,8 +669,16 @@ body{font-family:var(--bd);background:var(--cream);color:var(--ink);-webkit-font
             <span>&#127774; Ages 5–12</span>
           </div>
           <p class="camp-desc">Performing arts mornings + Creative STEM labs every afternoon.</p>
-          <div class="camp-widget-wrap"><div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbVdmSlQifQ=="></script></div></div>
-        </div>
+          <div class="camp-widget-wrap">
+            
+            <button class="widget-toggle" 
+                    onclick="var d=document.getElementById('mms_17');d.classList.toggle('open');this.style.display='none';">
+              Register for This Camp &rarr;
+            </button>
+            <div id="mms_17" class="widget-collapsed">
+              <div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbVdmSlQifQ=="></script></div>
+            </div>
+          </div>
       </div>
           <div class="camp-card  sold-out-card">
         <div class="camp-img-wrap">
@@ -558,8 +709,16 @@ body{font-family:var(--bd);background:var(--cream);color:var(--ink);-webkit-font
             <span>&#127774; Ages Grades K–3</span>
           </div>
           <p class="camp-desc">A second session of our beloved literacy camp — authors, storytelling, crafts and games.</p>
-          <div class="camp-widget-wrap"><div class="reg-label">&#128203; Registering for: <strong>Week 6 — Jul 13–17</strong></div><div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbVo5SmsifQ=="></script></div></div>
-        </div>
+          <div class="camp-widget-wrap">
+            <div class="reg-label">&#128203; Registering for: <strong>Week 6 — Jul 13–17</strong></div>
+            <button class="widget-toggle" 
+                    onclick="var d=document.getElementById('mms_18');d.classList.toggle('open');this.style.display='none';">
+              Register for This Camp &rarr;
+            </button>
+            <div id="mms_18" class="widget-collapsed">
+              <div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbVo5SmsifQ=="></script></div>
+            </div>
+          </div>
       </div>
   </div>
 
@@ -585,8 +744,16 @@ body{font-family:var(--bd);background:var(--cream);color:var(--ink);-webkit-font
             <span>&#127774; Ages 5–12</span>
           </div>
           <p class="camp-desc">Performing arts mornings + Creative STEM labs every afternoon.</p>
-          <div class="camp-widget-wrap"><div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbVdmSlQifQ=="></script></div></div>
-        </div>
+          <div class="camp-widget-wrap">
+            
+            <button class="widget-toggle" 
+                    onclick="var d=document.getElementById('mms_19');d.classList.toggle('open');this.style.display='none';">
+              Register for This Camp &rarr;
+            </button>
+            <div id="mms_19" class="widget-collapsed">
+              <div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbVdmSlQifQ=="></script></div>
+            </div>
+          </div>
       </div>
           <div class="camp-card  sold-out-card">
         <div class="camp-img-wrap">
@@ -617,8 +784,16 @@ body{font-family:var(--bd);background:var(--cream);color:var(--ink);-webkit-font
             <span>&#127774; Ages 11+</span>
           </div>
           <p class="camp-desc">Workshopping, character development and peer collaboration for emerging writers.</p>
-          <div class="camp-widget-wrap"><div class="reg-label">&#128203; Registering for: <strong>Week 7 — Jul 20–24</strong></div><div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbVpoSmIifQ=="></script></div></div>
-        </div>
+          <div class="camp-widget-wrap">
+            <div class="reg-label">&#128203; Registering for: <strong>Week 7 — Jul 20–24</strong></div>
+            <button class="widget-toggle" 
+                    onclick="var d=document.getElementById('mms_20');d.classList.toggle('open');this.style.display='none';">
+              Register for This Camp &rarr;
+            </button>
+            <div id="mms_20" class="widget-collapsed">
+              <div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbVpoSmIifQ=="></script></div>
+            </div>
+          </div>
       </div>
   </div>
 
@@ -644,23 +819,47 @@ body{font-family:var(--bd);background:var(--cream);color:var(--ink);-webkit-font
             <span>&#127774; Ages 5–12</span>
           </div>
           <p class="camp-desc">Grand finale week! End-of-summer showcase and STEM design challenge.</p>
-          <div class="camp-widget-wrap"><div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbVdmSlQifQ=="></script></div></div>
-        </div>
+          <div class="camp-widget-wrap">
+            
+            <button class="widget-toggle" 
+                    onclick="var d=document.getElementById('mms_21');d.classList.toggle('open');this.style.display='none';">
+              Register for This Camp &rarr;
+            </button>
+            <div id="mms_21" class="widget-collapsed">
+              <div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbVdmSlQifQ=="></script></div>
+            </div>
+          </div>
       </div>
     <div class="info-card">
       <span class="info-label" style="color:var(--mag)">AM &nbsp;&middot;&nbsp; Included in All Day</span>
       <div class="info-icon">&#9834;</div>
       <h3 class="info-title">End-of-Summer Showcase</h3>
       <p class="info-desc">Grand finale performing arts showcase celebrating everything campers built and created this summer.</p>
-      <div class="camp-widget-wrap"><div class="reg-label">&#128203; Registering for: <strong>Week 8 — Jul 27–31</strong></div><div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbVpLSloifQ=="></script></div></div>
-    </div>
+      <div class="camp-widget-wrap">
+            <div class="reg-label">&#128203; Registering for: <strong>Week 8 — Jul 27–31</strong></div>
+            <button class="widget-toggle" 
+                    onclick="var d=document.getElementById('mms_22');d.classList.toggle('open');this.style.display='none';">
+              Register for This Camp &rarr;
+            </button>
+            <div id="mms_22" class="widget-collapsed">
+              <div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbVpLSloifQ=="></script></div>
+            </div>
+          </div>
     <div class="info-card pm">
       <span class="info-label" style="color:var(--blue)">PM &nbsp;&middot;&nbsp; Included in All Day</span>
       <div class="info-icon">&#9881;</div>
       <h3 class="info-title">STEM Grand Finale Lab</h3>
       <p class="info-desc">Final STEM design challenge and engineering showcase — capping off eight incredible weeks.</p>
-      <div class="camp-widget-wrap"><div class="reg-label">&#128203; Registering for: <strong>Week 8 — Jul 27–31</strong></div><div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbVpLSloifQ=="></script></div></div>
-    </div>
+      <div class="camp-widget-wrap">
+            <div class="reg-label">&#128203; Registering for: <strong>Week 8 — Jul 27–31</strong></div>
+            <button class="widget-toggle" 
+                    onclick="var d=document.getElementById('mms_23');d.classList.toggle('open');this.style.display='none';">
+              Register for This Camp &rarr;
+            </button>
+            <div id="mms_23" class="widget-collapsed">
+              <div class="mms-embed"><script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbVpLSloifQ=="></script></div>
+            </div>
+          </div>
   </div>
 
 </div><!-- /schedule-wrap -->
