@@ -96,8 +96,20 @@ body{font-family:var(--bd);background:var(--cream);color:var(--ink);-webkit-font
 .date-week{font-size:0.58rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
 .date-range{font-size:0.88rem;font-weight:600;color:#fff;margin-bottom:6px;}
 .date-camps{font-size:0.7rem;color:rgba(255,255,255,0.45);line-height:1.5;}
-a.date-card{cursor:pointer;transition:background 0.2s,border-color 0.2s;}
+a.date-card{cursor:pointer;transition:background 0.2s,border-color 0.2s;position:relative;overflow:hidden;}
 a.date-card:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.3);}
+.date-bar{height:4px;display:flex;margin:-14px -16px 14px;gap:0;}
+.date-bar span{flex:1;}
+.db-mag{background:#c8007d;}
+.db-blue{background:#4285b2;}
+.db-orange{background:#e19632;}
+.db-gold{background:#e1af4b;}
+.dc-tag{display:inline-block;font-size:0.6rem;font-weight:700;letter-spacing:0.1em;
+  text-transform:uppercase;padding:2px 7px;border-radius:2px;margin-right:4px;margin-bottom:3px;vertical-align:middle;}
+.dc-ccc{background:rgba(200,0,125,0.2);color:#e0338f;}
+.dc-am{background:rgba(66,133,178,0.2);color:#78b4d8;}
+.dc-pm{background:rgba(225,150,50,0.2);color:#e1af4b;}
+.dc-mm{background:rgba(225,175,75,0.15);color:#e1af4b;}
 
 /* CHARTER BAND */
 .charter-band{background:rgba(66,133,178,0.08);border-top:3px solid var(--blue);border-bottom:3px solid var(--blue);padding:32px;}
@@ -159,7 +171,7 @@ a.date-card:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255
 
   <!-- CCC -->
   <div class="pillar">
-    <img src="https://static.wixstatic.com/media/2d2ffb_7edc9a95e239457190d311837dc67121~mv2.jpg/v1/fill/w_600,h_740,al_c,q_80,usm_0.33_1.00_0.00,enc_avif,quality_auto/img.jpg"
+    <img src="https://static.wixstatic.com/media/2d2ffb_7edc9a95e239457190d311837dc67121~mv2.jpg/v1/fill/w_800,h_600,al_c,q_80,usm_0.33_1.00_0.00,enc_avif,quality_auto/img.jpg"
          alt="Creative Conservatory Camp all day summer camp Lincoln CA 2026" class="pillar-img" loading="lazy">
     <div class="pillar-body">
       <span class="pillar-badge" style="background:rgba(200,0,125,0.1);color:var(--mag);">All Day &nbsp;&middot;&nbsp; Ages 5&ndash;12 &nbsp;&middot;&nbsp; All 8 Weeks</span>
@@ -207,7 +219,7 @@ a.date-card:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255
 
   <!-- SUMMER THEATRE -->
   <div class="pillar">
-    <img src="https://static.wixstatic.com/media/2d2ffb_40927acf25d542f4a715da0ec33f46d3~mv2.png/v1/fill/w_520,h_640,al_c,q_85,usm_0.33_1.00_0.00,enc_avif,quality_auto/img.png"
+    <img src="https://static.wixstatic.com/media/2d2ffb_40927acf25d542f4a715da0ec33f46d3~mv2.png/v1/fill/w_600,h_800,al_c,q_85,usm_0.33_1.00_0.00,enc_avif,quality_auto/img.png"
          alt="Summer Theatre 2026 Descendants Musical Mini Musicals Tamraloo Studios Lincoln CA" class="pillar-img" loading="lazy">
     <div class="pillar-body">
       <span class="pillar-badge" style="background:rgba(225,150,50,0.1);color:var(--orange);">Ages 7+ &amp; Adults &nbsp;&middot;&nbsp; Mini Musicals &amp; Main Stage</span>
@@ -238,14 +250,14 @@ a.date-card:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255
   <div class="date-inner">
     <h2 class="date-heading">8 Weeks &mdash; Full Summer Schedule</h2>
     <div class="date-grid">
-      <a href="https://therealerikap.github.io/Tamraloo-Studios/tamraloo-camps-2026.html#week-1" class="date-card" onclick="try{window.top.location.href=this.href;}catch(e){window.location.href=this.href;}return false;" style="text-decoration:none;"><div class="date-week">Week 1</div><div class="date-range">Jun 8&ndash;12</div><div class="date-camps">CCC All Day &bull; Pirate Camp PM</div></a>
-      <a href="https://therealerikap.github.io/Tamraloo-Studios/tamraloo-camps-2026.html#week-2" class="date-card" onclick="try{window.top.location.href=this.href;}catch(e){window.location.href=this.href;}return false;" style="text-decoration:none;"><div class="date-week">Week 2</div><div class="date-range">Jun 15&ndash;19</div><div class="date-camps">CCC &bull; Beach Dance AM &bull; Stories PM &bull; Mini Musical I begins</div></a>
-      <a href="https://therealerikap.github.io/Tamraloo-Studios/tamraloo-camps-2026.html#week-3" class="date-card" onclick="try{window.top.location.href=this.href;}catch(e){window.location.href=this.href;}return false;" style="text-decoration:none;"><div class="date-week">Week 3</div><div class="date-range">Jun 22&ndash;26</div><div class="date-camps">CCC &bull; Swashbuckle AM &bull; Space &amp; Crochet PM &bull; Mini Musical I ends</div></a>
-      <a href="https://therealerikap.github.io/Tamraloo-Studios/tamraloo-camps-2026.html#week-4" class="date-card" onclick="try{window.top.location.href=this.href;}catch(e){window.location.href=this.href;}return false;" style="text-decoration:none;"><div class="date-week">Week 4</div><div class="date-range">Jun 30&ndash;Jul 3</div><div class="date-camps">CCC &bull; Dino PM &bull; 4-day week</div></a>
-      <a href="https://therealerikap.github.io/Tamraloo-Studios/tamraloo-camps-2026.html#week-5" class="date-card" onclick="try{window.top.location.href=this.href;}catch(e){window.location.href=this.href;}return false;" style="text-decoration:none;"><div class="date-week">Week 5</div><div class="date-range">Jul 7&ndash;11</div><div class="date-camps">CCC &bull; LEGO PM &bull; Mini Musical II begins</div></a>
-      <a href="https://therealerikap.github.io/Tamraloo-Studios/tamraloo-camps-2026.html#week-6" class="date-card" onclick="try{window.top.location.href=this.href;}catch(e){window.location.href=this.href;}return false;" style="text-decoration:none;"><div class="date-week">Week 6</div><div class="date-range">Jul 13&ndash;17</div><div class="date-camps">CCC &bull; Shiz AM &bull; Stories S2 PM &bull; Mini Musical II ends</div></a>
-      <a href="https://therealerikap.github.io/Tamraloo-Studios/tamraloo-camps-2026.html#week-7" class="date-card" onclick="try{window.top.location.href=this.href;}catch(e){window.location.href=this.href;}return false;" style="text-decoration:none;"><div class="date-week">Week 7</div><div class="date-range">Jul 21&ndash;25</div><div class="date-camps">CCC &bull; Shiz Wk2 AM &bull; Young Authors PM &bull; Mini Musical III begins</div></a>
-      <a href="https://therealerikap.github.io/Tamraloo-Studios/tamraloo-camps-2026.html#week-8" class="date-card" onclick="try{window.top.location.href=this.href;}catch(e){window.location.href=this.href;}return false;" style="text-decoration:none;"><div class="date-week">Week 8</div><div class="date-range">Jul 27&ndash;31</div><div class="date-camps">CCC Grand Finale &bull; Mini Musical III ends</div></a>
+      <a href="https://therealerikap.github.io/Tamraloo-Studios/tamraloo-camps-2026.html#week-1" class="date-card" onclick="try{window.top.location.href=this.href;}catch(e){window.location.href=this.href;}return false;" style="text-decoration:none;"><div class="date-bar"><span class="db-mag"></span><span class="db-blue"></span><span class="db-orange"></span></div><div class="date-week">Week 1</div><div class="date-range">Jun 8–12</div><div class="date-camps"><span class="dc-tag dc-ccc">CCC</span> All Day &nbsp;&bull;&nbsp; <span class="dc-tag dc-pm">PM</span> Pirate Camp</div></a>
+      <a href="https://therealerikap.github.io/Tamraloo-Studios/tamraloo-camps-2026.html#week-2" class="date-card" onclick="try{window.top.location.href=this.href;}catch(e){window.location.href=this.href;}return false;" style="text-decoration:none;"><div class="date-bar"><span class="db-mag"></span><span class="db-blue"></span><span class="db-orange"></span><span class="db-gold"></span></div><div class="date-week">Week 2</div><div class="date-range">Jun 15–19</div><div class="date-camps"><span class="dc-tag dc-ccc">CCC</span> &nbsp;&bull;&nbsp; <span class="dc-tag dc-am">AM</span> Beach Dance &nbsp;&bull;&nbsp; <span class="dc-tag dc-pm">PM</span> Stories &nbsp;&bull;&nbsp; <span class="dc-tag dc-mm">MM</span> Mini Musical I begins</div></a>
+      <a href="https://therealerikap.github.io/Tamraloo-Studios/tamraloo-camps-2026.html#week-3" class="date-card" onclick="try{window.top.location.href=this.href;}catch(e){window.location.href=this.href;}return false;" style="text-decoration:none;"><div class="date-bar"><span class="db-mag"></span><span class="db-blue"></span><span class="db-orange"></span><span class="db-gold"></span></div><div class="date-week">Week 3</div><div class="date-range">Jun 22–26</div><div class="date-camps"><span class="dc-tag dc-ccc">CCC</span> &nbsp;&bull;&nbsp; <span class="dc-tag dc-am">AM</span> Swashbuckle &nbsp;&bull;&nbsp; <span class="dc-tag dc-pm">PM</span> Space &amp; Crochet &nbsp;&bull;&nbsp; <span class="dc-tag dc-mm">MM</span> Mini Musical I ends</div></a>
+      <a href="https://therealerikap.github.io/Tamraloo-Studios/tamraloo-camps-2026.html#week-4" class="date-card" onclick="try{window.top.location.href=this.href;}catch(e){window.location.href=this.href;}return false;" style="text-decoration:none;"><div class="date-bar"><span class="db-mag"></span><span class="db-orange"></span></div><div class="date-week">Week 4</div><div class="date-range">Jun 30–Jul 3</div><div class="date-camps"><span class="dc-tag dc-ccc">CCC</span> &nbsp;&bull;&nbsp; <span class="dc-tag dc-pm">PM</span> Dino &nbsp;&bull;&nbsp; 4-day week</div></a>
+      <a href="https://therealerikap.github.io/Tamraloo-Studios/tamraloo-camps-2026.html#week-5" class="date-card" onclick="try{window.top.location.href=this.href;}catch(e){window.location.href=this.href;}return false;" style="text-decoration:none;"><div class="date-bar"><span class="db-mag"></span><span class="db-orange"></span><span class="db-gold"></span></div><div class="date-week">Week 5</div><div class="date-range">Jul 7–11</div><div class="date-camps"><span class="dc-tag dc-ccc">CCC</span> &nbsp;&bull;&nbsp; <span class="dc-tag dc-pm">PM</span> LEGO &nbsp;&bull;&nbsp; <span class="dc-tag dc-mm">MM</span> Mini Musical II begins</div></a>
+      <a href="https://therealerikap.github.io/Tamraloo-Studios/tamraloo-camps-2026.html#week-6" class="date-card" onclick="try{window.top.location.href=this.href;}catch(e){window.location.href=this.href;}return false;" style="text-decoration:none;"><div class="date-bar"><span class="db-mag"></span><span class="db-blue"></span><span class="db-orange"></span><span class="db-gold"></span></div><div class="date-week">Week 6</div><div class="date-range">Jul 13–17</div><div class="date-camps"><span class="dc-tag dc-ccc">CCC</span> &nbsp;&bull;&nbsp; <span class="dc-tag dc-am">AM</span> Shiz &nbsp;&bull;&nbsp; <span class="dc-tag dc-pm">PM</span> Stories S2 &nbsp;&bull;&nbsp; <span class="dc-tag dc-mm">MM</span> Mini Musical II ends</div></a>
+      <a href="https://therealerikap.github.io/Tamraloo-Studios/tamraloo-camps-2026.html#week-7" class="date-card" onclick="try{window.top.location.href=this.href;}catch(e){window.location.href=this.href;}return false;" style="text-decoration:none;"><div class="date-bar"><span class="db-mag"></span><span class="db-blue"></span><span class="db-orange"></span><span class="db-gold"></span></div><div class="date-week">Week 7</div><div class="date-range">Jul 21–25</div><div class="date-camps"><span class="dc-tag dc-ccc">CCC</span> &nbsp;&bull;&nbsp; <span class="dc-tag dc-am">AM</span> Shiz Wk2 &nbsp;&bull;&nbsp; <span class="dc-tag dc-pm">PM</span> Young Authors &nbsp;&bull;&nbsp; <span class="dc-tag dc-mm">MM</span> Mini Musical III begins</div></a>
+      <a href="https://therealerikap.github.io/Tamraloo-Studios/tamraloo-camps-2026.html#week-8" class="date-card" onclick="try{window.top.location.href=this.href;}catch(e){window.location.href=this.href;}return false;" style="text-decoration:none;"><div class="date-bar"><span class="db-mag"></span><span class="db-gold"></span></div><div class="date-week">Week 8</div><div class="date-range">Jul 27–31</div><div class="date-camps"><span class="dc-tag dc-ccc">CCC</span> Grand Finale &nbsp;&bull;&nbsp; <span class="dc-tag dc-mm">MM</span> Mini Musical III ends</div></a>
     </div>
   </div>
 </div>
