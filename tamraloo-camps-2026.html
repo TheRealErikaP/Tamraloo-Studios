@@ -337,6 +337,48 @@ body {
 .info-card.pm .info-link { color:var(--blue); }
 .info-link:hover { opacity:0.7; }
 
+/* ── MMS WIDGET SECTION ──────────────────────────────── */
+#mms-widget-section {
+  max-width: 1100px; margin: 0 auto;
+  padding: 0 32px 64px;
+  scroll-margin-top: 24px;
+}
+.widget-header {
+  background: var(--ink);
+  border-radius: 4px 4px 0 0;
+  padding: 24px 28px 20px;
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+}
+.widget-header-text h3 {
+  font-family: var(--display); font-size: 1.2rem;
+  font-weight: 700; color: #fff; margin-bottom: 4px;
+}
+.widget-header-text p {
+  font-size: 0.8rem; color: rgba(255,255,255,0.5); line-height: 1.5;
+}
+.widget-hint-bar {
+  background: rgba(200,0,125,0.08);
+  border: 1px solid rgba(200,0,125,0.2);
+  border-top: none;
+  padding: 12px 28px;
+  font-size: 0.82rem; font-weight: 600;
+  color: var(--magenta);
+  display: none;
+}
+.widget-wrap {
+  border: 1px solid var(--border);
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  overflow: hidden;
+  background: #fff;
+  min-height: 300px;
+}
+.widget-note {
+  padding: 16px 28px 0;
+  font-size: 0.75rem; color: var(--text-light);
+  font-style: italic;
+}
+
 /* ── WIX BOOKING NOTE ─────────────────────────────────── */
 .booking-note {
   background:var(--blush);
@@ -411,6 +453,20 @@ body {
   .booking-note { flex-direction:column; }
 }
 </style>
+<script>
+function goBook(weekLabel) {
+  var el = document.getElementById('mms-widget-section');
+  if (el) {
+    el.scrollIntoView({behavior: 'smooth', block: 'start'});
+    // Update the helper text
+    var hint = document.getElementById('widget-hint');
+    if (hint && weekLabel) {
+      hint.textContent = 'Look for "' + weekLabel + '" in the options below to register.';
+      hint.style.display = 'block';
+    }
+  }
+}
+</script>
 </head>
 <body>
 
@@ -454,7 +510,7 @@ body {
         <span class="ccc-pill">&#127775; Stage Presence</span>
         <span class="ccc-pill">&#129309; 10% Sibling Discount</span>
       </div>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRDfxUhRaN23nOmlGlBHHd6e56utrNVCAD8MOslb0FRAedMg/viewform" target="_blank" rel="noopener" class="btn-ccc">Register for All-Day Camp &rarr;</a>
+      <button onclick="goBook('Creative Conservatory')" class="btn-ccc" style="border:none;cursor:pointer;font-family:var(--body);">Register for All-Day Camp &darr;</button>
       <a href="#schedule" class="btn-ccc btn-ccc-ghost">See Weekly Schedule &darr;</a>
     </div>
   </div>
@@ -489,7 +545,7 @@ body {
           <span class="meta-ages">&#127774; Ages 5–12</span>
         </div>
         <p class="camp-desc">Performing arts mornings + Creative STEM labs every afternoon. Week 1 instrument spotlight included.</p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRDfxUhRaN23nOmlGlBHHd6e56utrNVCAD8MOslb0FRAedMg/viewform" target="_blank" rel="noopener" class="btn-reg" style="background:var(--magenta)">Register for All-Day Camp &rarr;</a>
+        <button onclick="goBook('')" class="btn-reg" style="background:var(--magenta);border:none;cursor:pointer;width:100%;font-family:var(--body);">Register for All-Day Camp &rarr; &darr;</button>
       </div>
     </div>
     <div class="info-card" style="align-self:stretch;">
@@ -497,7 +553,7 @@ body {
       <div class="info-icon">&#9834;</div>
       <h3 class="info-title">Performing Arts Morning</h3>
       <p class="info-desc">Music exploration, dance, vocal confidence, rhythm, and stage presence led by specialty instructors. Week 1 instrument spotlight included in the all-day program.</p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRDfxUhRaN23nOmlGlBHHd6e56utrNVCAD8MOslb0FRAedMg/viewform" target="_blank" rel="noopener" class="info-link">Register for All-Day &rarr;</a>
+      <button onclick="goBook('Creative Conservatory')" class="info-link" style="background:none;border:none;cursor:pointer;font-family:var(--body);padding:0;">Register for All-Day &rarr;</button>
     </div>
           <div class="camp-card">
         <div class="camp-img-wrap">
@@ -514,7 +570,7 @@ body {
             <span class="meta-ages">&#127774; Ages 5–12</span>
           </div>
           <p class="camp-desc">Set sail for a week of swashbuckling adventure! Crafts, storytelling, treasure hunts, team challenges, and themed activities led by Tamraloo instructors.</p>
-          <a href="https://forms.gle/R3ZfvZ4Y7JNkcsND7" target="_blank" rel="noopener" class="btn-reg" style="background:var(--orange)">Register for Pirate Camp &rarr;</a>
+          <button onclick="goBook('')" class="btn-reg" style="background:var(--orange);border:none;cursor:pointer;width:100%;font-family:var(--body);">Register for Pirate Camp &rarr; &darr;</button>
         </div>
       </div>
   </div>
@@ -544,7 +600,7 @@ body {
             <span class="meta-ages">&#127774; Ages 5–12</span>
           </div>
           <p class="camp-desc">Performing arts mornings + Creative STEM labs every afternoon. Week 2 instrument spotlight included.</p>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRDfxUhRaN23nOmlGlBHHd6e56utrNVCAD8MOslb0FRAedMg/viewform" target="_blank" rel="noopener" class="btn-reg" style="background:var(--magenta)">Register for All-Day Camp &rarr;</a>
+          <button onclick="goBook('')" class="btn-reg" style="background:var(--magenta);border:none;cursor:pointer;width:100%;font-family:var(--body);">Register for All-Day Camp &rarr; &darr;</button>
         </div>
       </div>
           <div class="camp-card">
@@ -562,7 +618,7 @@ body {
             <span class="meta-ages">&#127774; Ages 5–8</span>
           </div>
           <p class="camp-desc">Channel Moana and Lilo &amp; Stitch in this high-energy dance camp! Jazz, hip-hop, and hula movements bring the beach to life for our youngest performers.</p>
-          <a href="https://forms.gle/hoFqpHjUujnLxP1N8" target="_blank" rel="noopener" class="btn-reg" style="background:var(--blue)">Register for Beach Dance &rarr;</a>
+          <button onclick="goBook('')" class="btn-reg" style="background:var(--blue);border:none;cursor:pointer;width:100%;font-family:var(--body);">Register for Beach Dance &rarr; &darr;</button>
         </div>
       </div>
           <div class="camp-card">
@@ -580,7 +636,7 @@ body {
             <span class="meta-ages">&#127774; Ages Grades K–3</span>
           </div>
           <p class="camp-desc">Dive into the world of beloved children's authors through storytelling, crafts, games, and creative exploration. Perfect for early readers and budding bookworms.</p>
-          <a href="https://forms.gle/yzJS3fHiqmgSGyi88" target="_blank" rel="noopener" class="btn-reg" style="background:var(--green-dk)">Register for Stories Camp &rarr;</a>
+          <button onclick="goBook('')" class="btn-reg" style="background:var(--green-dk);border:none;cursor:pointer;width:100%;font-family:var(--body);">Register for Stories Camp &rarr; &darr;</button>
         </div>
       </div>
   </div>
@@ -610,7 +666,7 @@ body {
             <span class="meta-ages">&#127774; Ages 5–12</span>
           </div>
           <p class="camp-desc">Performing arts mornings + Creative STEM labs every afternoon. Week 3 instrument spotlight included.</p>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRDfxUhRaN23nOmlGlBHHd6e56utrNVCAD8MOslb0FRAedMg/viewform" target="_blank" rel="noopener" class="btn-reg" style="background:var(--magenta)">Register for All-Day Camp &rarr;</a>
+          <button onclick="goBook('')" class="btn-reg" style="background:var(--magenta);border:none;cursor:pointer;width:100%;font-family:var(--body);">Register for All-Day Camp &rarr; &darr;</button>
         </div>
       </div>
           <div class="camp-card">
@@ -628,7 +684,7 @@ body {
             <span class="meta-ages">&#127774; Ages 5–8</span>
           </div>
           <p class="camp-desc">Peter Pan meets The Little Mermaid in this performing arts adventure! Explore character work, storytelling, dance, and beginner violin in a magical themed week.</p>
-          <a href="https://forms.gle/hoFqpHjUujnLxP1N8" target="_blank" rel="noopener" class="btn-reg" style="background:var(--blue)">Register for Swashbuckle &rarr;</a>
+          <button onclick="goBook('')" class="btn-reg" style="background:var(--blue);border:none;cursor:pointer;width:100%;font-family:var(--body);">Register for Swashbuckle &rarr; &darr;</button>
         </div>
       </div>
     <div style="display:flex;flex-direction:column;gap:14px;">
@@ -647,7 +703,7 @@ body {
             <span class="meta-ages">&#127774; Ages 5–12</span>
           </div>
           <p class="camp-desc">Blast off into engineering! Rocket builds, astronaut training challenges, and space-themed design projects light up this action-packed STEM afternoon camp.</p>
-          <a href="https://forms.gle/R3ZfvZ4Y7JNkcsND7" target="_blank" rel="noopener" class="btn-reg" style="background:var(--orange)">Register for Space Camp &rarr;</a>
+          <button onclick="goBook('')" class="btn-reg" style="background:var(--orange);border:none;cursor:pointer;width:100%;font-family:var(--body);">Register for Space Camp &rarr; &darr;</button>
         </div>
       </div>
             <div class="camp-card">
@@ -665,7 +721,7 @@ body {
             <span class="meta-ages">&#127774; Ages 10+</span>
           </div>
           <p class="camp-desc">Learn the art of crochet from scratch — or build on your skills. Campers complete a granny square tote bag and explore fiber arts fundamentals in a fun, creative setting.</p>
-          <a href="https://forms.gle/Wz3nT33rkCP45sK96" target="_blank" rel="noopener" class="btn-reg" style="background:var(--green-dk)">Register for Crochet Camp &rarr;</a>
+          <button onclick="goBook('')" class="btn-reg" style="background:var(--green-dk);border:none;cursor:pointer;width:100%;font-family:var(--body);">Register for Crochet Camp &rarr; &darr;</button>
         </div>
       </div>
     </div>
@@ -696,7 +752,7 @@ body {
             <span class="meta-ages">&#127774; Ages 5–12</span>
           </div>
           <p class="camp-desc">Performing arts mornings + Creative STEM labs every afternoon. 4-day week — no camp July 4th.</p>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRDfxUhRaN23nOmlGlBHHd6e56utrNVCAD8MOslb0FRAedMg/viewform" target="_blank" rel="noopener" class="btn-reg" style="background:var(--magenta)">Register for All-Day Camp &rarr;</a>
+          <button onclick="goBook('')" class="btn-reg" style="background:var(--magenta);border:none;cursor:pointer;width:100%;font-family:var(--body);">Register for All-Day Camp &rarr; &darr;</button>
         </div>
       </div>
     <div class="info-card">
@@ -704,7 +760,7 @@ body {
       <div class="info-icon">&#9834;</div>
       <h3 class="info-title">Performing Arts Morning</h3>
       <p class="info-desc">Music, dance, vocal confidence and stage presence led by Tamraloo specialty instructors. Included in the Creative Conservatory all-day program.</p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRDfxUhRaN23nOmlGlBHHd6e56utrNVCAD8MOslb0FRAedMg/viewform" target="_blank" rel="noopener" class="info-link">Register for All-Day &rarr;</a>
+      <button onclick="goBook('Creative Conservatory')" class="info-link" style="background:none;border:none;cursor:pointer;font-family:var(--body);padding:0;">Register for All-Day &rarr;</button>
     </div>
           <div class="camp-card">
         <div class="camp-img-wrap">
@@ -721,7 +777,7 @@ body {
             <span class="meta-ages">&#127774; Ages 5–12</span>
           </div>
           <p class="camp-desc">Dig into dinosaur science! Fossil excavations, prehistoric creature research, paleontology experiments, and dino-themed engineering challenges fill this thrilling 4-day camp.</p>
-          <a href="https://forms.gle/R3ZfvZ4Y7JNkcsND7" target="_blank" rel="noopener" class="btn-reg" style="background:var(--orange)">Register for Dino Camp &rarr;</a>
+          <button onclick="goBook('')" class="btn-reg" style="background:var(--orange);border:none;cursor:pointer;width:100%;font-family:var(--body);">Register for Dino Camp &rarr; &darr;</button>
         </div>
       </div>
   </div>
@@ -751,7 +807,7 @@ body {
             <span class="meta-ages">&#127774; Ages 5–12</span>
           </div>
           <p class="camp-desc">Performing arts mornings + Creative STEM labs every afternoon. Week 5 instrument spotlight included.</p>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRDfxUhRaN23nOmlGlBHHd6e56utrNVCAD8MOslb0FRAedMg/viewform" target="_blank" rel="noopener" class="btn-reg" style="background:var(--magenta)">Register for All-Day Camp &rarr;</a>
+          <button onclick="goBook('')" class="btn-reg" style="background:var(--magenta);border:none;cursor:pointer;width:100%;font-family:var(--body);">Register for All-Day Camp &rarr; &darr;</button>
         </div>
       </div>
     <div class="info-card">
@@ -759,7 +815,7 @@ body {
       <div class="info-icon">&#9834;</div>
       <h3 class="info-title">Performing Arts Morning</h3>
       <p class="info-desc">Music, dance, vocal confidence and stage presence. Included in the Creative Conservatory all-day program.</p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRDfxUhRaN23nOmlGlBHHd6e56utrNVCAD8MOslb0FRAedMg/viewform" target="_blank" rel="noopener" class="info-link">Register for All-Day &rarr;</a>
+      <button onclick="goBook('Creative Conservatory')" class="info-link" style="background:none;border:none;cursor:pointer;font-family:var(--body);padding:0;">Register for All-Day &rarr;</button>
     </div>
           <div class="camp-card">
         <div class="camp-img-wrap">
@@ -776,7 +832,7 @@ body {
             <span class="meta-ages">&#127774; Ages 7–12</span>
           </div>
           <p class="camp-desc">Daily building challenges, STEM problem-solving, and friendly competitions push creative engineers to think big. A favorite for hands-on learners who love to build.</p>
-          <a href="https://forms.gle/R3ZfvZ4Y7JNkcsND7" target="_blank" rel="noopener" class="btn-reg" style="background:var(--orange)">Register for LEGO Camp &rarr;</a>
+          <button onclick="goBook('')" class="btn-reg" style="background:var(--orange);border:none;cursor:pointer;width:100%;font-family:var(--body);">Register for LEGO Camp &rarr; &darr;</button>
         </div>
       </div>
   </div>
@@ -806,7 +862,7 @@ body {
             <span class="meta-ages">&#127774; Ages 5–12</span>
           </div>
           <p class="camp-desc">Performing arts mornings + Creative STEM labs every afternoon. Week 6 instrument spotlight included.</p>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRDfxUhRaN23nOmlGlBHHd6e56utrNVCAD8MOslb0FRAedMg/viewform" target="_blank" rel="noopener" class="btn-reg" style="background:var(--magenta)">Register for All-Day Camp &rarr;</a>
+          <button onclick="goBook('')" class="btn-reg" style="background:var(--magenta);border:none;cursor:pointer;width:100%;font-family:var(--body);">Register for All-Day Camp &rarr; &darr;</button>
         </div>
       </div>
           <div class="camp-card  sold-out-card">
@@ -842,7 +898,7 @@ body {
             <span class="meta-ages">&#127774; Ages Grades K–3</span>
           </div>
           <p class="camp-desc">A second session of our beloved literacy camp! Beloved children's authors, storytelling, crafts, and games for early readers.</p>
-          <a href="https://forms.gle/yzJS3fHiqmgSGyi88" target="_blank" rel="noopener" class="btn-reg" style="background:var(--green-dk)">Register for Stories S2 &rarr;</a>
+          <button onclick="goBook('')" class="btn-reg" style="background:var(--green-dk);border:none;cursor:pointer;width:100%;font-family:var(--body);">Register for Stories S2 &rarr; &darr;</button>
         </div>
       </div>
   </div>
@@ -872,7 +928,7 @@ body {
             <span class="meta-ages">&#127774; Ages 5–12</span>
           </div>
           <p class="camp-desc">Performing arts mornings + Creative STEM labs every afternoon. Week 7 instrument spotlight included.</p>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRDfxUhRaN23nOmlGlBHHd6e56utrNVCAD8MOslb0FRAedMg/viewform" target="_blank" rel="noopener" class="btn-reg" style="background:var(--magenta)">Register for All-Day Camp &rarr;</a>
+          <button onclick="goBook('')" class="btn-reg" style="background:var(--magenta);border:none;cursor:pointer;width:100%;font-family:var(--body);">Register for All-Day Camp &rarr; &darr;</button>
         </div>
       </div>
           <div class="camp-card  sold-out-card">
@@ -908,7 +964,7 @@ body {
             <span class="meta-ages">&#127774; Ages 11+</span>
           </div>
           <p class="camp-desc">For emerging writers ready to workshop their ideas. Storytelling, peer collaboration, character development, and creative writing foundations in a supportive setting.</p>
-          <a href="https://forms.gle/R3ZfvZ4Y7JNkcsND7" target="_blank" rel="noopener" class="btn-reg" style="background:var(--green-dk)">Register for Young Authors &rarr;</a>
+          <button onclick="goBook('')" class="btn-reg" style="background:var(--green-dk);border:none;cursor:pointer;width:100%;font-family:var(--body);">Register for Young Authors &rarr; &darr;</button>
         </div>
       </div>
   </div>
@@ -938,7 +994,7 @@ body {
             <span class="meta-ages">&#127774; Ages 5–12</span>
           </div>
           <p class="camp-desc">The grand finale! End-of-summer showcase and STEM design challenge round out eight incredible weeks. A celebration of everything campers have learned and created.</p>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRDfxUhRaN23nOmlGlBHHd6e56utrNVCAD8MOslb0FRAedMg/viewform" target="_blank" rel="noopener" class="btn-reg" style="background:var(--magenta)">Register for All-Day Camp &rarr;</a>
+          <button onclick="goBook('')" class="btn-reg" style="background:var(--magenta);border:none;cursor:pointer;width:100%;font-family:var(--body);">Register for All-Day Camp &rarr; &darr;</button>
         </div>
       </div>
     <div class="info-card">
@@ -946,27 +1002,38 @@ body {
       <div class="info-icon">&#9834;</div>
       <h3 class="info-title">Performing Arts Morning</h3>
       <p class="info-desc">End-of-summer performing arts showcase and grand finale celebration — included in the all-day Creative Conservatory program.</p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRDfxUhRaN23nOmlGlBHHd6e56utrNVCAD8MOslb0FRAedMg/viewform" target="_blank" rel="noopener" class="info-link">Register for All-Day &rarr;</a>
+      <button onclick="goBook('Creative Conservatory')" class="info-link" style="background:none;border:none;cursor:pointer;font-family:var(--body);padding:0;">Register for All-Day &rarr;</button>
     </div>
     <div class="info-card pm">
       <span class="info-label">PM Session &nbsp;&middot;&nbsp; Included in All Day</span>
       <div class="info-icon">&#9881;</div>
       <h3 class="info-title">Creative STEM Finale Lab</h3>
       <p class="info-desc">Grand finale STEM design challenge and end-of-summer engineering showcase — included in the all-day Creative Conservatory program.</p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRDfxUhRaN23nOmlGlBHHd6e56utrNVCAD8MOslb0FRAedMg/viewform" target="_blank" rel="noopener" class="info-link pm">Register for All-Day &rarr;</a>
+      <button onclick="goBook('Creative Conservatory')" class="info-link" style="background:none;border:none;cursor:pointer;font-family:var(--body);padding:0;">Register for All-Day &rarr;</button>
     </div>
   </div>
 
   <!-- WIX BOOKING NOTE -->
-  <div class="booking-note">
-    <div class="booking-note-text">
-      <h3>Prefer to book and pay through our studio system?</h3>
-      <p>Use the registration button on each camp above for the fastest sign-up. If you'd like to use our online booking system to pay by credit card, scroll down to the booking widget below &mdash; or call us at <a href="tel:9166642516" style="color:var(--magenta);font-weight:600;">(916) 664-2516</a> and we'll get you registered right away.</p>
-    </div>
-    <a href="tel:9166642516" class="btn-book">Call to Register</a>
-  </div>
+  </div><!-- /schedule-wrap (end of weekly cards) -->
 
-</div><!-- /schedule-wrap -->
+<!-- MMS REGISTRATION WIDGET -->
+<div id="mms-widget-section">
+  <div class="widget-header">
+    <div style="font-size:1.6rem;">&#127775;</div>
+    <div class="widget-header-text">
+      <h3>Ready to Register? Select Your Camp Below</h3>
+      <p>Choose your week, pick your time slot, and complete enrollment — all right here. Scroll up to review the schedule above if you need a reminder of what each week includes.</p>
+    </div>
+  </div>
+  <div id="widget-hint" class="widget-hint-bar"></div>
+  <div class="widget-wrap">
+    <p class="widget-note">&#9432; Use the time slot options below to find your camp. Summer Camp Week 1 = Jun 9–13, Week 2 = Jun 16–20, Week 3 = Jun 23–27, Week 4 = Jun 30–Jul 3, Week 5 = Jul 7–11, Week 6 = Jul 14–18, Week 7 = Jul 21–25, Week 8 = Jul 28–Aug 1.</p>
+    <div id="mymusicstaff-widget">
+      <script src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9NbjlKYyIsIldlYnNpdGVJRCI6Indic196eHlKayIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pUbVdmSlQifQ=="></script>
+    </div>
+  </div>
+</div>
+
 
 <!-- FAQ -->
 <section class="faq-section">
