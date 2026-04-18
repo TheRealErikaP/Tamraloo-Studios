@@ -139,102 +139,7 @@ a{color:inherit;}
   font-weight: 400;
 }
 
-/* ── PILLARS ─────────────────────────────────────────── */
-.pillars-section {
-  padding: 0;
-}
-.pillars-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-}
-.pillar {
-  position: relative;
-  padding: 48px 36px 44px;
-  border-right: 1px solid var(--bd);
-  display: flex;
-  flex-direction: column;
-  transition: background 0.2s;
-  cursor: default;
-  overflow: hidden;
-}
-.pillar:last-child { border-right: none; }
-.pillar::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 4px;
-}
-.pillar.music::before   { background: var(--blue); }
-.pillar.dance::before   { background: var(--mag); }
-.pillar.theatre::before { background: var(--or); }
-.pillar.tutoring::before { background: var(--green); }
-.pillar:hover { background: rgba(26,21,32,0.025); }
-.pillar-icon {
-  font-size: 1.6rem;
-  margin-bottom: 18px;
-  display: block;
-  line-height: 1;
-}
-.pillar-name {
-  font-family: var(--dp);
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--ink);
-  margin-bottom: 12px;
-  line-height: 1.15;
-}
-.pillar-desc {
-  font-size: 0.83rem;
-  color: var(--tm);
-  line-height: 1.72;
-  flex: 1;
-  margin-bottom: 24px;
-}
-.pillar-programs {
-  list-style: none;
-  margin-bottom: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-.pillar-programs li {
-  font-size: 0.76rem;
-  color: var(--tm);
-  padding-left: 14px;
-  position: relative;
-  font-weight: 500;
-}
-.pillar-programs li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 7px;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-}
-.pillar.music .pillar-programs li::before   { background: var(--blue); }
-.pillar.dance .pillar-programs li::before   { background: var(--mag); }
-.pillar.theatre .pillar-programs li::before { background: var(--or); }
-.pillar.tutoring .pillar-programs li::before { background: var(--green); }
-.pillar-link {
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: auto;
-}
-.pillar.music .pillar-link   { color: var(--blue); }
-.pillar.dance .pillar-link   { color: var(--mag); }
-.pillar.theatre .pillar-link { color: var(--or); }
-.pillar.tutoring .pillar-link { color: var(--green); }
-.pillar-link::after { content: '→'; transition: transform 0.15s; }
-.pillar-link:hover::after { transform: translateX(4px); }
+
 
 /* ── SUMMER BAND ─────────────────────────────────────── */
 .summer-band {
@@ -551,11 +456,132 @@ a{color:inherit;}
   .why-section { padding: 56px 20px; }
 }
 
+
+/* ── HOVER IMAGE PILLARS ───────────────────── */
+.pillars-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;min-height:520px;}
+.pillar{position:relative;overflow:hidden;cursor:pointer;display:block;text-decoration:none;}
+.pillar-bg{
+  position:absolute;inset:0;
+  background-size:cover;background-position:center;
+  transition:transform 0.55s cubic-bezier(0.25,0.46,0.45,0.94);
+  will-change:transform;
+}
+.pillar:hover .pillar-bg{transform:scale(1.06);}
+.pillar-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(26,21,32,0.92) 0%, rgba(26,21,32,0.45) 50%, rgba(26,21,32,0.1) 100%);
+  transition:background 0.35s ease;
+}
+.pillar:hover .pillar-overlay{background:linear-gradient(to top, rgba(26,21,32,0.97) 0%, rgba(26,21,32,0.75) 50%, rgba(26,21,32,0.5) 100%);}
+.pillar-accent{position:absolute;top:0;left:0;right:0;height:4px;z-index:2;}
+.pillar-content{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-end;
+  padding:32px 28px;z-index:2;
+  text-align:right;
+}
+
+.pillar:hover 
+
+.pillar-name{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:1.55rem;font-weight:700;color:#fff;
+  line-height:1.1;margin-bottom:10px;
+  text-shadow:0 2px 8px rgba(0,0,0,0.4);
+  text-align:right;
+}
+.pillar-desc{
+  font-size:0.8rem;color:rgba(255,255,255,0.75);line-height:1.7;
+  margin-bottom:16px;
+  opacity:0;transform:translateY(10px);
+  transition:opacity 0.35s ease 0.05s, transform 0.35s ease 0.05s;
+  max-width:220px;text-align:right;
+}
+.pillar:hover .pillar-desc{opacity:1;transform:translateY(0);}
+.pillar-programs-hover{
+  display:flex;flex-wrap:wrap;gap:5px;margin-bottom:16px;justify-content:flex-end;
+  opacity:0;transform:translateY(8px);
+  transition:opacity 0.35s ease 0.1s, transform 0.35s ease 0.1s;
+}
+.pillar:hover .pillar-programs-hover{opacity:1;transform:translateY(0);}
+.prog-pill{
+  font-size:0.65rem;font-weight:600;
+  background:rgba(255,255,255,0.12);
+  border:1px solid rgba(255,255,255,0.2);
+  color:rgba(255,255,255,0.85);
+  padding:3px 10px;border-radius:100px;
+  white-space:nowrap;
+}
+.pillar-cta-hover{
+  font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+  color:#fff;display:inline-flex;align-items:center;gap:6px;justify-content:flex-end;
+  opacity:0;transform:translateY(6px);
+  transition:opacity 0.35s ease 0.15s, transform 0.35s ease 0.15s;
+}
+.pillar:hover .pillar-cta-hover{opacity:1;transform:translateY(0);}
+.pillar-cta-hover::after{content:'→';transition:transform 0.2s;}
+.pillar:hover .pillar-cta-hover::after{transform:translateX(4px);}
+
+/* placeholder bg colors until real images drop in */
+.pillar.music .pillar-bg{background-image:url('https://therealerikap.github.io/tamraloo-assets/two-students-playing-cellos-during-music.jpg');background-color:#1a1520;}
+.pillar.dance .pillar-bg{background-image:url('https://therealerikap.github.io/tamraloo-assets/large-group-of-young-people-on.jpeg');background-color:#1a1520;}
+.pillar.theatre .pillar-bg{background-image:url('https://therealerikap.github.io/tamraloo-assets/saxophone-player-performing-on-stage-in.jpeg');background-color:#1a1520;}
+.pillar.tutoring .pillar-bg{background-image:url('https://therealerikap.github.io/tamraloo-assets/teacher-working-one-on-one-with-student-in.png');background-color:#1a1520;}
+
+@media(max-width:1000px){
+  .pillars-grid{grid-template-columns:1fr 1fr;}
+  .pillar{min-height:300px;}
+}
+@media(max-width:600px){
+  .pillars-grid{grid-template-columns:1fr;}
+  .pillar{min-height:260px;}
+  .pillar-desc{opacity:1;transform:none;}
+  .pillar-programs-hover{opacity:1;transform:none;}
+  .pillar-cta-hover{opacity:1;transform:none;}
+}
+
+
+/* ── HERO ROTATING BG ──────────────────────── */
+.hero{position:relative;}
+.hero-slides{position:absolute;inset:0;z-index:0;}
+.hero-slide{
+  position:absolute;inset:0;
+  background-size:cover;background-position:center;
+  opacity:0;
+  transition:opacity 1.2s ease-in-out;
+}
+.hero-slide.active{opacity:1;}
+.hero::before{z-index:1;}
+.hero-eyebrow,.hero-h1,.hero-sub,.hero-btns,.awards-bar{position:relative;z-index:2;}
+/* dark overlay on slides */
+.hero-slides::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to bottom, rgba(26,21,32,0.55) 0%, rgba(26,21,32,0.7) 60%, rgba(26,21,32,0.85) 100%);
+  z-index:1;pointer-events:none;
+}
+
+
+.why-card-num{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:0.65rem;font-weight:600;letter-spacing:0.25em;
+  text-transform:uppercase;display:block;margin-bottom:14px;
+  opacity:0.4;
+}
+.why-card h3{font-family:'Playfair Display',Georgia,serif;font-size:1.05rem;font-weight:700;color:var(--ink);margin-bottom:10px;line-height:1.2;}
+.why-card p{font-size:0.82rem;color:var(--tm);line-height:1.75;}
+
 </style>
 </head>
 <body style="background:var(--cream);">
 <!-- HERO -->
 <section class="hero" aria-label="Hero">
+<div class="hero-slides">
+  <div class="hero-slide  active" style="background-image:url('https://therealerikap.github.io/tamraloo-assets/saxophone-player-performing-on-stage-in.jpeg');"></div>
+  <div class="hero-slide" style="background-image:url('https://therealerikap.github.io/tamraloo-assets/teacher-and-students-posed-on-risers.jpg');"></div>
+  <div class="hero-slide" style="background-image:url('https://therealerikap.github.io/tamraloo-assets/two-students-playing-cellos-during-music.jpg');"></div>
+  <div class="hero-slide" style="background-image:url('https://therealerikap.github.io/tamraloo-assets/boy-playing-clarinet-on-stage-during.jpeg');"></div>
+  <div class="hero-slide" style="background-image:url('https://therealerikap.github.io/tamraloo-assets/large-group-of-young-people-on.jpeg');"></div>
+</div>
   <span class="hero-eyebrow">Lincoln, CA &nbsp;&middot;&nbsp; Placer County &nbsp;&middot;&nbsp; 30+ Years Teaching</span>
   <h1 class="hero-h1">
     Where students<br><em>become performers.</em>
@@ -572,11 +598,11 @@ a{color:inherit;}
     </div>
     <div class="award-item" role="listitem">
       <span class="award-label">Lincoln Best of the Best</span>
-      <span class="award-name">Performing Arts Studio</span>
+      <span class="award-name">Best Music Instruction</span>
     </div>
     <div class="award-item" role="listitem">
       <span class="award-label">30+ Years</span>
-      <span class="award-name">Serving Placer County</span>
+      <span class="award-name">Serving Students &amp; Families</span>
     </div>
     <div class="award-item" role="listitem">
       <span class="award-label">Charter School</span>
@@ -585,68 +611,48 @@ a{color:inherit;}
   </div>
 </section>
 
-<!-- 4 PILLARS -->
 <section class="pillars-section" aria-label="Programs">
   <div class="pillars-grid">
-
-    <div class="pillar music">
-      <span class="pillar-icon" aria-hidden="true">&#9834;</span>
-      <h2 class="pillar-name">Music Lessons</h2>
-      <p class="pillar-desc">Private and group instruction for all ages and levels. From first-time beginners to advanced students preparing for performance.</p>
-      <ul class="pillar-programs" aria-label="Music programs">
-        <li>Voice</li>
-        <li>Piano</li>
-        <li>Guitar</li>
-        <li>Drums &amp; Percussion</li>
-        <li>Strings &amp; Woodwinds</li>
-        <li>Ukulele</li>
-      </ul>
-      <a href="https://www.tamraloo.com/music-lessons" class="pillar-link" onclick="try{window.top.location.href=this.href;}catch(e){window.location.href=this.href;}return false;">Explore Music</a>
-    </div>
-
-    <div class="pillar dance">
-      <span class="pillar-icon" aria-hidden="true">&#128131;</span>
-      <h2 class="pillar-name">Dance Classes</h2>
-      <p class="pillar-desc">Technique, artistry, and stage confidence in a welcoming environment. Classes for every style, every age, every level.</p>
-      <ul class="pillar-programs" aria-label="Dance programs">
-        <li>Ballet</li>
-        <li>Jazz</li>
-        <li>Tap Dance</li>
-        <li>Hip-Hop</li>
-        <li>Musical Theatre Dance</li>
-        <li>Adult Dance Classes</li>
-      </ul>
-      <a href="https://www.tamraloo.com/dance-lessons-lincoln-ca" class="pillar-link" onclick="try{window.top.location.href=this.href;}catch(e){window.location.href=this.href;}return false;">Explore Dance</a>
-    </div>
-
-    <div class="pillar theatre">
-      <span class="pillar-icon" aria-hidden="true">&#127881;</span>
-      <h2 class="pillar-name">Theatre Programs</h2>
-      <p class="pillar-desc">Acting, singing, staging, and full productions. From Mini Musicals to main stage shows, students find their voice on stage.</p>
-      <ul class="pillar-programs" aria-label="Theatre programs">
-        <li>Musical Theatre</li>
-        <li>Acting Techniques</li>
-        <li>Mini Musical Camps</li>
-        <li>Main Stage Productions</li>
-        <li>Summer Theatre</li>
-      </ul>
-      <a href="https://www.tamraloo.com/dance" class="pillar-link" onclick="try{window.top.location.href=this.href;}catch(e){window.location.href=this.href;}return false;">Explore Theatre</a>
-    </div>
-
-    <div class="pillar tutoring">
-      <span class="pillar-icon" aria-hidden="true">&#128218;</span>
-      <h2 class="pillar-name">Academic Tutoring</h2>
-      <p class="pillar-desc">Structured literacy, math, and learning intervention for students who need a different approach. Evidence-based, student-centered.</p>
-      <ul class="pillar-programs" aria-label="Tutoring programs">
-        <li>Reading &amp; Literacy (Orton-Gillingham)</li>
-        <li>Math Tutoring &amp; Assessment</li>
-        <li>Dysgraphia &amp; Writing Support</li>
-        <li>Special Education Advocacy</li>
-        <li>Homeschool Consultations</li>
-      </ul>
-      <a href="https://www.tamraloo.com/tutoring-lincoln-ca" class="pillar-link" onclick="try{window.top.location.href=this.href;}catch(e){window.location.href=this.href;}return false;">Explore Tutoring</a>
-    </div>
-
+    <a href="https://www.tamraloo.com/music-lessons" class="pillar music" onclick="try{window.top.location.href=this.href;}catch(e){window.location.href=this.href;}return false;">
+      <div class="pillar-bg" style="background-image:url('');"></div>
+      <div class="pillar-overlay"></div>
+      <div class="pillar-accent" style="background:#4285b2;"></div>
+      <div class="pillar-content">
+        <h2 class="pillar-name">Music</h2>
+        <p class="pillar-desc">Private and group lessons for all ages. Beginners to advanced performers.</p>
+        <div class="pillar-programs-hover"><span class="prog-pill">Voice</span><span class="prog-pill">Piano</span><span class="prog-pill">Guitar</span><span class="prog-pill">Drums</span><span class="prog-pill">Strings</span><span class="prog-pill">Woodwinds</span><span class="prog-pill">Ukulele</span></div>
+        <span class="pillar-cta-hover">Explore Music</span>
+      </div></a>
+    <a href="https://www.tamraloo.com/dance-lessons-lincoln-ca" class="pillar dance" onclick="try{window.top.location.href=this.href;}catch(e){window.location.href=this.href;}return false;">
+      <div class="pillar-bg" style="background-image:url('');"></div>
+      <div class="pillar-overlay"></div>
+      <div class="pillar-accent" style="background:#c8007d;"></div>
+      <div class="pillar-content">
+        <h2 class="pillar-name">Dance</h2>
+        <p class="pillar-desc">Technique, artistry, and stage confidence in every style.</p>
+        <div class="pillar-programs-hover"><span class="prog-pill">Ballet</span><span class="prog-pill">Jazz</span><span class="prog-pill">Tap</span><span class="prog-pill">Hip-Hop</span><span class="prog-pill">Musical Theatre</span><span class="prog-pill">Adult Classes</span></div>
+        <span class="pillar-cta-hover">Explore Dance</span>
+      </div></a>
+    <a href="https://www.tamraloo.com/dance" class="pillar theatre" onclick="try{window.top.location.href=this.href;}catch(e){window.location.href=this.href;}return false;">
+      <div class="pillar-bg" style="background-image:url('');"></div>
+      <div class="pillar-overlay"></div>
+      <div class="pillar-accent" style="background:#e19632;"></div>
+      <div class="pillar-content">
+        <h2 class="pillar-name">Theatre</h2>
+        <p class="pillar-desc">Acting, singing, and full productions. From Mini Musicals to main stage.</p>
+        <div class="pillar-programs-hover"><span class="prog-pill">Musical Theatre</span><span class="prog-pill">Acting</span><span class="prog-pill">Mini Musicals</span><span class="prog-pill">Main Stage</span><span class="prog-pill">Summer Theatre</span></div>
+        <span class="pillar-cta-hover">Explore Theatre</span>
+      </div></a>
+    <a href="https://www.tamraloo.com/tutoring-lincoln-ca" class="pillar tutoring" onclick="try{window.top.location.href=this.href;}catch(e){window.location.href=this.href;}return false;">
+      <div class="pillar-bg" style="background-image:url('');"></div>
+      <div class="pillar-overlay"></div>
+      <div class="pillar-accent" style="background:#4b9632;"></div>
+      <div class="pillar-content">
+        <h2 class="pillar-name">Tutoring</h2>
+        <p class="pillar-desc">Evidence-based literacy, math, and learning support for every student.</p>
+        <div class="pillar-programs-hover"><span class="prog-pill">Reading</span><span class="prog-pill">Math</span><span class="prog-pill">Dysgraphia</span><span class="prog-pill">Writing</span><span class="prog-pill">Advocacy</span><span class="prog-pill">Homeschool</span></div>
+        <span class="pillar-cta-hover">Explore Tutoring</span>
+      </div></a>
   </div>
 </section>
 
@@ -655,7 +661,7 @@ a{color:inherit;}
   <div class="trust-inner">
     <div class="trust-stat">
       <span class="trust-num">30+</span>
-      <span class="trust-label">Years Teaching</span>
+      <span class="trust-label">Years of Students &amp; Families</span>
     </div>
     <div class="trust-stat">
       <span class="trust-num">4</span>
@@ -708,32 +714,32 @@ a{color:inherit;}
   </div>
   <div class="why-grid">
     <div class="why-card">
-      <span class="why-card-icon" aria-hidden="true">&#127775;</span>
-      <h3>30+ Years of Teaching</h3>
+      
+      <h3>30 years of big dreams, first notes, and standing ovations.</h3>
       <p>Three decades of experience means we&rsquo;ve taught every age, every level, and every learning style. We know what works — and we know how to make it stick.</p>
     </div>
-    <div class="why-card">
-      <span class="why-card-icon" aria-hidden="true">&#128101;</span>
+    <div class="why-card" style="border-top-color:#4285b2;">
+      <span class="why-card-num">II</span>
       <h3>Every Student Is a Priority</h3>
       <p>Small class sizes, private lesson options, and teachers who remember your name and your goals. You&rsquo;re not a number here.</p>
     </div>
-    <div class="why-card">
-      <span class="why-card-icon" aria-hidden="true">&#127891;</span>
+    <div class="why-card" style="border-top-color:#e19632;">
+      <span class="why-card-num">III</span>
       <h3>One Place for Everything</h3>
       <p>Music, dance, theatre, and tutoring under one roof. Families can enroll siblings, build schedules, and grow with us for years.</p>
     </div>
-    <div class="why-card">
-      <span class="why-card-icon" aria-hidden="true">&#127942;</span>
+    <div class="why-card" style="border-top-color:#e1af4b;">
+      <span class="why-card-num">IV</span>
       <h3>Award-Winning Studio</h3>
       <p>Sacramento A-List Best Music Instruction. Lincoln Best of the Best. Consistently recognized by families in Placer County for excellence in the arts.</p>
     </div>
-    <div class="why-card">
-      <span class="why-card-icon" aria-hidden="true">&#128336;</span>
+    <div class="why-card" style="border-top-color:#4b9632;">
+      <span class="why-card-num">V</span>
       <h3>Flexible Scheduling</h3>
       <p>Before school, after school, weekends. Weekly lessons, camps, intensives. We work around your family&rsquo;s life — not the other way around.</p>
     </div>
-    <div class="why-card">
-      <span class="why-card-icon" aria-hidden="true">&#128200;</span>
+    <div class="why-card" style="border-top-color:#4285b2;">
+      <span class="why-card-num">VI</span>
       <h3>Real Results on Stage</h3>
       <p>Recitals, competitions, theatre productions, and showcases throughout the year. Students perform — and families get to watch them shine.</p>
     </div>
@@ -773,5 +779,19 @@ a{color:inherit;}
     </div>
   </div>
 </section>
+
+<script>
+(function(){
+  var slides = document.querySelectorAll('.hero-slide');
+  if(!slides.length) return;
+  var cur = 0;
+  setInterval(function(){
+    slides[cur].classList.remove('active');
+    cur = (cur + 1) % slides.length;
+    slides[cur].classList.add('active');
+  }, 5000);
+})();
+</script>
+
 </body>
 </html>
